@@ -1,7 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-  :root{}
+  :root{
+    --black: #232025;
+    --rose: #d5cdc4
+  }
 
   * {
     box-sizing: border-box;
@@ -11,6 +14,8 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: sans-serif;
+    background-color: var(--black);
+    color: var(--rose);
   }
 
   a {

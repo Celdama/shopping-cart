@@ -9,10 +9,10 @@ https://dribbble.com/shots/17268154-TALA-Homepage-now-live
   -[] <Navbar />
   -[] <Home />
   -[] <Informations />
-  -[] <ItemsList />
+  -[] <ItemList />
   -[] <Item />
   -[] <Marketing />
-  -[] <Ingredients />
+  -[] <Ingredient />
   -[] <Questions />
   -[] <DisplayProduct />
   -[] <Instagram />
