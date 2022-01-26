@@ -1,9 +1,10 @@
 import { GlobalStyle } from './GlobalStyle';
+import NavBar from './Components/Navbar';
 
 const App = () => {
   return (
     <div className='App'>
-      <h1>Shopping Cart</h1>
+      <NavBar />
       <GlobalStyle />
     </div>
   );
