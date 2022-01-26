@@ -1,8 +1,22 @@
 # Shopping Cart
 
+-[x] find a desing
+https://dribbble.com/shots/17268154-TALA-Homepage-now-live
+
 ### Think about the component and the folder structure
 
-- which compoenents
+- which components
+  -[] <Navbar />
+  -[] <Home />
+  -[] <Informations />
+  -[] <ItemsList />
+  -[] <Item />
+  -[] <Marketing />
+  -[] <Ingredients />
+  -[] <Questions />
+  -[] <DisplayProduct />
+  -[] <Instagram />
+  -[] <Footer />
 
 - which functionalities
 
