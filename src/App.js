@@ -4,6 +4,7 @@ import Home from './Components/Home';
 import Hero from './Components/Hero';
 import Informations from './Components/Informations';
 import Divider from './Components/Divider';
+import ItemList from './Components/ItemList';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Hero />
       <Informations />
       <Divider />
+      <ItemList />
       <br />
       <br />
       <br />
