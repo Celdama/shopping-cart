@@ -1,18 +1,15 @@
 import styled from 'styled-components';
 
 export const Content = styled.li`
-  outline: 1px solid white;
   padding: 18px 0;
   display: flex;
   justify-content: space-between;
 
   .index {
-    outline: 1px solid yellow;
     width: 20%;
   }
 
   div {
-    outline: 1px solid green;
     width: 100%;
     display: flex;
     justify-content: space-between;

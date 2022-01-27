@@ -7,28 +7,23 @@ export const Wrapper = styled.section`
 `;
 
 export const Content = styled.div`
-  outline: 1px solid red;
   width: 100%;
   max-width: var(--maxWidth);
 
   ul {
     list-style: none;
-    outline: 1px solid blue;
     padding: 0;
 
     li {
-      outline: 1px solid white;
-      padding: 18px 0;
+      padding: 12px 0;
       display: flex;
       justify-content: space-between;
 
       .index {
-        outline: 1px solid yellow;
         width: 20%;
       }
 
       div {
-        outline: 1px solid green;
         width: 100%;
         display: flex;
         justify-content: space-between;
