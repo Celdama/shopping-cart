@@ -16,6 +16,12 @@ export const Content = styled.div`
     padding: 95px 0;
   }
 
+  .horizontal-divider {
+    height: 1px;
+    border: 1px dotted var(--rose);
+    background-color: transparent;
+  }
+
   .quote {
     max-width: var(--maxWidth);
     margin: 0 auto;
@@ -33,9 +39,6 @@ export const Content = styled.div`
   flex-direction: column;
 
   .sub-content {
-    border-bottom: 1px dotted var(--rose);
-    border-top: 1px dotted var(--rose);
-
     .container {
       display: flex;
       max-width: var(--maxWidth);
