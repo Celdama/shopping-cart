@@ -17,7 +17,7 @@ export const Content = styled.div`
 
   .divider {
     height: 1px;
-    border: 1px dotted #fff;
+    border: 1px dotted var(--rose);
     background-color: transparent;
     max-width: var(--maxWidth);
     text-align: center;

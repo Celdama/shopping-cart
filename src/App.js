@@ -5,6 +5,8 @@ import Hero from './Components/Hero';
 import Informations from './Components/Informations';
 import Divider from './Components/Divider';
 import ItemList from './Components/ItemList';
+import Marketing from './Components/Marketing';
+import Space from './Components/Space';
 
 const App = () => {
   return (
@@ -15,6 +17,8 @@ const App = () => {
       <Informations />
       <Divider />
       <ItemList />
+      <Marketing />
+      <Space />
       <br />
       <br />
       <br />
