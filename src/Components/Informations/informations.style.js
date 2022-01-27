@@ -15,4 +15,9 @@ export const Text = styled.h2`
   font-size: 5vw;
   text-align: center;
   font-weight: 400;
+
+  p {
+    padding: 0;
+    margin: 0;
+  }
 `;
