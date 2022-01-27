@@ -10,7 +10,8 @@ https://dribbble.com/shots/17268154-TALA-Homepage-now-live
 - [x] <Navbar />
 - [x] <Home />
 - [x] <Hero />
-- [] <Informations />
+- [x] <Informations />
+- [] <Divider />
 - [] <ItemList />
 - [] <Item />
 - [] <Marketing />

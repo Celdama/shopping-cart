@@ -3,6 +3,7 @@ import NavBar from './Components/Navbar';
 import Home from './Components/Home';
 import Hero from './Components/Hero';
 import Informations from './Components/Informations';
+import Divider from './Components/Divider';
 
 const App = () => {
   return (
@@ -11,9 +12,26 @@ const App = () => {
       <Home />
       <Hero />
       <Informations />
+      <Divider />
       <br />
       <br />
       <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <p>test</p>
       <GlobalStyle />
     </div>
   );
