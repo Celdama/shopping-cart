@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Image from '../../Images/heroImage.jpg';
+import Image2 from '../../Images/heroImage2.jpg';
 import { Wrapper } from './heroImg.styles';
 
 const HeroImg = () => {
+  const [random, setRandom] = useState(Math.round(Math.random()));
   const [position, setPosition] = useState(0);
 
   useEffect(() => {
@@ -23,8 +25,10 @@ const HeroImg = () => {
     transform: `translate3d(-${position}px, 0px, 0px)`,
   };
 
+  console.log(random);
+
   return (
-    <Wrapper image={Image}>
+    <Wrapper image={random ? Image : Image2}>
       <div style={leftStyle}></div>
       <div style={rightStyle}></div>
     </Wrapper>

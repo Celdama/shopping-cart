@@ -5,18 +5,20 @@ https://dribbble.com/shots/17268154-TALA-Homepage-now-live
 
 ### Think about the component and the folder structure
 
-- which components
-  -[] <Navbar />
-  -[] <Home />
-  -[] <Informations />
-  -[] <ItemList />
-  -[] <Item />
-  -[] <Marketing />
-  -[] <Ingredient />
-  -[] <Questions />
-  -[] <DisplayProduct />
-  -[] <Instagram />
-  -[] <Footer />
+##### which components
+
+- [x] <Navbar />
+- [x] <Home />
+- [x] <Hero />
+- [] <Informations />
+- [] <ItemList />
+- [] <Item />
+- [] <Marketing />
+- [] <Ingredient />
+- [] <Questions />
+- [] <DisplayProduct />
+- [] <Instagram />
+- [] <Footer />
 
 - which functionalities
 

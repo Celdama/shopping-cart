@@ -1,14 +1,14 @@
 import { GlobalStyle } from './GlobalStyle';
 import NavBar from './Components/Navbar';
 import Home from './Components/Home';
-import HeroImg from './Components/HeroImg';
+import Hero from './Components/Hero';
 
 const App = () => {
   return (
     <div className='App'>
       <NavBar />
       <Home />
-      <HeroImg />
+      <Hero />
       <br />
       <br />
       <br />

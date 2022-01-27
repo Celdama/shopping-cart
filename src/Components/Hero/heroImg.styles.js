@@ -12,6 +12,6 @@ export const Wrapper = styled.div`
 
   div {
     background-color: var(--black);
-    width: 100px;
+    width: 102px;
   }
 `;
