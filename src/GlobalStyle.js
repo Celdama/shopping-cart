@@ -27,4 +27,9 @@ export const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
   }
+
+  .serif {
+    font-family: serif;
+    font-style: italic;
+  }
 `;
