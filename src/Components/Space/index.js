@@ -44,6 +44,10 @@ const Space = () => {
     visible: {
       y: 5,
       opacity: 1,
+      transition: {
+        ease: 'easeIn',
+        duration: 0.3,
+      },
     },
   };
 
