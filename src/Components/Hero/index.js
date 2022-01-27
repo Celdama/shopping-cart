@@ -9,7 +9,7 @@ const HeroImg = () => {
 
   useEffect(() => {
     const onScroll = () => {
-      setPosition(window.pageYOffset / 9);
+      setPosition(window.scrollY / 9);
     };
 
     window.removeEventListener('scroll', onScroll);
