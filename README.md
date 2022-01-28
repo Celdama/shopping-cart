@@ -15,6 +15,7 @@ https://dribbble.com/shots/17268154-TALA-Homepage-now-live
 - [x] <ItemList />
 - [x] <Item />
 - [x] <Marketing />
+- [x] <Space />
 - [] <Ingredient />
 - [] <Questions />
 - [] <DisplayProduct />

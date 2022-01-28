@@ -7,6 +7,7 @@ import Divider from './Components/Divider';
 import ItemList from './Components/ItemList';
 import Marketing from './Components/Marketing';
 import Space from './Components/Space';
+import Ingredient from './Components/Ingredient';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
       <ItemList />
       <Marketing />
       <Space />
+      <Ingredient />
       <br />
       <br />
       <br />
@@ -37,7 +39,7 @@ const App = () => {
       <br />
       <br />
       <br />
-      <p>test</p>
+
       <GlobalStyle />
     </div>
   );
