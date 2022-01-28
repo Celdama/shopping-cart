@@ -19,9 +19,8 @@ const Question = () => {
     hidden: {},
     visible: {
       transition: {
-        delay: 1.2,
-        delayChildren: 0.1,
-        staggerChildren: 0.2,
+        delayChildren: 0.6,
+        staggerChildren: 0.3,
       },
     },
   };
