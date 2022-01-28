@@ -9,6 +9,7 @@ import Marketing from './Components/Marketing';
 import Space from './Components/Space';
 import Ingredient from './Components/Ingredient';
 import Questions from './Components/Questions';
+import DisplayProduct from './Components/DisplayProduct';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
       <Space />
       <Ingredient />
       <Questions />
+      <DisplayProduct />
       <br />
       <br />
       <br />
