@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
-  outline: 1px solid red;
   height: 90vh;
   display: flex;
   justify-content: center;
