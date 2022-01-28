@@ -25,8 +25,6 @@ const HeroImg = () => {
     transform: `translate3d(-${position}px, 0px, 0px)`,
   };
 
-  console.log(random);
-
   return (
     <Wrapper image={random ? Image : Image2}>
       <div style={leftStyle}></div>

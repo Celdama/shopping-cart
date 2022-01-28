@@ -49,6 +49,7 @@ const Ingredient = () => {
   return (
     <Wrapper>
       <ContentQuestion>
+        {/* METTRE H3 DANS UN COMPONENT POUR LANIMER */}
         <h3>
           <span>Number of</span>
           <span className='serif'>ingredients:</span>
