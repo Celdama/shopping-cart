@@ -67,10 +67,10 @@ const DisplayProduct = () => {
           className='products'
         >
           <div>
-            <img className='small ' src={Product1} alt='' />
+            <img className='small' src={Product1} alt='' />
           </div>
           <div>
-            <img className='medium ' src={Product2} alt='' />
+            <img className='medium' src={Product2} alt='' />
           </div>
           <div>
             <img className='large' src={Product3} alt='' />

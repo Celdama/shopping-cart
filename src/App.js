@@ -10,6 +10,7 @@ import Space from './Components/Space';
 import Ingredient from './Components/Ingredient';
 import Questions from './Components/Questions';
 import DisplayProduct from './Components/DisplayProduct';
+import Instagram from './Components/Instagram';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
       <Ingredient />
       <Questions />
       <DisplayProduct />
+      <Instagram />
       <br />
       <br />
       <br />
