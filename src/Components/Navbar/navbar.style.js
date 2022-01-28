@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.nav`
-  display: flex;
-  justify-content: space-around;
   padding: 0 20px;
 `;
 
@@ -10,21 +8,24 @@ export const Content = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   max-width: var(--maxWidth);
   padding: 20px 0;
+  margin: 0 auto;
   text-transform: uppercase;
+
+  @media screen and (max-width: 1440px) {
+    max-width: 1380px;
+  }
 
   ul {
     display: flex;
-    padding: 0 20px;
     gap: 36px;
     list-style: none;
-    justify-content: space-between;
-    text-align: center;
   }
 `;
 
 export const Logo = styled.h1`
   margin: 0;
 `;
+
+// à partir de 1440px = maxWidth 1380px

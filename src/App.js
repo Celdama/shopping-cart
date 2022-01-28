@@ -27,25 +27,6 @@ const App = () => {
       <Questions />
       <DisplayProduct />
       <Instagram />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-
       <GlobalStyle />
     </div>
   );
