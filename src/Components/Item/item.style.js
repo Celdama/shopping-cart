@@ -33,11 +33,4 @@ export const Content = styled.li`
       opacity: 1;
     }
   }
-
-  img {
-    opacity: 0;
-    width: 65px;
-    height: auto;
-    transition: opacity ease-in-out 0.4s;
-  }
 `;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
-  padding: 40px 0;
+  padding: 40px 20px;
   display: flex;
   justify-content: center;
 `;
@@ -9,6 +9,10 @@ export const Wrapper = styled.section`
 export const Content = styled.div`
   width: 100%;
   max-width: var(--maxWidth);
+
+  @media screen and (min-width: 992px) {
+    max-width: 90%;
+  }
 
   ul {
     list-style: none;
@@ -30,13 +34,17 @@ export const Content = styled.div`
         cursor: pointer;
 
         .savour {
-          font-size: 4.5vw;
+          font-size: 38px;
           text-align: left;
           text-shadow: -1px 0 var(--rose), 0 1px var(--rose), 1px 0 var(--rose),
             0 -1px var(--rose);
 
           text-transform: uppercase;
           transition: all ease-in-out 0.2s;
+
+          @media screen and (min-width: 768px) {
+            font-size: 4.5vw;
+          }
         }
 
         :hover .savour {
@@ -50,9 +58,12 @@ export const Content = styled.div`
 
       img {
         opacity: 0;
-        width: 65px;
-        height: auto;
+        width: 30px;
         transition: opacity ease-in-out 0.4s;
+
+        @media screen and (min-width: 768px) {
+          width: 65px;
+        }
       }
     }
   }
