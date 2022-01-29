@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   :root{
-    --maxWidth: 1700px;
+    --maxWidth: 2100px;
     --black: #232025;
     --rose: #d5cdc4;
     --fontSuperBig: 2.5rem;

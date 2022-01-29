@@ -13,8 +13,8 @@ export const Content = styled.div`
   margin: 0 auto;
   text-transform: uppercase;
 
-  @media screen and (max-width: 1440px) {
-    max-width: 1380px;
+  @media screen and (min-width: 992px) {
+    max-width: 90%;
   }
 
   ul {
@@ -27,5 +27,3 @@ export const Content = styled.div`
 export const Logo = styled.h1`
   margin: 0;
 `;
-
-// à partir de 1440px = maxWidth 1380px
