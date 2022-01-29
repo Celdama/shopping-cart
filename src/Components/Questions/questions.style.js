@@ -13,7 +13,11 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 3.3vw;
+  font-size: 24px;
+
+  @media screen and (min-width: 992px) {
+    font-size: 3.3vw;
+  }
 
   .answers {
     width: 80%;
@@ -38,23 +42,37 @@ export const Content = styled.div`
     }
 
     img {
-      width: 290px;
+      width: 190px;
       position: absolute;
       z-index: -1;
       height: auto;
       opacity: 0;
       transform: rotate(17deg);
       transition: opacity ease 0.3s;
+
+      @media screen and (min-width: 992px) {
+        width: 290px;
+      }
     }
   }
 `;
 
 export const BananaGif = styled.img`
-  top: ${({ top }) => (top ? `${top - 160}%` : '')};
-  left: ${({ left }) => (left ? `${left - 140}%` : '')};
+  top: ${({ top }) => (top ? `${top - 150}%` : '')};
+  left: ${({ left }) => (left ? `${left - 100}%` : '')};
+
+  @media screen and (min-width: 992px) {
+    top: ${({ top }) => (top ? `${top - 160}%` : '')};
+    left: ${({ left }) => (left ? `${left - 140}%` : '')};
+  }
 `;
 
 export const SyrupGif = styled.img`
-  top: ${({ top }) => (top ? `${top - 160}%` : '')};
-  left: ${({ left }) => (left ? `${left - 140}%` : '')};
+  top: ${({ top }) => (top ? `${top - 150}%` : '')};
+  left: ${({ left }) => (left ? `${left - 100}%` : '')};
+
+  @media screen and (min-width: 992px) {
+    top: ${({ top }) => (top ? `${top - 160}%` : '')};
+    left: ${({ left }) => (left ? `${left - 140}%` : '')};
+  }
 `;
