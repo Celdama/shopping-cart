@@ -5,10 +5,14 @@ export const Wrapper = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   width: 100%;
-  height: 110vh;
+  height: 300px;
   display: flex;
   justify-content: space-between;
   overflow-x: hidden;
+
+  @media screen and (min-width: 992px) {
+    height: 110vh;
+  }
 
   div {
     background-color: var(--black);
