@@ -14,21 +14,28 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   h2 {
-    font-size: 5vw;
+    font-size: 32px;
     margin: 0;
     display: flex;
     flex-direction: column;
+    @media screen and (min-width: 992px) {
+      font-size: 5vw;
+    }
   }
 
   div {
-    margin: 50px 0 70px 0;
-    width: 30%;
+    margin: 40px 0 90px 0;
+    width: 70%;
+    @media screen and (min-width: 992px) {
+      width: 30%;
+    }
     p {
-      font-size: 16px;
-      line-height: 16px;
+      font-size: 12px;
       font-weight: bold;
       margin: 0;
-      text-align: start;
+      @media screen and (min-width: 992px) {
+        font-size: 16px;
+      }
     }
   }
 
