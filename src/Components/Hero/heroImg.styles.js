@@ -12,6 +12,14 @@ export const Wrapper = styled.div`
 
   div {
     background-color: var(--black);
-    width: 102px;
+    width: 26px;
+
+    @media screen and (min-width: 992px) {
+      width: 102px;
+    }
+
+    @media screen and (min-width: 1600px) {
+      width: 142px;
+    }
   }
 `;
