@@ -49,7 +49,7 @@ const Marketing = () => {
     hidden: {},
     visible: {
       transition: {
-        delayChildren: 0.1,
+        delayChildren: 0.9,
         staggerChildren: 0.2,
       },
     },
@@ -59,7 +59,7 @@ const Marketing = () => {
     hidden: {},
     visible: {
       transition: {
-        delayChildren: 0.8,
+        delayChildren: 0.5,
         staggerChildren: 0.2,
       },
     },
@@ -81,7 +81,6 @@ const Marketing = () => {
       <Content>
         <div className='main-content'>
           <motion.p
-            ref={ref}
             variants={mainContainerStyle}
             animate={controls}
             initial='hidden'
@@ -90,9 +89,7 @@ const Marketing = () => {
             <motion.span variants={textChildrenStyle}>
               i finished the
             </motion.span>
-            <motion.span variants={textChildrenStyle}>
-              box and regret
-            </motion.span>
+            <motion.span variants={textChildrenStyle}>box & regret</motion.span>
             <motion.span variants={textChildrenStyle}>nothing.</motion.span>
           </motion.p>
         </div>
@@ -107,7 +104,6 @@ const Marketing = () => {
           <div className='container'>
             <div className='left'>
               <motion.p
-                ref={ref}
                 variants={subContainerStyle}
                 animate={controls}
                 initial='hidden'
@@ -122,14 +118,12 @@ const Marketing = () => {
             </div>
             <motion.div
               className='divider'
-              ref={ref}
               variants={verticalStyle}
               animate={controls}
               initial='hidden'
             ></motion.div>
             <div className='right'>
               <motion.p
-                ref={ref}
                 variants={subContainerStyle}
                 animate={controls}
                 initial='hidden'
@@ -148,7 +142,6 @@ const Marketing = () => {
           </div>
         </div>
         <motion.div
-          ref={ref}
           variants={horizontalStyle}
           animate={controls}
           initial='hidden'

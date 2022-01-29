@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
-  padding: 80px 0 0 0;
+  padding: 90px 0 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,11 +9,17 @@ export const Wrapper = styled.section`
 
 export const Content = styled.div`
   width: 100%;
-  height: 100%;
   display: flex;
 
   .main-content {
-    padding: 95px 0;
+    padding: 0px;
+    width: 100%;
+    margin: 0 auto;
+    max-width: var(--maxWidth);
+    @media screen and (min-width: 992px) {
+      max-width: 90%;
+      padding: 0px;
+    }
   }
 
   .horizontal-divider {
@@ -23,15 +29,15 @@ export const Content = styled.div`
   }
 
   .quote {
-    max-width: var(--maxWidth);
-    margin: 0 auto;
     text-transform: uppercase;
-    font-size: 8vw;
+    font-size: 52px;
     display: flex;
     flex-direction: column;
+    margin: 40px 20px;
 
-    span {
-      line-height: 8rem;
+    @media screen and (min-width: 992px) {
+      font-size: 8vw;
+      margin: 40px 0px;
     }
   }
 
@@ -39,11 +45,22 @@ export const Content = styled.div`
   flex-direction: column;
 
   .sub-content {
+    max-width: var(--maxWidth);
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+    @media screen and (min-width: 992px) {
+      max-width: 90%;
+      padding: 0px;
+    }
     .container {
       display: flex;
       max-width: var(--maxWidth);
-      height: 290px;
-      margin: 0 auto;
+      height: 140px;
+
+      @media screen and (min-width: 992px) {
+        height: 290px;
+      }
 
       .left {
         width: 60%;
@@ -55,7 +72,6 @@ export const Content = styled.div`
         p {
           display: flex;
           flex-direction: column;
-          line-height: 4rem;
         }
       }
 
@@ -67,11 +83,15 @@ export const Content = styled.div`
 
       .right {
         width: 40%;
-        font-size: 1.6vw;
+        font-size: 10px;
         text-transform: uppercase;
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @media screen and (min-width: 992px) {
+          font-size: 1.6vw;
+        }
 
         p {
           display: flex;
