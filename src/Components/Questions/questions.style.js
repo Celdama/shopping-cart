@@ -37,12 +37,14 @@ export const Content = styled.div`
     height: auto;
     width: 200px;
     text-align: center;
-    :hover img {
+    cursor: pointer;
+
+    :hover > img {
       opacity: 1;
     }
 
     img {
-      width: 190px;
+      width: 110px;
       position: absolute;
       z-index: -1;
       height: auto;
