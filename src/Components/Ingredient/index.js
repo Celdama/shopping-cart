@@ -20,10 +20,10 @@ const Ingredient = () => {
       x: 0,
     },
     visible: {
-      x: -1200,
+      x: -400,
       transition: {
         type: 'tween',
-        duration: 7,
+        duration: 6,
         repeat: Infinity,
         repeatType: 'mirror',
       },
@@ -32,14 +32,13 @@ const Ingredient = () => {
 
   const fromLeftToRight = {
     hidden: {
-      x: -1200,
+      x: -400,
     },
     visible: {
       x: 0,
       transition: {
         type: 'tween',
-
-        duration: 7,
+        duration: 6,
         repeat: Infinity,
         repeatType: 'mirror',
       },
