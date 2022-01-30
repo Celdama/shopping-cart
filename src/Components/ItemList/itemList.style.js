@@ -29,30 +29,42 @@ export const Content = styled.div`
 
       div {
         width: 100%;
-        display: flex;
-        justify-content: space-between;
-        cursor: pointer;
 
-        .savour {
-          font-size: 38px;
-          text-align: left;
-          text-shadow: -1px 0 var(--rose), 0 1px var(--rose), 1px 0 var(--rose),
-            0 -1px var(--rose);
+        a {
+          text-align: none;
+          color: var(--rose);
+        }
 
-          text-transform: uppercase;
-          transition: all ease-in-out 0.2s;
+        .link {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          cursor: pointer;
+          div {
+            display: flex;
+            justify-content: space-between;
+            .savour {
+              font-size: 38px;
+              text-align: left;
+              text-shadow: -1px 0 var(--rose), 0 1px var(--rose),
+                1px 0 var(--rose), 0 -1px var(--rose);
 
-          @media screen and (min-width: 768px) {
-            font-size: 4.5vw;
+              text-transform: uppercase;
+              transition: all ease-in-out 0.2s;
+
+              @media screen and (min-width: 768px) {
+                font-size: 4.5vw;
+              }
+            }
           }
-        }
 
-        :hover .savour {
-          color: var(--black);
-        }
+          :hover .savour {
+            color: var(--black);
+          }
 
-        :hover img {
-          opacity: 1;
+          :hover img {
+            opacity: 1;
+          }
         }
       }
 

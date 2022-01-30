@@ -2,7 +2,8 @@ import { GlobalStyle } from './GlobalStyle';
 import NavBar from './Components/Navbar';
 import Home from './Components/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Shop from './Components/Shop';
+import Product from './Components/Product';
+import ProductDetail from './Components/ProductDetail';
 
 const App = () => {
   return (
@@ -11,7 +12,8 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/shop' element={<Shop />} />
+          {/* <Route path='product' element={<Product />} /> */}
+          <Route path='product/:name' element={<ProductDetail />} />
         </Routes>
       </BrowserRouter>
       <GlobalStyle />
