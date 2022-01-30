@@ -1,32 +1,19 @@
 import { GlobalStyle } from './GlobalStyle';
 import NavBar from './Components/Navbar';
 import Home from './Components/Home';
-import Hero from './Components/Hero';
-import Informations from './Components/Informations';
-import Divider from './Components/Divider';
-import ItemList from './Components/ItemList';
-import Marketing from './Components/Marketing';
-import Space from './Components/Space';
-import Ingredient from './Components/Ingredient';
-import Questions from './Components/Questions';
-import DisplayProduct from './Components/DisplayProduct';
-import Instagram from './Components/Instagram';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Shop from './Components/Shop';
 
 const App = () => {
   return (
     <div className='App'>
       <NavBar />
-      <Home />
-      <Hero />
-      <Informations />
-      <Divider />
-      <ItemList />
-      <Marketing />
-      <Space />
-      <Ingredient />
-      <Questions />
-      <DisplayProduct />
-      <Instagram />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/shop' element={<Shop />} />
+        </Routes>
+      </BrowserRouter>
       <GlobalStyle />
     </div>
   );
