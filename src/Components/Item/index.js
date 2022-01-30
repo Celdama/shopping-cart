@@ -2,11 +2,11 @@ import React from 'react';
 import Arrow from '../../Images/arrow.svg';
 import { Link } from 'react-router-dom';
 
-const Item = ({ name, id }) => {
+const Item = ({ name, id, index }) => {
   return (
     <div>
-      <Link className='link' to={`product/${name}`}>
-        <span className='index'>Ø{id}</span>
+      <Link className='link' to={`product/${id}`}>
+        <span className='index'>Ø{index}</span>
         <div>
           <span className='savour'>{name}</span>
           <img src={Arrow} alt={`product ${name}`} />

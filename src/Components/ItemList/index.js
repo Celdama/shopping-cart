@@ -37,7 +37,7 @@ const ItemList = () => {
   const content = products.map((item, index) => {
     return (
       <motion.li key={item.id} variants={children}>
-        <Item name={item.name} id={index + 1} />
+        <Item name={item.name} id={item.id} index={index + 1} />
       </motion.li>
     );
   });

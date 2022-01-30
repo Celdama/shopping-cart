@@ -19,11 +19,11 @@ export const products = [
   },
   {
     id: 'acOO3',
-    name: 'banana',
+    name: 'pineapple',
     price: 29.0,
     description:
       'A little tart, a little sweet, a lot pineapple. Crunchy, vegan, just guilt free snacking. 12 PACKS.',
-    ingredients: 'banana',
+    ingredients: 'pineapple',
     mainImg: './Images/products/pineapple/mainImg.jpg',
   },
   {

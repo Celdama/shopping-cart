@@ -2,7 +2,6 @@ import { GlobalStyle } from './GlobalStyle';
 import NavBar from './Components/Navbar';
 import Home from './Components/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Product from './Components/Product';
 import ProductDetail from './Components/ProductDetail';
 
 const App = () => {
@@ -12,8 +11,7 @@ const App = () => {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
-          {/* <Route path='product' element={<Product />} /> */}
-          <Route path='product/:name' element={<ProductDetail />} />
+          <Route path='product/:id' element={<ProductDetail />} />
         </Routes>
       </BrowserRouter>
       <GlobalStyle />
