@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import { useEffect } from 'react';
+import { useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 export const useMotionEffect = () => {
