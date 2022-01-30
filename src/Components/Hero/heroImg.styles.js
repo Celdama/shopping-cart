@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   background: url(${({ image }) => image});
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 300px;
+  height: 600px;
   display: flex;
   justify-content: space-between;
   overflow-x: hidden;
