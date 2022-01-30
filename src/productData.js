@@ -1,5 +1,6 @@
 export const products = [
   {
+    id: 'aa001',
     name: 'mango',
     price: 29.0,
     description:
@@ -8,6 +9,7 @@ export const products = [
     mainImg: './Images/products/mango/mainImg.jpg',
   },
   {
+    id: 'ab002',
     name: 'banana',
     price: 29.0,
     description:
@@ -16,6 +18,7 @@ export const products = [
     mainImg: './Images/products/banana/mainImg.jpg',
   },
   {
+    id: 'acOO3',
     name: 'banana',
     price: 29.0,
     description:
@@ -24,6 +27,7 @@ export const products = [
     mainImg: './Images/products/pineapple/mainImg.jpg',
   },
   {
+    id: 'ad004',
     name: 'pitahaya',
     price: 29.0,
     description:
@@ -32,6 +36,7 @@ export const products = [
     mainImg: './Images/products/pitahaya/mainImg.jpg',
   },
   {
+    id: 'ae005',
     name: 'Variety',
     price: 29.0,
     description:

@@ -1,13 +1,12 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Wrapper, Content } from './itemList.style';
 import { useMotionEffect } from '../../hooks/useMotionEffect';
 import Item from '../Item';
+import { products } from '../../productData';
 
 const ItemList = () => {
   const [controls, ref] = useMotionEffect();
-
-  const items = ['mango', 'banana', 'pineapple', 'pitahaya', 'variety'];
 
   const container = {
     hidden: { opacity: 0 },
@@ -35,10 +34,10 @@ const ItemList = () => {
     },
   };
 
-  const content = items.map((item, index) => {
+  const content = products.map((item, index) => {
     return (
-      <motion.li variants={children}>
-        <Item key={index} name={item} id={index + 1} />
+      <motion.li key={item.id} variants={children}>
+        <Item name={item.name} id={index + 1} />
       </motion.li>
     );
   });
