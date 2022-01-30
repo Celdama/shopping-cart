@@ -45,6 +45,12 @@ export const Content = styled.div`
   .text-content {
     display: flex;
     justify-content: center;
+    flex-direction: column;
+
+    @media screen and (min-width: 992px) {
+      /* width: 50%; */
+      flex-direction: row;
+    }
     .left {
       width: 100%;
       display: flex;
@@ -56,7 +62,7 @@ export const Content = styled.div`
 
       h1 {
         margin: 0;
-        font-size: 110px;
+        font-size: 130px;
         @media screen and (min-width: 992px) {
           font-size: 13vw;
         }
@@ -64,7 +70,7 @@ export const Content = styled.div`
 
       p {
         width: 55%;
-        align-self: flex-end;
+        align-self: flex-start;
         font-size: 22px;
 
         @media screen and (min-width: 992px) {
@@ -73,7 +79,7 @@ export const Content = styled.div`
         }
 
         span {
-          padding-left: 0px;
+          padding-left: 76px;
 
           @media screen and (min-width: 992px) {
             padding-left: 170px;
@@ -83,18 +89,19 @@ export const Content = styled.div`
     }
 
     .right {
+      display: flex;
       justify-content: center;
-      align-items: center;
-      width: 50%;
+      align-items: flex-end;
+      width: 96%;
       flex-direction: column;
-      display: none;
 
       @media screen and (min-width: 992px) {
         display: flex;
+        width: 50%;
+        align-items: center;
       }
 
       p {
-        text-align: left;
         margin: 0;
         text-transform: uppercase;
         font-size: var(--fontSuperSmall);

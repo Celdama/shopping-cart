@@ -9,7 +9,7 @@ const Home = () => {
           <div className='left'>
             <h1>TALA</h1>
             <p>
-              <span>An entirely</span> new fruit snack -- made of fruit.
+              <span>An entirely</span> new fruit snack — made of fruit.
             </p>
           </div>
           <div className='right'>
