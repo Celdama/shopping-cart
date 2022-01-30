@@ -1,67 +1,33 @@
-import React, { useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { Wrapper, Content, Text } from './informations.style';
+import { useMotionEffectWithChildren } from '../../hooks/useMotionEffectWithChildren';
 
 const Informations = () => {
-  const controls = useAnimation();
-  const { ref, inView } = useInView();
+  const [controls, ref] = useMotionEffectWithChildren();
 
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    } else {
-      controls.start('hidden');
-    }
-  }, [controls, inView]);
-
-  const style1 = {
-    hidden: {
-      y: 50,
-      color: '#232025',
-      opacity: 0,
-    },
+  const container = {
+    hidden: { opacity: 0 },
     visible: {
-      y: 0,
-      color: '#d5cdc4',
       opacity: 1,
       transition: {
-        transition: 'backInOut',
-        duration: 0.8,
+        delayChildren: 0.2,
+        staggerChildren: 0.4,
       },
     },
   };
 
-  const style2 = {
+  const children = {
     hidden: {
-      y: 50,
-      color: '#232025',
+      y: 0,
       opacity: 0,
     },
     visible: {
-      y: 0,
-      color: '#d5cdc4',
+      y: 5,
       opacity: 1,
       transition: {
         transition: 'backInOut',
         duration: 1,
-      },
-    },
-  };
-
-  const style3 = {
-    hidden: {
-      y: 50,
-      color: '#232025',
-      opacity: 0,
-    },
-    visible: {
-      y: 0,
-      color: '#d5cdc4',
-      opacity: 1,
-      transition: {
-        transition: 'backInOut',
-        duration: 1.2,
       },
     },
   };
@@ -72,32 +38,24 @@ const Informations = () => {
         <Text>
           <motion.div
             ref={ref}
-            variants={style1}
+            variants={container}
             animate={controls}
             initial='hidden'
           >
-            <p>We're bringing fruit snacks back to </p>
-          </motion.div>
-          <motion.div
-            ref={ref}
-            variants={style2}
-            animate={controls}
-            initial='hidden'
-          >
-            <p>
-              their roots with{' '}
-              <span className='serif'>perfectly ripe fruit</span>{' '}
-            </p>
-          </motion.div>
-          <motion.div
-            ref={ref}
-            variants={style3}
-            animate={controls}
-            initial='hidden'
-          >
-            <p>
-              <span className='serif'>bursting with flavor.</span>
-            </p>
+            <motion.div variants={children}>
+              <p>We're bringing fruit snacks back to </p>
+            </motion.div>
+            <motion.div variants={children}>
+              <p>
+                their roots with{' '}
+                <span className='serif'>perfectly ripe fruit</span>{' '}
+              </p>
+            </motion.div>
+            <motion.div variants={children}>
+              <p>
+                <span className='serif'>bursting with flavor.</span>
+              </p>
+            </motion.div>
           </motion.div>
         </Text>
       </Content>
