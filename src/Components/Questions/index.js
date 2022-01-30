@@ -5,20 +5,12 @@ import Question from '../Question';
 import { Wrapper, Content, BananaGif, SyrupGif } from './questions.style';
 import Banana from '../../Images/bananas.gif';
 import Syrup from '../../Images/syrup.gif';
+import { useMotionEffect } from '../../hooks/useMotionEffect';
 
 const Questions = () => {
   const [positionY, setPositionY] = useState(0);
   const [positionX, setPositionX] = useState(0);
-  const controls = useAnimation();
-  const { ref, inView } = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    } else {
-      controls.start('hidden');
-    }
-  }, [controls, inView]);
+  const [controls, ref] = useMotionEffect();
 
   const style = {
     hidden: {

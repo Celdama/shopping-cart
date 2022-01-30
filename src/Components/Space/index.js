@@ -1,20 +1,11 @@
-import React, { useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { Wrapper, Content } from './space.style';
 import Smiley from '../../Images/smiley.svg';
+import { useMotionEffect } from '../../hooks/useMotionEffect';
 
 const Space = () => {
-  const controls = useAnimation();
-  const { ref, inView } = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    } else {
-      controls.start('hidden');
-    }
-  }, [controls, inView]);
+  const [controls, ref] = useMotionEffect();
 
   const containerTitleStyle = {
     hidden: {},

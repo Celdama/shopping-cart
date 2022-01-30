@@ -1,24 +1,15 @@
-import React, { useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { Wrapper, Content } from './displayProduct.style';
 import Product1 from '../../Images/products/01.png';
 import Product2 from '../../Images/products/02.png';
 import Product3 from '../../Images/products/03.png';
 import Product4 from '../../Images/products/04.png';
 import Product5 from '../../Images/products/05.png';
+import { useMotionEffect } from '../../hooks/useMotionEffect';
 
 const DisplayProduct = () => {
-  const controls = useAnimation();
-  const { ref, inView } = useInView();
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    } else {
-      controls.start('hidden');
-    }
-  }, [controls, inView]);
+  const [controls, ref] = useMotionEffect();
 
   const titleStyle = {
     hidden: {
