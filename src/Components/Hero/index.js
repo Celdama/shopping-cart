@@ -1,21 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Image from '../../Images/heroImage.jpg';
 import Image2 from '../../Images/heroImage2.jpg';
 import { Wrapper } from './heroImg.styles';
+import { useHeroEffect } from '../../hooks/useHeroEffect';
 
 const HeroImg = () => {
-  const [random, setRandom] = useState(Math.round(Math.random()));
-  const [position, setPosition] = useState(0);
-
-  useEffect(() => {
-    const onScroll = () => {
-      setPosition(window.scrollY / 9);
-    };
-
-    window.removeEventListener('scroll', onScroll);
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onscroll);
-  }, []);
+  const [position, random] = useHeroEffect();
 
   const rightStyle = {
     transform: `translate3d(${position}px, 0px, 0px)`,
