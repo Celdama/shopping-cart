@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Wrapper, Content, Text } from './informations.style';
-import { useMotionEffectWithChildren } from '../../hooks/useMotionEffectWithChildren';
+import { useMotionEffect } from '../../hooks/useMotionEffect';
 
 const Informations = () => {
-  const [controls, ref] = useMotionEffectWithChildren();
+  const [controls, ref] = useMotionEffect();
 
   const container = {
     hidden: { opacity: 0 },

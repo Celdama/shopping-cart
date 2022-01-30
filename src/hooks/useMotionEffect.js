@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
-export const useMotionEffectWithChildren = () => {
+export const useMotionEffect = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView();
 

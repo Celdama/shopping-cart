@@ -1,11 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Wrapper, Content } from './itemList.style';
-import { useMotionEffectWithChildren } from '../../hooks/useMotionEffectWithChildren';
+import { useMotionEffect } from '../../hooks/useMotionEffect';
 import Item from '../Item';
 
 const ItemList = () => {
-  const [controls, ref] = useMotionEffectWithChildren();
+  const [controls, ref] = useMotionEffect();
 
   const items = ['mango', 'banana', 'pineapple', 'pitahaya', 'variety'];
 
