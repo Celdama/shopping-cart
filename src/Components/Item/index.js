@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Item = ({ name, id, index }) => {
   return (
     <div>
-      <Link className='link' state={{ id }} to={`shop`}>
+      <Link className='link' state={{ id }} to={'shop'}>
         <span className='index'>Ø{index}</span>
         <div>
           <span className='savour'>{name}</span>

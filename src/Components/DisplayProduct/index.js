@@ -7,6 +7,7 @@ import Product3 from '../../Images/products/03.png';
 import Product4 from '../../Images/products/04.png';
 import Product5 from '../../Images/products/05.png';
 import { useMotionEffect } from '../../hooks/useMotionEffect';
+import { Link } from 'react-router-dom';
 
 const DisplayProduct = () => {
   const [controls, ref] = useMotionEffect();
@@ -58,19 +59,29 @@ const DisplayProduct = () => {
           className='products'
         >
           <div>
-            <img className='small' src={Product1} alt='' />
+            <Link to={'shop'} state={{ id: 'aa001' }}>
+              <img className='small' src={Product1} alt='' />
+            </Link>
           </div>
           <div>
-            <img className='medium' src={Product2} alt='' />
+            <Link to={'shop'} state={{ id: 'ab002' }}>
+              <img className='medium' src={Product2} alt='' />
+            </Link>
           </div>
           <div>
-            <img className='large' src={Product3} alt='' />
+            <Link to={'shop'} state={{ id: 'ac003' }}>
+              <img className='large' src={Product3} alt='' />
+            </Link>
           </div>
           <div style={{ zIndex: -1 }}>
-            <img className='medium right' src={Product4} alt='' />
+            <Link to={'shop'} state={{ id: 'ad004' }}>
+              <img className='medium right' src={Product4} alt='' />
+            </Link>
           </div>
           <div style={{ zIndex: -2 }}>
-            <img className='small' src={Product5} alt='' />
+            <Link to={'shop'} state={{ id: 'ae005' }}>
+              <img className='small' src={Product5} alt='' />
+            </Link>
           </div>
         </motion.div>
       </Content>
