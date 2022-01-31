@@ -2,7 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { products } from '../../productData';
 
-import { Wrapper, Content, Image, Item } from './productDetail.style';
+import {
+  Wrapper,
+  Content,
+  Image,
+  Item,
+  Thumbnail,
+} from './productDetail.style';
 import getCoverProductByKey from '../../Helpers/getCoverProductByKey';
 
 const ProductDetail = () => {
@@ -10,6 +16,7 @@ const ProductDetail = () => {
   const [currentProductImage, setCurrentProductImage] = useState([]);
   const [productImages, setProductImages] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
+  const [indexCurrentImage, setIndexCurrentImage] = useState(0);
 
   const location = useLocation();
   const { id } = location.state;
@@ -21,6 +28,7 @@ const ProductDetail = () => {
         const allImagesProduct = getCoverProductByKey(product.name);
 
         setCurrentProductImage(allImagesProduct[0]);
+        setIndexCurrentImage(0);
         setProductImages(allImagesProduct);
       }
 
@@ -33,6 +41,11 @@ const ProductDetail = () => {
     const currentProductImages = getCoverProductByKey(name);
     setCurrentProductImage(currentProductImages[0]);
     setProductImages(currentProductImages);
+  };
+
+  const handleChangeCurrentImage = (index) => {
+    setCurrentProductImage(productImages[index]);
+    setIndexCurrentImage(index);
   };
 
   return (
@@ -73,7 +86,14 @@ const ProductDetail = () => {
             <div className='product-photos'>
               {productImages.map((src, index) => {
                 return (
-                  <img key={index} className='thumbnail' src={src} alt='#' />
+                  <Thumbnail
+                    key={index}
+                    isCurrent={index === indexCurrentImage ? true : false}
+                    onClick={() => handleChangeCurrentImage(index)}
+                    className='thumbnail'
+                    src={src}
+                    alt='#'
+                  />
                 );
               })}
             </div>
