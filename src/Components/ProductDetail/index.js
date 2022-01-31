@@ -1,35 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { products } from '../../productData';
 
 import { Wrapper, Content, Image, Item } from './productDetail.style';
 import getCoverProductByKey from '../../Helpers/getCoverProductByKey';
 
 const ProductDetail = () => {
-  const { id } = useParams();
   const [currentProduct, setCurrentProduct] = useState({});
-  const [otherProducts, setOtherProducts] = useState([]);
+  // const [otherProducts, setOtherProducts] = useState([]);
   const [currentProductImage, setCurrentProductImage] = useState([]);
   const [productImages, setProductImages] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
+
+  const location = useLocation();
+  const { id } = location.state;
 
   useEffect(() => {
     products.forEach((product) => {
       if (product.id === id) {
         setCurrentProduct(product);
-        const productImages = getCoverProductByKey(product.name);
-        setCurrentProductImage(productImages[0]);
-        setProductImages(productImages);
+        console.log(currentProduct);
+        console.log(getCoverProductByKey(product.name));
+        const allImagesProduct = getCoverProductByKey(product.name);
+
+        setCurrentProductImage(allImagesProduct[0]);
+        setProductImages(allImagesProduct);
       }
-      // else {
-      //   setOtherProducts((prevState) => [...prevState, product]);
-      // }
 
       setAllProducts((prevState) => [...prevState, product]);
     });
   }, []);
-
-  console.log(allProducts);
 
   return (
     <Wrapper>
@@ -43,7 +43,11 @@ const ProductDetail = () => {
               {allProducts.map((product) => {
                 const isCurrent = product.name === currentProduct.name;
                 // au click sur un produit ici, mettre à jour le currentProduct grâce à l'id !
-                return <Item current={isCurrent}>{product.name}</Item>;
+                return (
+                  <Item key={product.id} current={isCurrent}>
+                    {product.name}
+                  </Item>
+                );
               })}
             </ul>
           </div>
@@ -60,8 +64,10 @@ const ProductDetail = () => {
               <button>add to card</button>
             </div>
             <div className='product-photos'>
-              {productImages.map((src) => {
-                return <img className='thumbnail' src={src} alt='#' />;
+              {productImages.map((src, index) => {
+                return (
+                  <img key={index} className='thumbnail' src={src} alt='#' />
+                );
               })}
             </div>
           </div>

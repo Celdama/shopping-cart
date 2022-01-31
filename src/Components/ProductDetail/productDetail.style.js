@@ -1,15 +1,23 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
-  padding: 80px 20px;
+  padding: 0px 10px;
+  outline: 1px solid red;
 `;
 
 export const Content = styled.div`
+  padding: 10px 0;
   position: relative;
+  margin: 0 auto;
   /* padding: 20px 0; */
-  width: 100%;
-  /* outline: 1px solid yellow; */
+  /* width: 100%; */
+  max-width: var(--maxWidth);
+
+  outline: 1px solid yellow;
   display: flex;
+  @media screen and (min-width: 992px) {
+    max-width: 95%;
+  }
 
   .left {
     /* outline: 1px solid blue; */
@@ -104,8 +112,9 @@ export const Content = styled.div`
 `;
 
 export const Image = styled.img`
-  height: 733px;
-  width: 639px;
+  height: 90vh;
+  width: 44vw;
+  min-height: 640px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; ;;;

@@ -18,7 +18,7 @@ export const products = [
     mainImg: './Images/products/banana/mainImg.jpg',
   },
   {
-    id: 'acOO3',
+    id: 'ac003',
     name: 'pineapple',
     price: 29.0,
     description:
@@ -37,7 +37,7 @@ export const products = [
   },
   {
     id: 'ae005',
-    name: 'Variety',
+    name: 'variety',
     price: 29.0,
     description:
       "Can't decide? Don't blame you. Enjoy our three most popular crunchy, vegan, guilt free flavors. 12 PACKS. ",
