@@ -88,7 +88,7 @@ const ProductDetail = () => {
                 return (
                   <Thumbnail
                     key={index}
-                    isCurrent={index === indexCurrentImage ? true : false}
+                    isCurrent={index === indexCurrentImage}
                     onClick={() => handleChangeCurrentImage(index)}
                     className='thumbnail'
                     src={src}

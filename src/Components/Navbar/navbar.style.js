@@ -26,4 +26,7 @@ export const Content = styled.div`
 
 export const Logo = styled.h1`
   margin: 0;
+  a {
+    color: var(--rose);
+  }
 `;
