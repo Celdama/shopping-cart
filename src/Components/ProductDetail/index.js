@@ -7,7 +7,6 @@ import getCoverProductByKey from '../../Helpers/getCoverProductByKey';
 
 const ProductDetail = () => {
   const [currentProduct, setCurrentProduct] = useState({});
-  // const [otherProducts, setOtherProducts] = useState([]);
   const [currentProductImage, setCurrentProductImage] = useState([]);
   const [productImages, setProductImages] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
@@ -19,8 +18,6 @@ const ProductDetail = () => {
     products.forEach((product) => {
       if (product.id === id) {
         setCurrentProduct(product);
-        console.log(currentProduct);
-        console.log(getCoverProductByKey(product.name));
         const allImagesProduct = getCoverProductByKey(product.name);
 
         setCurrentProductImage(allImagesProduct[0]);
@@ -31,6 +28,13 @@ const ProductDetail = () => {
     });
   }, []);
 
+  const handleCurrentProduct = (id, name) => {
+    setCurrentProduct(products.find((product) => product.id === id));
+    const currentProductImages = getCoverProductByKey(name);
+    setCurrentProductImage(currentProductImages[0]);
+    setProductImages(currentProductImages);
+  };
+
   return (
     <Wrapper>
       <Content>
@@ -40,12 +44,15 @@ const ProductDetail = () => {
         <div className='right'>
           <div className='product-list'>
             <ul>
-              {allProducts.map((product) => {
-                const isCurrent = product.name === currentProduct.name;
-                // au click sur un produit ici, mettre à jour le currentProduct grâce à l'id !
+              {allProducts.map(({ name, id }) => {
+                const isCurrent = name === currentProduct.name;
                 return (
-                  <Item key={product.id} current={isCurrent}>
-                    {product.name}
+                  <Item
+                    onClick={() => handleCurrentProduct(id, name)}
+                    key={id}
+                    current={isCurrent}
+                  >
+                    {name}
                   </Item>
                 );
               })}
