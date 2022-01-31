@@ -75,8 +75,6 @@ const productImg = {
 };
 
 const getCoverProductByKey = (key) => {
-  // console.log(key);
-  // console.log(productImg[key]);
   return productImg[key];
 };
 
