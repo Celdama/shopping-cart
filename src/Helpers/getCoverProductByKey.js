@@ -1,3 +1,5 @@
+import { nanoid } from 'nanoid';
+
 import mango0 from '../Images/products/mango/0.jpg';
 import mango1 from '../Images/products/mango/1.jpg';
 import mango2 from '../Images/products/mango/2.jpg';
@@ -35,8 +37,47 @@ const productImages = {
   variety: [variety0, variety1, variety2, variety3],
 };
 
+const productImg = {
+  mango: [
+    { id: nanoid(), img: mango0 },
+    { id: nanoid(), img: mango1 },
+    { id: nanoid(), img: mango2 },
+    { id: nanoid(), img: mango3 },
+    { id: nanoid(), img: mango4 },
+  ],
+  banana: [
+    { id: nanoid(), img: banana0 },
+    { id: nanoid(), img: banana1 },
+    { id: nanoid(), img: banana2 },
+    { id: nanoid(), img: banana3 },
+    { id: nanoid(), img: banana4 },
+  ],
+  pineapple: [
+    { id: nanoid(), img: pineapple0 },
+    { id: nanoid(), img: pineapple1 },
+    { id: nanoid(), img: pineapple2 },
+    { id: nanoid(), img: pineapple3 },
+    { id: nanoid(), img: pineapple4 },
+  ],
+  pitahaya: [
+    { id: nanoid(), img: pitahaya0 },
+    { id: nanoid(), img: pitahaya1 },
+    { id: nanoid(), img: pitahaya2 },
+    { id: nanoid(), img: pitahaya3 },
+    { id: nanoid(), img: pitahaya4 },
+  ],
+  variety: [
+    { id: nanoid(), img: variety0 },
+    { id: nanoid(), img: variety1 },
+    { id: nanoid(), img: variety2 },
+    { id: nanoid(), img: variety3 },
+  ],
+};
+
 const getCoverProductByKey = (key) => {
-  return productImages[key];
+  // console.log(key);
+  // console.log(productImg[key]);
+  return productImg[key];
 };
 
 export default getCoverProductByKey;

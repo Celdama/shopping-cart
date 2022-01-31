@@ -107,6 +107,16 @@ export const Image = styled.img`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  animation: fadeIn 5s;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;
 
 export const Thumbnail = styled.img`
