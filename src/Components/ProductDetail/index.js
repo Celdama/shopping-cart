@@ -41,6 +41,7 @@ const ProductDetail = () => {
     const currentProductImages = getCoverProductByKey(name);
     setCurrentProductImage(currentProductImages[0]);
     setProductImages(currentProductImages);
+    setIndexCurrentImage(0);
   };
 
   const handleChangeCurrentImage = (index) => {
