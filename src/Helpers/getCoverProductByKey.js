@@ -29,14 +29,6 @@ import variety1 from '../Images/products/variety/1.jpg';
 import variety2 from '../Images/products/variety/2.jpg';
 import variety3 from '../Images/products/variety/3.jpg';
 
-const productImages = {
-  mango: [mango0, mango1, mango2, mango3, mango4],
-  banana: [banana0, banana1, banana2, banana3, banana4],
-  pineapple: [pineapple0, pineapple1, pineapple2, pineapple3, pineapple4],
-  pitahaya: [pitahaya0, pitahaya1, pitahaya2, pitahaya3, pitahaya4],
-  variety: [variety0, variety1, variety2, variety3],
-};
-
 const productImg = {
   mango: [
     { id: nanoid(), img: mango0 },
