@@ -13,7 +13,7 @@ import Space from '../Space';
 import ProductDetailCompare from '../ProductDetailCompare';
 import DisplayProduct from '../DisplayProduct';
 
-const ProductDetail = () => {
+const ProductDetail = ({ addProductToCart }) => {
   const [currentProduct, setCurrentProduct] = useState({});
   const [currentProductImage, setCurrentProductImage] = useState([]);
   const [allProductsImages, setAllProductsImages] = useState([]);
@@ -112,6 +112,7 @@ const ProductDetail = () => {
                 price={price}
                 desc={description}
                 handleCurrentProduct={handleCurrentProduct}
+                addProductToCart={() => addProductToCart(currentProduct)}
               />
             </div>
             <div className='product-photos'>{thumbnailProducts}</div>

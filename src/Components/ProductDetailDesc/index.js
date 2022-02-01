@@ -1,7 +1,12 @@
 import React from 'react';
 import { Wrapper, Content, Button } from './productDetailDesc.style';
 
-const ProductDetailDesc = ({ price, desc, handleCurrentProduct }) => {
+const ProductDetailDesc = ({
+  price,
+  desc,
+  handleCurrentProduct,
+  addProductToCart,
+}) => {
   return (
     <Wrapper>
       <Content>
@@ -13,7 +18,7 @@ const ProductDetailDesc = ({ price, desc, handleCurrentProduct }) => {
             sample pack
           </span>
         </p>
-        <Button>add to card</Button>
+        <Button onClick={addProductToCart}>add to card</Button>
       </Content>
     </Wrapper>
   );
