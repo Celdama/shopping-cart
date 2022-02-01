@@ -13,10 +13,10 @@ const App = () => {
 
   const addProductToCart = (product) => {
     setCartItems((prevState) => [...prevState, product]);
+    setDisplayCart(true);
   };
 
   const handleDisplayCart = () => {
-    console.log('clicked');
     setDisplayCart((prevState) => !prevState);
   };
 

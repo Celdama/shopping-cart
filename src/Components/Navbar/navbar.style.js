@@ -21,6 +21,7 @@ export const Content = styled.div`
     display: flex;
     gap: 36px;
     list-style: none;
+    cursor: pointer;
   }
 `;
 
