@@ -7,20 +7,20 @@ https://dribbble.com/shots/17268154-TALA-Homepage-now-live
 
 ##### which components
 
-- [x] <Navbar />
-- [x] <Home />
-- [x] <Hero />
-- [x] <Informations />
-- [x] <Divider />
-- [x] <ItemList />
-- [x] <Item />
-- [x] <Marketing />
-- [x] <Space />
-- [x] <Ingredient />
-- [x] <Questions />
-- [x] <DisplayProduct />
-- [x] <Instagram />
-- [] <Footer />
+- [x] Navbar
+- [x] Home
+- [x] Hero
+- [x] Informations
+- [x] Divider
+- [x] ItemList
+- [x] Item
+- [x] Marketing
+- [x] Space
+- [x] Ingredient
+- [x] Questions
+- [x] DisplayProduct
+- [x] Instagram
+- [] Footer
 
 - which functionalities
 
