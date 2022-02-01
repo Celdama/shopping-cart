@@ -32,4 +32,9 @@ export const GlobalStyle = createGlobalStyle`
     font-family: serif;
     font-style: italic;
   }
+
+  .capitalize {
+    text-transform: capitalize;
+
+  }
 `;

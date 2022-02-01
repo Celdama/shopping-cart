@@ -38,7 +38,7 @@ const Home = () => {
       <ItemList />
       <Marketing />
       <Space />
-      <Ingredient />
+      <Ingredient text='ONE' repeat={6} />
       <Questions />
       <DisplayProduct />
       <Instagram />

@@ -8,6 +8,7 @@ import ProductDetailSavour from '../ProductDetailSavour';
 import ProductDetailTitle from '../ProductDetailTitle';
 import ProductDetailDesc from '../ProductDetailDesc';
 import ProductDetailThumbnails from '../ProductDetailThumbnail';
+import Ingredient from '../Ingredient';
 
 const ProductDetail = () => {
   const [currentProduct, setCurrentProduct] = useState({});
@@ -111,6 +112,11 @@ const ProductDetail = () => {
           </div>
         </div>
       </Content>
+      <Ingredient
+        text='Zero Added Sugar'
+        name={currentProduct.name}
+        repeat={1}
+      />
     </Wrapper>
   );
 };

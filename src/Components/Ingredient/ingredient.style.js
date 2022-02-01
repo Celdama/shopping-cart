@@ -35,6 +35,8 @@ export const ContentAnswer = styled.div`
 
   div {
     display: flex;
+    width: 4000px;
+    text-transform: uppercase;
 
     p {
       text-shadow: -1px 0 #d5cdc4, 0 1px #d5cdc4, 1px 0 #d5cdc4, 0 -1px #d5cdc4;
