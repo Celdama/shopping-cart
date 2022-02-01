@@ -11,6 +11,10 @@ export const Content = styled.div`
   width: 60%;
   flex-direction: column;
   justify-content: space-between;
+
+  span {
+    cursor: pointer;
+  }
 `;
 
 export const Button = styled.button`

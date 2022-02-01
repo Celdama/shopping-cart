@@ -19,7 +19,7 @@ https://dribbble.com/shots/17268154-TALA-Homepage-now-live
 - [x] <Ingredient />
 - [x] <Questions />
 - [x] <DisplayProduct />
-- [] <Instagram />
+- [x] <Instagram />
 - [] <Footer />
 
 - which functionalities

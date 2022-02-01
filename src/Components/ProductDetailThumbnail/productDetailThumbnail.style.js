@@ -5,5 +5,5 @@ export const Thumbnail = styled.img`
   width: 99px;
   padding: 6px;
   cursor: pointer;
-  outline: ${({ isCurrent }) => (isCurrent ? '1px solid yellow' : '')};
+  outline: ${({ isCurrent, color }) => (isCurrent ? `1px solid ${color}` : '')};
 `;

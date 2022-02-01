@@ -49,10 +49,19 @@ const ProductDetail = () => {
     setActiveImgId(id);
   };
 
+  const colors = {
+    mango: 'orange',
+    banana: 'yellow',
+    pineapple: 'green',
+    pitahaya: 'red',
+    variety: 'white',
+  };
+
   const listAllProducts = allProducts.map(({ name, id }) => {
     const isCurrent = name === currentProduct.name;
     return (
       <ProductDetailSavour
+        color={colors[currentProduct.name]}
         key={id}
         name={name}
         handleCurrentProduct={() => handleCurrentProduct(name)}
@@ -63,8 +72,11 @@ const ProductDetail = () => {
 
   const thumbnailProducts = allProductsImages.map((src) => {
     const { id, img } = src;
+
     return (
       <ProductDetailThumbnails
+        color={colors[currentProduct.name]}
+        currentProduct={currentProduct}
         key={id}
         isCurrent={id === activeImgId}
         handleChangeCurrentImage={() => handleChangeCurrentImage(src)}
