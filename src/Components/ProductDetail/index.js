@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { products } from '../../productData';
 import getCoverProductByKey from '../../Helpers/getCoverProductByKey';
-import { Wrapper, Content, Image, Item } from './productDetail.style';
+import { Wrapper, Content, Image } from './productDetail.style';
 
+import ProductDetailSavour from '../ProductDetailSavour';
 import ProductDetailTitle from '../ProductDetailTitle';
 import ProductDetailDesc from '../ProductDetailDesc';
 import ProductDetailThumbnails from '../ProductDetailThumbnail';
@@ -51,13 +52,12 @@ const ProductDetail = () => {
   const listAllProducts = allProducts.map(({ name, id }) => {
     const isCurrent = name === currentProduct.name;
     return (
-      <Item
-        onClick={() => handleCurrentProduct(name)}
+      <ProductDetailSavour
         key={id}
+        name={name}
+        handleCurrentProduct={() => handleCurrentProduct(name)}
         current={isCurrent}
-      >
-        {name}
-      </Item>
+      />
     );
   });
 

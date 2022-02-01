@@ -36,10 +36,6 @@ export const Content = styled.div`
         display: flex;
         justify-content: space-between;
         list-style: none;
-
-        li {
-          cursor: pointer;
-        }
       }
     }
 
@@ -82,8 +78,4 @@ export const Image = styled.img`
       opacity: 1;
     }
   }
-`;
-
-export const Item = styled.li`
-  border-bottom: ${({ current }) => (current ? '2px solid yellow' : '')};
 `;
