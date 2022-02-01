@@ -15,8 +15,7 @@ const ProductDetail = () => {
   const [currentProductImage, setCurrentProductImage] = useState([]);
   const [allProductsImages, setAllProductsImages] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
-  const [indexCurrentImage, setIndexCurrentImage] = useState(0);
-  const [activeIndex, setActiveIndex] = useState('');
+  const [activeImgId, setActiveImgId] = useState('');
 
   const location = useLocation();
   const { id: locationId } = location.state;
@@ -26,12 +25,7 @@ const ProductDetail = () => {
       const { id, name } = product;
       if (id === locationId) {
         setCurrentProduct(product);
-        const allImagesCurrentProduct = getCoverProductByKey(name);
-
-        setAllProductsImages(allImagesCurrentProduct);
-        setCurrentProductImage(allImagesCurrentProduct[0]);
-        setIndexCurrentImage(0);
-        setActiveIndex(currentProductImage.id);
+        setAllImages(getCoverProductByKey(name));
       }
 
       !allProducts.length &&
@@ -39,21 +33,21 @@ const ProductDetail = () => {
     });
   }, []);
 
-  console.log(activeIndex);
+  const setAllImages = (imgArray) => {
+    setAllProductsImages(imgArray);
+    setCurrentProductImage(imgArray[0]);
+    setActiveImgId(imgArray[0].id);
+  };
 
   const handleCurrentProduct = (name) => {
     setCurrentProduct(products.find((product) => product.name === name));
-    const currentProductImages = getCoverProductByKey(name);
-    setCurrentProductImage(currentProductImages[0]);
-    setAllProductsImages(currentProductImages);
-    setIndexCurrentImage(0);
-    setActiveIndex(currentProductImage.id);
+    setAllImages(getCoverProductByKey(name));
   };
 
-  const handleChangeCurrentImage = (index) => {
-    setCurrentProductImage(allProductsImages[index]);
-    setActiveIndex(currentProductImage.id);
-    setIndexCurrentImage(index);
+  const handleChangeCurrentImage = (img) => {
+    const { id } = img;
+    setCurrentProductImage(img);
+    setActiveImgId(id);
   };
 
   const listAllProducts = allProducts.map(({ name, id }) => {
@@ -69,15 +63,16 @@ const ProductDetail = () => {
     );
   });
 
-  const thumbnailProducts = allProductsImages.map((src, index) => {
+  const thumbnailProducts = allProductsImages.map((src) => {
+    const { id, img } = src;
     return (
       <Thumbnail
-        key={index}
-        isCurrent={index === indexCurrentImage}
-        onClick={() => handleChangeCurrentImage(index)}
+        key={id}
+        isCurrent={id === activeImgId}
+        onClick={() => handleChangeCurrentImage(src)}
         className='thumbnail'
-        src={src.img}
-        alt='#'
+        src={img}
+        alt='thumbnail product'
       />
     );
   });
@@ -88,7 +83,7 @@ const ProductDetail = () => {
     <Wrapper>
       <Content>
         <div className='left'>
-          <Image key={activeIndex} src={currentProductImage.img} />
+          <Image key={activeImgId} src={currentProductImage.img} />
         </div>
         <div className='right'>
           <div className='product-list'>
