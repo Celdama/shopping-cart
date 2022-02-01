@@ -10,6 +10,8 @@ import {
   Thumbnail,
 } from './productDetail.style';
 
+import ProductDetailTitle from '../ProductDetailTitle';
+
 const ProductDetail = () => {
   const [currentProduct, setCurrentProduct] = useState({});
   const [currentProductImage, setCurrentProductImage] = useState([]);
@@ -92,7 +94,7 @@ const ProductDetail = () => {
 
           <div className='product-info'>
             <div className='product-text'>
-              <h3 className='product-name'>{name}</h3>
+              <ProductDetailTitle title={name} />
               <p className='product-price'>$ {price}.00 USD</p>
               <p className='product-desc'>{description}</p>
               <p className='product-marketing'>
