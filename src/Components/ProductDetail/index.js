@@ -21,7 +21,7 @@ const ProductDetail = () => {
   const [activeImgId, setActiveImgId] = useState('');
 
   const location = useLocation();
-  const { id: locationId } = location.state;
+  const { id: locationId } = location.state || [];
 
   useEffect(() => {
     products.forEach((product) => {
@@ -29,6 +29,9 @@ const ProductDetail = () => {
       if (id === locationId) {
         setCurrentProduct(product);
         setAllImages(getCoverProductByKey(name));
+      } else if (locationId === undefined) {
+        setCurrentProduct(products[0]);
+        setAllImages(getCoverProductByKey(products[0].name));
       }
 
       !allProducts.length &&
