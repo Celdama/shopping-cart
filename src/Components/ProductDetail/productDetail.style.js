@@ -51,26 +51,7 @@ export const Content = styled.div`
       display: flex;
 
       .product-text {
-        width: 70%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: flex-start;
-
-        .product-desc {
-          width: 60%;
-        }
-
-        button {
-          width: 280px;
-          height: 64px;
-          background-color: transparent;
-          border-radius: 32px;
-          font-size: 12px;
-          text-transform: uppercase;
-          border: 1px solid var(--rose);
-          color: var(--rose);
-        }
+        width: 80%;
       }
 
       .product-photos {
@@ -101,13 +82,6 @@ export const Image = styled.img`
       opacity: 1;
     }
   }
-`;
-
-export const Thumbnail = styled.img`
-  height: 67px;
-  width: 99px;
-  padding: 6px;
-  outline: ${({ isCurrent }) => (isCurrent ? '1px solid yellow' : '')};
 `;
 
 export const Item = styled.li`

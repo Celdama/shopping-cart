@@ -2,16 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { products } from '../../productData';
 import getCoverProductByKey from '../../Helpers/getCoverProductByKey';
-import {
-  Wrapper,
-  Content,
-  Image,
-  Item,
-  Thumbnail,
-} from './productDetail.style';
+import { Wrapper, Content, Image, Item } from './productDetail.style';
 
 import ProductDetailTitle from '../ProductDetailTitle';
 import ProductDetailDesc from '../ProductDetailDesc';
+import ProductDetailThumbnails from '../ProductDetailThumbnail';
 
 const ProductDetail = () => {
   const [currentProduct, setCurrentProduct] = useState({});
@@ -69,13 +64,11 @@ const ProductDetail = () => {
   const thumbnailProducts = allProductsImages.map((src) => {
     const { id, img } = src;
     return (
-      <Thumbnail
+      <ProductDetailThumbnails
         key={id}
         isCurrent={id === activeImgId}
-        onClick={() => handleChangeCurrentImage(src)}
-        className='thumbnail'
-        src={img}
-        alt='thumbnail product'
+        handleChangeCurrentImage={() => handleChangeCurrentImage(src)}
+        img={img}
       />
     );
   });

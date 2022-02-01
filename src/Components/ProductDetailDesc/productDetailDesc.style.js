@@ -8,7 +8,18 @@ export const Wrapper = styled.div`
 export const Content = styled.div`
   display: flex;
   height: 100%;
-  width: 100%;
+  width: 60%;
   flex-direction: column;
   justify-content: space-between;
+`;
+
+export const Button = styled.button`
+  width: 280px;
+  height: 64px;
+  background-color: transparent;
+  border-radius: 32px;
+  font-size: 12px;
+  text-transform: uppercase;
+  border: 1px solid var(--rose);
+  color: var(--rose);
 `;

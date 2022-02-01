@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wrapper, Content } from './productDetailDesc.style';
+import { Wrapper, Content, Button } from './productDetailDesc.style';
 
 const ProductDetailDesc = ({ price, desc, handleCurrentProduct }) => {
   return (
@@ -13,7 +13,7 @@ const ProductDetailDesc = ({ price, desc, handleCurrentProduct }) => {
             sample pack
           </span>
         </p>
-        <button>add to card</button>
+        <Button>add to card</Button>
       </Content>
     </Wrapper>
   );
