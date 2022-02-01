@@ -15,8 +15,6 @@ const App = () => {
     setCartItem((prevState) => [...prevState, product]);
   };
 
-  console.log(cartItems);
-
   return (
     <div className='App'>
       <BrowserRouter>
@@ -29,7 +27,7 @@ const App = () => {
             element={<ProductDetail addProductToCart={addProductToCart} />}
           />
         </Routes>
-        <Cart />
+        <Cart cartItems={cartItems} />
       </BrowserRouter>
       <GlobalStyle />
     </div>
