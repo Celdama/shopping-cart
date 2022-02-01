@@ -9,17 +9,22 @@ import Cart from './Components/Cart';
 
 const App = () => {
   const [displayCart, setDisplayCart] = useState(false);
-  const [cartItems, setCartItem] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
   const addProductToCart = (product) => {
-    setCartItem((prevState) => [...prevState, product]);
+    setCartItems((prevState) => [...prevState, product]);
+  };
+
+  const handleDisplayCart = () => {
+    console.log('clicked');
+    setDisplayCart((prevState) => !prevState);
   };
 
   return (
     <div className='App'>
       <BrowserRouter>
         <ScrollToTop />
-        <NavBar />
+        <NavBar handleDisplayCart={handleDisplayCart} />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route
@@ -27,7 +32,7 @@ const App = () => {
             element={<ProductDetail addProductToCart={addProductToCart} />}
           />
         </Routes>
-        <Cart cartItems={cartItems} />
+        <Cart displayCart={displayCart} cartItems={cartItems} />
       </BrowserRouter>
       <GlobalStyle />
     </div>

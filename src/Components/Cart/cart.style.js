@@ -8,6 +8,8 @@ export const Wrapper = styled.div`
   top: 100px;
   right: 180px;
   color: var(--black);
+  z-index: 5;
+  display: ${({ display }) => (display ? 'none' : 'block')};
 `;
 
 export const Content = styled.div``;

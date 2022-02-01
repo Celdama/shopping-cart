@@ -2,7 +2,7 @@ import React from 'react';
 import { Wrapper, Content, Logo } from './navbar.style';
 import { Link } from 'react-router-dom';
 
-const NavBar = () => {
+const NavBar = ({ handleDisplayCart }) => {
   return (
     <Wrapper>
       <Content>
@@ -10,7 +10,7 @@ const NavBar = () => {
           <Link to={'/'}>tala</Link>
         </Logo>
         <ul>
-          <li>Cart</li>
+          <li onClick={handleDisplayCart}>Cart</li>
           <li>Menu</li>
         </ul>
       </Content>
