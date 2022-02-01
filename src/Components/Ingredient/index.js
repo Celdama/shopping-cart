@@ -11,7 +11,7 @@ const Ingredient = ({ text, repeat, name }) => {
       x: 0,
     },
     visible: {
-      x: -400,
+      x: name ? -990 : -400,
       transition: {
         type: 'tween',
         duration: 6,

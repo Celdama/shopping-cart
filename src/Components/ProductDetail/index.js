@@ -9,6 +9,7 @@ import ProductDetailTitle from '../ProductDetailTitle';
 import ProductDetailDesc from '../ProductDetailDesc';
 import ProductDetailThumbnails from '../ProductDetailThumbnail';
 import Ingredient from '../Ingredient';
+import Space from '../Space';
 
 const ProductDetail = () => {
   const [currentProduct, setCurrentProduct] = useState({});
@@ -117,6 +118,7 @@ const ProductDetail = () => {
         name={currentProduct.name}
         repeat={1}
       />
+      <Space productPage={true} />
     </Wrapper>
   );
 };

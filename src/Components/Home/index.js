@@ -37,7 +37,7 @@ const Home = () => {
       <Divider />
       <ItemList />
       <Marketing />
-      <Space />
+      <Space productPage={false} />
       <Ingredient text='ONE' repeat={6} />
       <Questions />
       <DisplayProduct />

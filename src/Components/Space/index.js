@@ -4,7 +4,7 @@ import { Wrapper, Content } from './space.style';
 import Smiley from '../../Images/smiley.svg';
 import { useMotionEffect } from '../../hooks/useMotionEffect';
 
-const Space = () => {
+const Space = ({ productPage }) => {
   const [controls, ref] = useMotionEffect();
 
   const containerTitleStyle = {
@@ -42,37 +42,57 @@ const Space = () => {
     },
   };
 
+  const contentHomePage = (
+    <>
+      <motion.h2
+        ref={ref}
+        variants={containerTitleStyle}
+        animate={controls}
+        initial='hidden'
+      >
+        <motion.span variants={textStyle}>
+          Guil-free satisfaction for
+        </motion.span>
+        <motion.span variants={textStyle} className='serif'>
+          every occasion.
+        </motion.span>
+      </motion.h2>
+      <motion.div
+        ref={ref}
+        variants={containerPStyle}
+        animate={controls}
+        initial='hidden'
+      >
+        <motion.p variants={textStyle}>
+          Yes you can actually eat TALA in space.
+        </motion.p>
+        <motion.p variants={textStyle}>
+          Now you just have to figure out how to get there.
+        </motion.p>
+      </motion.div>
+      <img src={Smiley} alt='' />
+    </>
+  );
+
+  const contentProductPage = (
+    <motion.h2
+      ref={ref}
+      variants={containerTitleStyle}
+      animate={controls}
+      initial='hidden'
+    >
+      <motion.span variants={textStyle}>
+        Tastes just like real fruit...
+      </motion.span>
+      <motion.span variants={textStyle} className='serif'>
+        because it is real fruit.
+      </motion.span>
+    </motion.h2>
+  );
+
   return (
     <Wrapper>
-      <Content>
-        <motion.h2
-          ref={ref}
-          variants={containerTitleStyle}
-          animate={controls}
-          initial='hidden'
-        >
-          <motion.span variants={textStyle}>
-            Guil-free satisfaction for
-          </motion.span>
-          <motion.span variants={textStyle} className='serif'>
-            every occasion.
-          </motion.span>
-        </motion.h2>
-        <motion.div
-          ref={ref}
-          variants={containerPStyle}
-          animate={controls}
-          initial='hidden'
-        >
-          <motion.p variants={textStyle}>
-            Yes you can actually eat TALA in space.
-          </motion.p>
-          <motion.p variants={textStyle}>
-            Now you just have to figure out how to get there.
-          </motion.p>
-        </motion.div>
-        <img src={Smiley} alt='' />
-      </Content>
+      <Content>{productPage ? contentProductPage : contentHomePage}</Content>
     </Wrapper>
   );
 };
