@@ -10,6 +10,7 @@ import ProductDetailDesc from '../ProductDetailDesc';
 import ProductDetailThumbnails from '../ProductDetailThumbnail';
 import Ingredient from '../Ingredient';
 import Space from '../Space';
+import ProductDetailCompare from '../ProductDetailCompare';
 
 const ProductDetail = () => {
   const [currentProduct, setCurrentProduct] = useState({});
@@ -119,6 +120,20 @@ const ProductDetail = () => {
         repeat={1}
       />
       <Space productPage={true} />
+      <div className='compare-container'>
+        <ProductDetailCompare
+          title='tala'
+          sugar={6}
+          calories={40}
+          tala={true}
+        />
+        <ProductDetailCompare
+          title='them'
+          sugar={13}
+          calories={90}
+          tala={false}
+        />
+      </div>
     </Wrapper>
   );
 };

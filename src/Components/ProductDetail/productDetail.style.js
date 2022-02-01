@@ -1,11 +1,16 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
-  padding: 0px 10px;
+  /* padding: 0px 10px; */
+
+  .compare-container {
+    display: flex;
+    height: 100vh;
+  }
 `;
 
 export const Content = styled.div`
-  padding: 10px 0;
+  padding: 10px 10px;
   position: relative;
   margin: 0 auto;
   max-width: var(--maxWidth);
