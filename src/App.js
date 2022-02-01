@@ -10,6 +10,7 @@ import Cart from './Components/Cart';
 const App = () => {
   const [displayCart, setDisplayCart] = useState(false);
   const [cartItems, setCartItems] = useState([]);
+  // ENREGISTRER LE CART DANS LOCALSTORAGE
 
   const addProductToCart = (product) => {
     setCartItems((prevState) => [...prevState, product]);
