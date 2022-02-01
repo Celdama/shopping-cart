@@ -11,6 +11,7 @@ import {
 } from './productDetail.style';
 
 import ProductDetailTitle from '../ProductDetailTitle';
+import ProductDetailDesc from '../ProductDetailDesc';
 
 const ProductDetail = () => {
   const [currentProduct, setCurrentProduct] = useState({});
@@ -95,15 +96,11 @@ const ProductDetail = () => {
           <div className='product-info'>
             <div className='product-text'>
               <ProductDetailTitle title={name} />
-              <p className='product-price'>$ {price}.00 USD</p>
-              <p className='product-desc'>{description}</p>
-              <p className='product-marketing'>
-                can't decide which flavor is right for you ? <br /> try our{' '}
-                <span onClick={() => handleCurrentProduct('variety')}>
-                  sample pack
-                </span>
-              </p>
-              <button>add to card</button>
+              <ProductDetailDesc
+                price={price}
+                desc={description}
+                handleCurrentProduct={handleCurrentProduct}
+              />
             </div>
             <div className='product-photos'>{thumbnailProducts}</div>
           </div>
