@@ -21,18 +21,12 @@ export const Content = styled.div`
   flex-direction: column;
   height: 100%;
 
-  .content-cart {
-    .container {
-      /* padding: 0 24px; */
-
-      .empty-product {
-        text-transform: uppercase;
-        font-size: 12px;
-        color: var(--black);
-        font-weight: bold;
-        text-align: center;
-      }
-    }
+  .empty-product {
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--black);
+    font-weight: bold;
+    text-align: center;
   }
 `;
 

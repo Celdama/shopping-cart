@@ -56,13 +56,6 @@ const Cart = ({
                   <ul>{cardItemsList}</ul>
                 </ListItems>
                 <CartCheckout sum={sum} />
-                {/* <div className='checkout'>
-                  <p className='total'>
-                    <span>Subtotal</span>
-                    <span className='price'> $ {sum}.00 USD</span>
-                  </p>
-                  <button>checkout</button>
-                </div> */}
               </div>
             ) : (
               <p className='empty-product'>sorry, there's nothing here yet.</p>
