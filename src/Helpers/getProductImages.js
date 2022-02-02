@@ -70,4 +70,8 @@ const getCoverProductByKey = (key) => {
   return productImg[key];
 };
 
-export default getCoverProductByKey;
+const getThumbnailProductByKey = (key) => {
+  return productImg[key][0].img;
+};
+
+export { getCoverProductByKey, getThumbnailProductByKey };

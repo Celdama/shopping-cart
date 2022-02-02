@@ -1,5 +1,5 @@
 import React from 'react';
-import getCoverProductByKey from '../../Helpers/getCoverProductByKey';
+import { getThumbnailProductByKey } from '../../Helpers/getProductImages';
 import { Wrapper, Content, Item } from './cart.style';
 import CartItem from '../CartItem';
 
@@ -13,13 +13,12 @@ const Cart = ({
 }) => {
   const cardItemsList = cartItems.map((item) => {
     const { quantity, name, price } = item;
-    const cover = getCoverProductByKey(item.name)[0].img;
 
     return (
       <Item quantity={quantity}>
         {!!quantity && (
           <CartItem
-            cover={cover}
+            thumbnail={getThumbnailProductByKey(name)}
             name={name}
             price={price}
             quantity={quantity}

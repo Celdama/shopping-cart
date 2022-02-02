@@ -9,7 +9,7 @@ import {
 } from './cartItem.style';
 
 const CartItem = ({
-  cover,
+  thumbnail,
   name,
   price,
   quantity,
@@ -20,7 +20,7 @@ const CartItem = ({
   return (
     <Wrapper>
       <Content>
-        <Thumbnail src={cover} alt='product' />
+        <Thumbnail src={thumbnail} alt='product' />
         <ContentProductInfo>
           <span className='name'>{name}</span>
           <span className='price'>$ {price}.00 USD</span>

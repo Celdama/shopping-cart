@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { products } from '../../productData';
-import getCoverProductByKey from '../../Helpers/getCoverProductByKey';
+import { getCoverProductByKey } from '../../Helpers/getProductImages';
 import { Wrapper, Content, Image } from './productDetail.style';
 
 import ProductDetailSavour from '../ProductDetailSavour';
