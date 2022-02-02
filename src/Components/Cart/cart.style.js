@@ -22,63 +22,8 @@ export const Content = styled.div`
   height: 100%;
 
   .content-cart {
-    /* height: 100%; */
-    display: flex;
-    align-items: center;
-    flex: 1 1 auto;
     .container {
       /* padding: 0 24px; */
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      justify-content: center;
-
-      .list-items {
-        height: 100%;
-        padding: 0 24px;
-        display: flex;
-        flex-direction: column;
-
-        ul {
-          flex: 1 1 auto;
-          padding: 0;
-        }
-      }
-
-      .checkout {
-        border-top: 1px dotted var(--black);
-
-        padding-bottom: 20px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-transform: uppercase;
-
-        .total {
-          width: 100%;
-          padding: 0 24px;
-          display: flex;
-          justify-content: space-between;
-          /* text-transform: uppercase; */
-          font-weight: bold;
-          font-size: 14px;
-        }
-
-        button {
-          height: 56px;
-          width: 272px;
-          border: 1px solid #232025;
-          border-radius: 32px;
-          background-color: #232025;
-          color: var(--rose);
-          text-transform: uppercase;
-          cursor: pointer;
-          font-size: 14px;
-          font-weight: bold;
-        }
-      }
 
       .empty-product {
         text-transform: uppercase;
@@ -88,6 +33,32 @@ export const Content = styled.div`
         text-align: center;
       }
     }
+  }
+`;
+
+export const ContentCart = styled.div`
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+`;
+
+export const CartItemsContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+`;
+
+export const ListItems = styled.div`
+  height: 100%;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+
+  ul {
+    flex: 1 1 auto;
+    padding: 0;
   }
 `;
 

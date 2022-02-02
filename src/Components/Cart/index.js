@@ -1,9 +1,16 @@
 import React from 'react';
 import { getThumbnailProductByKey } from '../../Helpers/getProductImages';
-import { Wrapper, Content, Item } from './cart.style';
+import {
+  Wrapper,
+  Content,
+  Item,
+  ContentCart,
+  CartItemsContainer,
+  ListItems,
+} from './cart.style';
 import CartHeader from '../CartHeader';
 import CartItem from '../CartItem';
-import { VscClose } from 'react-icons/vsc';
+import CartCheckout from '../CartCheckout';
 
 const Cart = ({
   cartItems,
@@ -41,27 +48,27 @@ const Cart = ({
     <Wrapper displayCart={displayCart}>
       <Content>
         <CartHeader handleDisplayCart={handleDisplayCart} />
-
-        <div className='content-cart'>
-          <div className='container'>
+        <ContentCart className='content-cart'>
+          <CartItemsContainer className='container'>
             {sum > 0 ? (
               <div>
-                <div className='list-items'>
+                <ListItems>
                   <ul>{cardItemsList}</ul>
-                </div>
-                <div className='checkout'>
+                </ListItems>
+                <CartCheckout sum={sum} />
+                {/* <div className='checkout'>
                   <p className='total'>
                     <span>Subtotal</span>
                     <span className='price'> $ {sum}.00 USD</span>
                   </p>
                   <button>checkout</button>
-                </div>
+                </div> */}
               </div>
             ) : (
               <p className='empty-product'>sorry, there's nothing here yet.</p>
             )}
-          </div>
-        </div>
+          </CartItemsContainer>
+        </ContentCart>
       </Content>
     </Wrapper>
   );
