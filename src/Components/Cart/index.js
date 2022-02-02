@@ -2,6 +2,7 @@ import React from 'react';
 import { getThumbnailProductByKey } from '../../Helpers/getProductImages';
 import { Wrapper, Content, Item } from './cart.style';
 import CartItem from '../CartItem';
+import { VscClose } from 'react-icons/vsc';
 
 const Cart = ({
   cartItems,
@@ -32,7 +33,7 @@ const Cart = ({
   });
 
   const sum = cartItems
-    .map((item) => item.quantity > 0 && item.price * item.quantity)
+    .map(({ quantity, price }) => quantity > 0 && price * quantity)
     .reduce((prev, curr) => prev + curr, 0);
 
   return (
@@ -41,8 +42,9 @@ const Cart = ({
         <div className='header-cart'>
           <div>
             <h4>Your Cart</h4>
-            {/* METTRE UNE ICON DELETE A LA PLACE DE X  */}
-            <span onClick={handleDisplayCart}>x</span>
+            <span onClick={handleDisplayCart}>
+              <VscClose />
+            </span>
           </div>
         </div>
         <div className='content-cart'>

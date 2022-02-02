@@ -35,6 +35,7 @@ export const GlobalStyle = createGlobalStyle`
 
   .capitalize {
     text-transform: capitalize;
-
   }
+
+
 `;
