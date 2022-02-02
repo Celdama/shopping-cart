@@ -20,33 +20,6 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  /* outline: 1px solid red; */
-  .header-cart {
-    padding: 18px 24px;
-    border-bottom: 1px dotted var(--black);
-    width: 100%;
-    flex: 0 1 auto;
-
-    div {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      h4 {
-        padding: 0;
-        margin: 0;
-        font-size: 16px;
-        text-transform: uppercase;
-        color: var(--black);
-      }
-      span {
-        font-size: 24px;
-        border: none;
-        padding: 0;
-        margin: 0;
-        cursor: pointer;
-      }
-    }
-  }
 
   .content-cart {
     /* height: 100%; */

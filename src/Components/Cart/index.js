@@ -1,6 +1,7 @@
 import React from 'react';
 import { getThumbnailProductByKey } from '../../Helpers/getProductImages';
 import { Wrapper, Content, Item } from './cart.style';
+import CartHeader from '../CartHeader';
 import CartItem from '../CartItem';
 import { VscClose } from 'react-icons/vsc';
 
@@ -39,14 +40,8 @@ const Cart = ({
   return (
     <Wrapper displayCart={displayCart}>
       <Content>
-        <div className='header-cart'>
-          <div>
-            <h4>Your Cart</h4>
-            <span onClick={handleDisplayCart}>
-              <VscClose />
-            </span>
-          </div>
-        </div>
+        <CartHeader handleDisplayCart={handleDisplayCart} />
+
         <div className='content-cart'>
           <div className='container'>
             {sum > 0 ? (
