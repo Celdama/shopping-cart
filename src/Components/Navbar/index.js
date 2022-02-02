@@ -11,8 +11,7 @@ const NavBar = ({ handleDisplayCart, numberOfCartItems }) => {
         </Logo>
         <ul>
           <li onClick={handleDisplayCart}>
-            Cart
-            {numberOfCartItems > 0 && <span>{numberOfCartItems}</span>}
+            Cart {numberOfCartItems > 0 && <span>{numberOfCartItems}</span>}
           </li>
           <li>Menu</li>
         </ul>

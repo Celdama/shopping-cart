@@ -131,8 +131,10 @@ export const Content = styled.div`
                   display: flex;
                   width: 12px;
                   justify-content: center;
-                  background-color: orange;
+                  background-color: var(--black);
+                  color: var(--rose);
                   align-items: center;
+                  cursor: pointer;
                 }
 
                 .incremente {
