@@ -69,9 +69,11 @@ const App = () => {
   };
 
   const deleteProductFromCart = (product) => {
-    setCartItems((prevState) =>
-      prevState.filter((item) => item.name !== product.name)
-    );
+    setCartItems((prevState) => {
+      return prevState.map((item) => {
+        return item.name === product.name ? { ...item, quantity: 0 } : item;
+      });
+    });
   };
 
   const handleDisplayCart = () => {
