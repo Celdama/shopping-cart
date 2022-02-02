@@ -2,7 +2,12 @@ import React from 'react';
 import { Wrapper, Content, Item } from './cart.style';
 import getCoverProductByKey from '../../Helpers/getCoverProductByKey';
 
-const Cart = ({ cartItems, displayCart, handleDisplayCart }) => {
+const Cart = ({
+  cartItems,
+  displayCart,
+  handleDisplayCart,
+  deleteProductFromCart,
+}) => {
   const cardItemsList = cartItems.map((item) => {
     const cover = getCoverProductByKey(item.name)[0].img;
 
@@ -16,7 +21,12 @@ const Cart = ({ cartItems, displayCart, handleDisplayCart }) => {
             <div className='center'>
               <span className='name'>{item.name}</span>
               <span className='price'>$ {item.price}.00 USD</span>
-              <span className='delete'>REMOVE</span>
+              <span
+                onClick={() => deleteProductFromCart(item)}
+                className='delete'
+              >
+                REMOVE
+              </span>
             </div>
             <div className='right'>
               <span>{item.quantity}</span>

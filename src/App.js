@@ -68,6 +68,12 @@ const App = () => {
     setDisplayCart(true);
   };
 
+  const deleteProductFromCart = (product) => {
+    setCartItems((prevState) =>
+      prevState.filter((item) => item.name !== product.name)
+    );
+  };
+
   const handleDisplayCart = () => {
     setDisplayCart((prevState) => !prevState);
   };
@@ -90,6 +96,7 @@ const App = () => {
         <Cart
           displayCart={displayCart}
           handleDisplayCart={handleDisplayCart}
+          deleteProductFromCart={deleteProductFromCart}
           cartItems={cartItems}
         />
       </BrowserRouter>
