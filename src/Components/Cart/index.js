@@ -1,6 +1,7 @@
 import React from 'react';
-import { Wrapper, Content, Item } from './cart.style';
 import getCoverProductByKey from '../../Helpers/getCoverProductByKey';
+import { Wrapper, Content, Item } from './cart.style';
+import CartItem from '../CartItem';
 
 const Cart = ({
   cartItems,
@@ -16,36 +17,15 @@ const Cart = ({
     return (
       <Item quantity={item.quantity}>
         {!!item.quantity && (
-          <div className='item-container'>
-            <div className='left'>
-              <img src={cover} alt='' />
-            </div>
-            <div className='center'>
-              <span className='name'>{item.name}</span>
-              <span className='price'>$ {item.price}.00 USD</span>
-              <span
-                onClick={() => deleteProductFromCart(item)}
-                className='delete'
-              >
-                REMOVE
-              </span>
-            </div>
-            <div className='right'>
-              <span
-                onClick={() => decrementeProductQuantity(item)}
-                className='decremente'
-              >
-                -
-              </span>
-              <span>{item.quantity}</span>
-              <span
-                onClick={() => incrementeProductQuantity(item)}
-                className='incremente'
-              >
-                +
-              </span>
-            </div>
-          </div>
+          <CartItem
+            cover={cover}
+            name={item.name}
+            price={item.price}
+            quantity={item.quantity}
+            deleteProductFromCart={() => deleteProductFromCart(item)}
+            decrementeProductQuantity={() => decrementeProductQuantity(item)}
+            incrementeProductQuantity={() => incrementeProductQuantity(item)}
+          />
         )}
       </Item>
     );
