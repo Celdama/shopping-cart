@@ -15,26 +15,31 @@ const App = () => {
       name: 'mango',
       quantity: 0,
       price: 29,
+      img: './Images/products/mango/mainImg.jpg',
     },
     {
       name: 'banana',
       quantity: 0,
       price: 29,
+      img: './Images/products/banana/mainImg.jpg',
     },
     {
       name: 'pineapple',
       quantity: 0,
       price: 29,
+      img: './Images/products/pineapple/mainImg.jpg',
     },
     {
       name: 'pitahaya',
       quantity: 0,
       price: 29,
+      img: './Images/products/pitahaya/mainImg.jpg',
     },
     {
       name: 'variety',
       quantity: 0,
       price: 29,
+      img: './Images/products/variety/mainImg.jpg',
     },
   ]);
   // ENREGISTRER LE CART DANS LOCALSTORAGE

@@ -1,21 +1,35 @@
 import React from 'react';
-import { Wrapper, Content } from './cart.style';
+import { Wrapper, Content, Item } from './cart.style';
+import getCoverProductByKey from '../../Helpers/getCoverProductByKey';
 
 const Cart = ({ cartItems, displayCart, handleDisplayCart }) => {
+  // console.log(cartItems);
   const cardItemsList = cartItems.map((item) => {
+    const cover = getCoverProductByKey(item.name)[0].img;
+
     return (
-      <div>
+      <Item quantity={item.quantity}>
         {!!item.quantity && (
-          <li>
-            {item.name} : $ {item.price} <span>{item.quantity}</span>
-          </li>
+          <div className='item-container'>
+            <div className='left'>
+              <img src={cover} alt='' />
+            </div>
+            <div className='center'>
+              <span className='name'>{item.name}</span>
+              <span className='price'>$ {item.price}.00 USD</span>
+              <span className='delete'>REMOVE</span>
+            </div>
+            <div className='right'>
+              <span>{item.quantity}</span>
+            </div>
+          </div>
         )}
-      </div>
+      </Item>
     );
-  });
+  }); /*  */
 
   const sum = cartItems
-    .map((item) => item.quantity > 0 && item.price)
+    .map((item) => item.quantity > 0 && item.price * item.quantity)
     .reduce((prev, curr) => prev + curr, 0);
 
   return (
@@ -29,11 +43,11 @@ const Cart = ({ cartItems, displayCart, handleDisplayCart }) => {
           </div>
         </div>
         <div className='content-cart'>
-          <div>
+          <div className='container'>
             {sum > 0 ? (
-              <div>
+              <div className='list-items'>
                 <ul>{cardItemsList}</ul>
-                <p>Subtotal : ${sum}</p>
+                <p className='total'>Subtotal : ${sum}</p>
               </div>
             ) : (
               <p>sorry, there's nothing here yet.</p>

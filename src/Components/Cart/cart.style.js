@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  height: 281px;
+  /* min-height: 281px; */
   min-width: 320px;
   max-width: 320px;
-  background-color: var(--rose);
+  background-color: #e2ddd7;
   position: fixed;
   border: 1px solid #000;
   border-radius: 8px;
@@ -20,6 +20,7 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+  /* outline: 1px solid red; */
   .header-cart {
     padding: 18px 24px;
     border-bottom: 1px dotted var(--black);
@@ -52,9 +53,85 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
     flex: 1 1 auto;
-    div {
+    .container {
       padding: 0 24px;
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: center;
+
+      .list-items {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        ul {
+          /* outline: 1px solid green; */
+          flex: 1 1 auto;
+          padding: 0;
+
+          li {
+            /* width: 100%; */
+
+            .item-container {
+              display: flex;
+              justify-content: space-between;
+              /* flex-direction: row; */
+              text-transform: uppercase;
+              color: var(--black);
+
+              .left {
+                img {
+                  width: 64px;
+                  height: 64px;
+                }
+              }
+
+              .center {
+                flex: 1 1 auto;
+                padding: 0 10px;
+
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+
+                .name {
+                  font-size: 16px;
+                  font-weight: bold;
+                }
+
+                .price,
+                .delete {
+                  font-size: 12px;
+                  font-weight: 600;
+                }
+
+                .delete {
+                  text-decoration: underline;
+                }
+              }
+
+              .right {
+                width: 48px;
+                height: 32px;
+                background-color: #d5cdc4;
+                font-weight: 600;
+                font-size: 12px;
+                border-radius: 4px;
+                color: var(--black);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+            }
+          }
+        }
+      }
+
+      .total {
+        text-align: start;
+      }
 
       p {
         text-transform: uppercase;
@@ -65,4 +142,9 @@ export const Content = styled.div`
       }
     }
   }
+`;
+
+export const Item = styled.li`
+  display: ${({ quantity }) => (quantity ? 'block' : 'none')};
+  padding: 12px 0;
 `;
