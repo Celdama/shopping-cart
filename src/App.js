@@ -82,7 +82,11 @@ const App = () => {
             element={<ProductDetail addProductToCart={addProductToCart} />}
           />
         </Routes>
-        <Cart displayCart={displayCart} cartItems={cartItems} />
+        <Cart
+          displayCart={displayCart}
+          handleDisplayCart={handleDisplayCart}
+          cartItems={cartItems}
+        />
       </BrowserRouter>
       <GlobalStyle />
     </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Wrapper, Content } from './cart.style';
 
-const Cart = ({ cartItems, displayCart }) => {
+const Cart = ({ cartItems, displayCart, handleDisplayCart }) => {
   const cardItemsList = cartItems.map((item) => {
     return (
       <div>
@@ -21,15 +21,25 @@ const Cart = ({ cartItems, displayCart }) => {
   return (
     <Wrapper displayCart={displayCart}>
       <Content>
-        <h4>Your Cart</h4>
-        {sum > 0 ? (
+        <div className='header-cart'>
           <div>
-            <ul>{cardItemsList}</ul>
-            <p>Subtotal : ${sum}</p>
+            <h4>Your Cart</h4>
+            {/* METTRE UNE ICON DELETE A LA PLACE DE X  */}
+            <span onClick={handleDisplayCart}>x</span>
           </div>
-        ) : (
-          <p>sorry, there's nothing here yet.</p>
-        )}
+        </div>
+        <div className='content-cart'>
+          <div>
+            {sum > 0 ? (
+              <div>
+                <ul>{cardItemsList}</ul>
+                <p>Subtotal : ${sum}</p>
+              </div>
+            ) : (
+              <p>sorry, there's nothing here yet.</p>
+            )}
+          </div>
+        </div>
       </Content>
     </Wrapper>
   );
