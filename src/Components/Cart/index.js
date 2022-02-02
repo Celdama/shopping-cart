@@ -1,12 +1,15 @@
 import React from 'react';
 import { Wrapper, Content, Item } from './cart.style';
 import getCoverProductByKey from '../../Helpers/getCoverProductByKey';
+import { useState } from 'react/cjs/react.development';
 
 const Cart = ({
   cartItems,
   displayCart,
   handleDisplayCart,
   deleteProductFromCart,
+  incrementeProductQuantity,
+  decrementeProductQuantity,
 }) => {
   const cardItemsList = cartItems.map((item) => {
     const cover = getCoverProductByKey(item.name)[0].img;
@@ -29,7 +32,19 @@ const Cart = ({
               </span>
             </div>
             <div className='right'>
+              <span
+                onClick={() => decrementeProductQuantity(item)}
+                className='decremente'
+              >
+                -
+              </span>
               <span>{item.quantity}</span>
+              <span
+                onClick={() => incrementeProductQuantity(item)}
+                className='incremente'
+              >
+                +
+              </span>
             </div>
           </div>
         )}

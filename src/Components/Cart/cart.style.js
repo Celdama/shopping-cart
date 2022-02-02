@@ -122,8 +122,28 @@ export const Content = styled.div`
                 border-radius: 4px;
                 color: var(--black);
                 display: flex;
-                justify-content: center;
+                justify-content: space-between;
                 align-items: center;
+
+                .incremente,
+                .decremente {
+                  height: 100%;
+                  display: flex;
+                  width: 12px;
+                  justify-content: center;
+                  background-color: orange;
+                  align-items: center;
+                }
+
+                .incremente {
+                  border-top-right-radius: 4px;
+                  border-bottom-right-radius: 4px;
+                }
+
+                .decremente {
+                  border-top-left-radius: 4px;
+                  border-bottom-left-radius: 4px;
+                }
               }
             }
           }

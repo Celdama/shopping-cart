@@ -76,6 +76,26 @@ const App = () => {
     });
   };
 
+  const incrementeProductQuantity = (product) => {
+    setCartItems((prevState) => {
+      return prevState.map((item) => {
+        return item.name === product.name
+          ? { ...item, quantity: item.quantity + 1 }
+          : item;
+      });
+    });
+  };
+
+  const decrementeProductQuantity = (product) => {
+    setCartItems((prevState) => {
+      return prevState.map((item) => {
+        return item.name === product.name
+          ? { ...item, quantity: item.quantity - 1 }
+          : item;
+      });
+    });
+  };
+
   const handleDisplayCart = () => {
     setDisplayCart((prevState) => !prevState);
   };
@@ -99,6 +119,8 @@ const App = () => {
           displayCart={displayCart}
           handleDisplayCart={handleDisplayCart}
           deleteProductFromCart={deleteProductFromCart}
+          incrementeProductQuantity={incrementeProductQuantity}
+          decrementeProductQuantity={decrementeProductQuantity}
           cartItems={cartItems}
         />
       </BrowserRouter>
