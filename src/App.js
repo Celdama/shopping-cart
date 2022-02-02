@@ -9,11 +9,43 @@ import Cart from './Components/Cart';
 
 const App = () => {
   const [displayCart, setDisplayCart] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState([
+    {
+      name: 'mango',
+      quantity: 0,
+      price: 29,
+    },
+    {
+      name: 'banana',
+      quantity: 0,
+      price: 29,
+    },
+    {
+      name: 'pineapple',
+      quantity: 0,
+      price: 29,
+    },
+    {
+      name: 'pitahaya',
+      quantity: 0,
+      price: 29,
+    },
+    {
+      name: 'variety',
+      quantity: 0,
+      price: 29,
+    },
+  ]);
   // ENREGISTRER LE CART DANS LOCALSTORAGE
 
   const addProductToCart = (product) => {
-    setCartItems((prevState) => [...prevState, product]);
+    setCartItems((prevState) => {
+      return prevState.map((item) => {
+        return item.name === product.name
+          ? { ...item, quantity: item.quantity + 1 }
+          : item;
+      });
+    });
     setDisplayCart(true);
   };
 

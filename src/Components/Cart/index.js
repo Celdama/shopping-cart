@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Wrapper, Content } from './cart.style';
 
 const Cart = ({ cartItems, displayCart }) => {
-  console.log(displayCart);
-  // GERER LES QUANTITES DANS CE COMPONENT
+  console.log(cartItems);
+  const [globalCart, setGlobalCart] = useState([]);
+  const [cartProductsQuantity, setCartProductsQuantity] = useState([
+    {
+      name: 'mango',
+      quantity: 0,
+    },
+    {
+      name: 'banana',
+      quantity: 0,
+    },
+  ]);
 
   const cardItemsList = cartItems.map((item) => {
     return (
@@ -20,7 +30,7 @@ const Cart = ({ cartItems, displayCart }) => {
     .reduce((prev, curr) => prev + curr, 0);
 
   return (
-    <Wrapper display={displayCart}>
+    <Wrapper displayCart={displayCart}>
       <Content>
         <h4>Your Cart</h4>
         <ul>{cardItemsList ? cardItemsList : 'no product'}</ul>

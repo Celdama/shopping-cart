@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
   right: 180px;
   color: var(--black);
   z-index: 5;
-  display: ${({ display }) => (!display ? 'none' : 'block')};
+  display: ${({ displayCart }) => (displayCart ? 'block' : 'none')};
 `;
 
 export const Content = styled.div``;
