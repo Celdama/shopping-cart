@@ -47,8 +47,8 @@ const App = () => {
   useEffect(() => {
     const handleNumberOfProduct = () => {
       let sum = 0;
-      cartItems.forEach((item) => {
-        sum += item.quantity;
+      cartItems.forEach(({ quantity }) => {
+        sum += quantity;
       });
       setNumberOfCartItems(sum);
     };
@@ -59,8 +59,9 @@ const App = () => {
   const addProductToCart = (product) => {
     setCartItems((prevState) => {
       return prevState.map((item) => {
-        return item.name === product.name
-          ? { ...item, quantity: item.quantity + 1 }
+        const { name, quantity } = item;
+        return name === product.name
+          ? { ...item, quantity: quantity + 1 }
           : item;
       });
     });
@@ -71,7 +72,8 @@ const App = () => {
   const deleteProductFromCart = (product) => {
     setCartItems((prevState) => {
       return prevState.map((item) => {
-        return item.name === product.name ? { ...item, quantity: 0 } : item;
+        const { name } = item;
+        return name === product.name ? { ...item, quantity: 0 } : item;
       });
     });
   };
@@ -79,8 +81,9 @@ const App = () => {
   const incrementeProductQuantity = (product) => {
     setCartItems((prevState) => {
       return prevState.map((item) => {
-        return item.name === product.name
-          ? { ...item, quantity: item.quantity + 1 }
+        const { name, quantity } = item;
+        return name === product.name
+          ? { ...item, quantity: quantity + 1 }
           : item;
       });
     });
@@ -89,8 +92,9 @@ const App = () => {
   const decrementeProductQuantity = (product) => {
     setCartItems((prevState) => {
       return prevState.map((item) => {
-        return item.name === product.name
-          ? { ...item, quantity: item.quantity - 1 }
+        const { name, quantity } = item;
+        return name === product.name
+          ? { ...item, quantity: quantity - 1 }
           : item;
       });
     });

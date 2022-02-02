@@ -1,7 +1,6 @@
 import React from 'react';
 import { Wrapper, Content, Item } from './cart.style';
 import getCoverProductByKey from '../../Helpers/getCoverProductByKey';
-import { useState } from 'react/cjs/react.development';
 
 const Cart = ({
   cartItems,
