@@ -3,7 +3,6 @@ import { Wrapper, Content, Item } from './cart.style';
 import getCoverProductByKey from '../../Helpers/getCoverProductByKey';
 
 const Cart = ({ cartItems, displayCart, handleDisplayCart }) => {
-  // console.log(cartItems);
   const cardItemsList = cartItems.map((item) => {
     const cover = getCoverProductByKey(item.name)[0].img;
 
@@ -26,7 +25,7 @@ const Cart = ({ cartItems, displayCart, handleDisplayCart }) => {
         )}
       </Item>
     );
-  }); /*  */
+  });
 
   const sum = cartItems
     .map((item) => item.quantity > 0 && item.price * item.quantity)
@@ -45,12 +44,20 @@ const Cart = ({ cartItems, displayCart, handleDisplayCart }) => {
         <div className='content-cart'>
           <div className='container'>
             {sum > 0 ? (
-              <div className='list-items'>
-                <ul>{cardItemsList}</ul>
-                <p className='total'>Subtotal : ${sum}</p>
+              <div>
+                <div className='list-items'>
+                  <ul>{cardItemsList}</ul>
+                </div>
+                <div className='checkout'>
+                  <p className='total'>
+                    <span>Subtotal</span>
+                    <span className='price'> $ {sum}.00 USD</span>
+                  </p>
+                  <button>checkout</button>
+                </div>
               </div>
             ) : (
-              <p>sorry, there's nothing here yet.</p>
+              <p className='empty-product'>sorry, there's nothing here yet.</p>
             )}
           </div>
         </div>

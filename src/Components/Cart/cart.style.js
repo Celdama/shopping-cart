@@ -54,7 +54,7 @@ export const Content = styled.div`
     align-items: center;
     flex: 1 1 auto;
     .container {
-      padding: 0 24px;
+      /* padding: 0 24px; */
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -63,6 +63,7 @@ export const Content = styled.div`
 
       .list-items {
         height: 100%;
+        padding: 0 24px;
         display: flex;
         flex-direction: column;
 
@@ -129,11 +130,41 @@ export const Content = styled.div`
         }
       }
 
-      .total {
-        text-align: start;
+      .checkout {
+        border-top: 1px dotted var(--black);
+
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+
+        .total {
+          width: 100%;
+          padding: 0 24px;
+          display: flex;
+          justify-content: space-between;
+          /* text-transform: uppercase; */
+          font-weight: bold;
+          font-size: 14px;
+        }
+
+        button {
+          height: 56px;
+          width: 272px;
+          border: 1px solid #232025;
+          border-radius: 32px;
+          background-color: #232025;
+          color: var(--rose);
+          text-transform: uppercase;
+          cursor: pointer;
+          font-size: 14px;
+          font-weight: bold;
+        }
       }
 
-      p {
+      .empty-product {
         text-transform: uppercase;
         font-size: 12px;
         color: var(--black);
