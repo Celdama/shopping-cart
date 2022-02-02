@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Wrapper, Content } from './cart.style';
 
 const Cart = ({ cartItems, displayCart }) => {
-  console.log(cartItems);
+  // console.log(cartItems);
   const [globalCart, setGlobalCart] = useState([]);
   const [cartProductsQuantity, setCartProductsQuantity] = useState([
     {

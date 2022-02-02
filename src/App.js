@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { GlobalStyle } from './GlobalStyle';
 import NavBar from './Components/Navbar';
 import Home from './Components/Home';
@@ -9,6 +9,7 @@ import Cart from './Components/Cart';
 
 const App = () => {
   const [displayCart, setDisplayCart] = useState(false);
+  const [numberOfCartItems, setNumberOfCartItems] = useState(0);
   const [cartItems, setCartItems] = useState([
     {
       name: 'mango',
@@ -38,6 +39,18 @@ const App = () => {
   ]);
   // ENREGISTRER LE CART DANS LOCALSTORAGE
 
+  useEffect(() => {
+    const handleNumberOfProduct = () => {
+      let sum = 0;
+      cartItems.forEach((item) => {
+        sum += item.quantity;
+      });
+      setNumberOfCartItems(sum);
+    };
+
+    handleNumberOfProduct(cartItems);
+  }, [cartItems]);
+
   const addProductToCart = (product) => {
     setCartItems((prevState) => {
       return prevState.map((item) => {
@@ -46,6 +59,7 @@ const App = () => {
           : item;
       });
     });
+
     setDisplayCart(true);
   };
 
@@ -57,7 +71,10 @@ const App = () => {
     <div className='App'>
       <BrowserRouter>
         <ScrollToTop />
-        <NavBar handleDisplayCart={handleDisplayCart} />
+        <NavBar
+          numberOfCartItems={numberOfCartItems}
+          handleDisplayCart={handleDisplayCart}
+        />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route
