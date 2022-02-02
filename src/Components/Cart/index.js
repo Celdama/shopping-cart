@@ -12,16 +12,17 @@ const Cart = ({
   decrementeProductQuantity,
 }) => {
   const cardItemsList = cartItems.map((item) => {
+    const { quantity, name, price } = item;
     const cover = getCoverProductByKey(item.name)[0].img;
 
     return (
-      <Item quantity={item.quantity}>
-        {!!item.quantity && (
+      <Item quantity={quantity}>
+        {!!quantity && (
           <CartItem
             cover={cover}
-            name={item.name}
-            price={item.price}
-            quantity={item.quantity}
+            name={name}
+            price={price}
+            quantity={quantity}
             deleteProductFromCart={() => deleteProductFromCart(item)}
             decrementeProductQuantity={() => decrementeProductQuantity(item)}
             incrementeProductQuantity={() => incrementeProductQuantity(item)}

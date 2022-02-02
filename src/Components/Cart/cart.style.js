@@ -68,87 +68,8 @@ export const Content = styled.div`
         flex-direction: column;
 
         ul {
-          /* outline: 1px solid green; */
           flex: 1 1 auto;
           padding: 0;
-
-          li {
-            /* width: 100%; */
-
-            .item-container {
-              display: flex;
-              justify-content: space-between;
-              /* flex-direction: row; */
-              text-transform: uppercase;
-              color: var(--black);
-
-              .left {
-                img {
-                  width: 64px;
-                  height: 64px;
-                }
-              }
-
-              .center {
-                flex: 1 1 auto;
-                padding: 0 10px;
-
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-
-                .name {
-                  font-size: 16px;
-                  font-weight: bold;
-                }
-
-                .price,
-                .delete {
-                  font-size: 12px;
-                  font-weight: 600;
-                }
-
-                .delete {
-                  text-decoration: underline;
-                }
-              }
-
-              .right {
-                width: 48px;
-                height: 32px;
-                background-color: #d5cdc4;
-                font-weight: 600;
-                font-size: 12px;
-                border-radius: 4px;
-                color: var(--black);
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-
-                .incremente,
-                .decremente {
-                  height: 100%;
-                  display: flex;
-                  width: 12px;
-                  justify-content: center;
-                  background-color: var(--black);
-                  color: var(--rose);
-                  align-items: center;
-                  cursor: pointer;
-                }
-
-                .incremente {
-                  border-top-right-radius: 4px;
-                  border-bottom-right-radius: 4px;
-                }
-
-                .decremente {
-                  border-top-left-radius: 4px;
-                  border-bottom-left-radius: 4px;
-                }
-              }
-            }
-          }
         }
       }
 

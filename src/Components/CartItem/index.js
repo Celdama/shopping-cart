@@ -1,4 +1,12 @@
 import React from 'react';
+import {
+  Wrapper,
+  Content,
+  Thumbnail,
+  ContentProductInfo,
+  ContentQuantity,
+  QuantityBtn,
+} from './cartItem.style';
 
 const CartItem = ({
   cover,
@@ -10,27 +18,33 @@ const CartItem = ({
   incrementeProductQuantity,
 }) => {
   return (
-    <div className='item-container'>
-      <div className='left'>
-        <img src={cover} alt='' />
-      </div>
-      <div className='center'>
-        <span className='name'>{name}</span>
-        <span className='price'>$ {price}.00 USD</span>
-        <span onClick={deleteProductFromCart} className='delete'>
-          REMOVE
-        </span>
-      </div>
-      <div className='right'>
-        <span onClick={decrementeProductQuantity} className='decremente'>
-          -
-        </span>
-        <span>{quantity}</span>
-        <span onClick={incrementeProductQuantity} className='incremente'>
-          +
-        </span>
-      </div>
-    </div>
+    <Wrapper>
+      <Content>
+        <Thumbnail src={cover} alt='product' />
+        <ContentProductInfo>
+          <span className='name'>{name}</span>
+          <span className='price'>$ {price}.00 USD</span>
+          <span onClick={deleteProductFromCart} className='delete'>
+            REMOVE
+          </span>
+        </ContentProductInfo>
+        <ContentQuantity>
+          <QuantityBtn
+            onClick={decrementeProductQuantity}
+            className='decremente'
+          >
+            -
+          </QuantityBtn>
+          <span>{quantity}</span>
+          <QuantityBtn
+            onClick={incrementeProductQuantity}
+            className='incremente'
+          >
+            +
+          </QuantityBtn>
+        </ContentQuantity>
+      </Content>
+    </Wrapper>
   );
 };
 
