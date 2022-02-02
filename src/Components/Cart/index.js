@@ -1,40 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Wrapper, Content } from './cart.style';
 
 const Cart = ({ cartItems, displayCart }) => {
-  // console.log(cartItems);
-  const [globalCart, setGlobalCart] = useState([]);
-  const [cartProductsQuantity, setCartProductsQuantity] = useState([
-    {
-      name: 'mango',
-      quantity: 0,
-    },
-    {
-      name: 'banana',
-      quantity: 0,
-    },
-  ]);
-
   const cardItemsList = cartItems.map((item) => {
     return (
       <div>
-        <li>
-          {item.name} : $ {item.price}
-        </li>
+        {!!item.quantity && (
+          <li>
+            {item.name} : $ {item.price} <span>{item.quantity}</span>
+          </li>
+        )}
       </div>
     );
   });
 
   const sum = cartItems
-    .map((item) => item.price)
+    .map((item) => item.quantity > 0 && item.price)
     .reduce((prev, curr) => prev + curr, 0);
 
   return (
     <Wrapper displayCart={displayCart}>
       <Content>
         <h4>Your Cart</h4>
-        <ul>{cardItemsList ? cardItemsList : 'no product'}</ul>
-        <p>Subtotal : ${sum}</p>
+        {sum > 0 ? (
+          <div>
+            <ul>{cardItemsList}</ul>
+            <p>Subtotal : ${sum}</p>
+          </div>
+        ) : (
+          <p>sorry, there's nothing here yet.</p>
+        )}
       </Content>
     </Wrapper>
   );
