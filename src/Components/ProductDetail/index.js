@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { products } from '../../productData';
 import { getCoverProductByKey } from '../../Helpers/getProductImages';
-import { Wrapper, Content, Image } from './productDetail.style';
+import { Wrapper, Content } from './productDetail.style';
 
+import ProductDetailImg from '../ProductDetailImg';
 import ProductDetailSavour from '../ProductDetailSavour';
 import ProductDetailTitle from '../ProductDetailTitle';
 import ProductDetailDesc from '../ProductDetailDesc';
@@ -93,13 +94,12 @@ const ProductDetail = ({ addProductToCart }) => {
   });
 
   const { name, price, description } = currentProduct;
+  const { img } = currentProductImage;
 
   return (
     <Wrapper>
       <Content>
-        <div className='left'>
-          <Image key={activeImgId} src={currentProductImage.img} />
-        </div>
+        <ProductDetailImg key={activeImgId} src={img} />
         <div className='right'>
           <div className='product-list'>
             <ul>{listAllProducts}</ul>

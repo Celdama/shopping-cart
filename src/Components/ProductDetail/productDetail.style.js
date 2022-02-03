@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
-  /* padding: 0px 10px; */
-
   .compare-container {
     display: flex;
     height: 100vh;
@@ -62,25 +60,6 @@ export const Content = styled.div`
         justify-content: space-around;
         align-items: center;
       }
-    }
-  }
-`;
-
-export const Image = styled.img`
-  height: 90vh;
-  width: 44vw;
-  min-height: 640px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  animation: fadeIn 5s;
-
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
     }
   }
 `;
