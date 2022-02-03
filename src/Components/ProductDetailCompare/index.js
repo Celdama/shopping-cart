@@ -32,7 +32,15 @@ const ProductDetailCompare = ({ title, sugar, calories, tala }) => {
           {title}
         </motion.h2>
         <motion.div
-          variants={getChildrenBasicMotionEffect(0, 0, 5, 1, 'backInOut', 0.4)}
+          variants={getChildrenBasicMotionEffect(
+            0,
+            0,
+            5,
+            1,
+            1,
+            'backInOut',
+            0.4
+          )}
           className='container'
         >
           <div className='sugar'>
