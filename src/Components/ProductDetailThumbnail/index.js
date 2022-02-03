@@ -7,8 +7,23 @@ const ProductDetailThumbnails = ({
   handleChangeCurrentImage,
   img,
 }) => {
+  const children = {
+    hidden: {
+      y: 50,
+      opacity: 0,
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        transition: 'backInOut',
+        duration: 0.5,
+      },
+    },
+  };
   return (
     <Thumbnail
+      variants={children}
       color={color}
       isCurrent={isCurrent}
       src={img}

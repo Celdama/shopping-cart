@@ -19,6 +19,8 @@ import Ingredient from '../Ingredient';
 import Space from '../Space';
 import ProductDetailCompare from '../ProductDetailCompare';
 import DisplayProduct from '../DisplayProduct';
+import { motion } from 'framer-motion';
+import { useMotionEffect } from '../../hooks/useMotionEffect';
 
 const ProductDetail = ({ addProductToCart }) => {
   const [currentProduct, setCurrentProduct] = useState({});
@@ -29,6 +31,19 @@ const ProductDetail = ({ addProductToCart }) => {
 
   const location = useLocation();
   const { id: locationId } = location.state || [];
+
+  const [controls, ref] = useMotionEffect();
+
+  const container = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.2,
+        staggerChildren: 0.2,
+      },
+    },
+  };
 
   useEffect(() => {
     products.forEach((product) => {
@@ -101,7 +116,6 @@ const ProductDetail = ({ addProductToCart }) => {
 
   const { name, price, description, id } = currentProduct;
   const { img } = currentProductImage;
-  console.log(currentProduct);
 
   return (
     <Wrapper>
@@ -121,7 +135,16 @@ const ProductDetail = ({ addProductToCart }) => {
                 addProductToCart={() => addProductToCart(currentProduct)}
               />
             </div>
-            <div className='info-thumbnails'>{thumbnailProducts}</div>
+
+            <motion.div
+              ref={ref}
+              variants={container}
+              animate={controls}
+              initial='hidden'
+              className='info-thumbnails'
+            >
+              {thumbnailProducts}
+            </motion.div>
           </ProductInfo>
         </ProductDetailInfo>
       </Content>
