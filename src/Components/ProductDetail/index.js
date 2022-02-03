@@ -18,7 +18,6 @@ import Ingredient from '../Ingredient';
 import ProductThumbnails from '../ProductThumbnails';
 import Space from '../Space';
 import ProductDetailCompare from '../ProductDetailCompare';
-import DisplayProduct from '../DisplayProduct';
 
 const ProductDetail = ({ addProductToCart }) => {
   const [currentProduct, setCurrentProduct] = useState({});
@@ -131,7 +130,7 @@ const ProductDetail = ({ addProductToCart }) => {
           tala={false}
         />
       </div>
-      <DisplayProduct />
+      {/* <DisplayProduct /> */}
     </Wrapper>
   );
 };
