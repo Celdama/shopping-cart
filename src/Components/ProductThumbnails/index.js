@@ -1,5 +1,9 @@
 import React from 'react';
 import { Wrapper, Thumbnail } from './productThumbnails.style';
+import {
+  getContainerBasicMotionEffect,
+  getChildrenBasicMotionEffect,
+} from '../../Helpers/basicMotionEffect';
 
 const ProductThumbnails = ({
   productImages,
@@ -8,38 +12,12 @@ const ProductThumbnails = ({
   activeImgId,
   handleChangeCurrentImage,
 }) => {
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const children = {
-    hidden: {
-      y: 0,
-      opacity: 0,
-    },
-    visible: {
-      y: 5,
-      opacity: 1,
-      transition: {
-        transition: 'backInOut',
-        duration: 0.4,
-      },
-    },
-  };
-
   const thumbnailProducts = productImages.map((src) => {
     const { id, img } = src;
 
     return (
       <Thumbnail
-        variants={children}
+        variants={getChildrenBasicMotionEffect(0, 0, 5, 1, 'backInOut', 0.4)}
         color={color}
         $currentProduct={currentProduct}
         key={id}
@@ -53,7 +31,7 @@ const ProductThumbnails = ({
   return (
     <Wrapper
       key={currentProduct.id}
-      variants={container}
+      variants={getContainerBasicMotionEffect(0, 1, 0, 0.2, 0.2)}
       animate='visible'
       initial='hidden'
     >
