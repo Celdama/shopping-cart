@@ -1,6 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Wrapper, Title } from './productDetailTitle.style';
+import { Title } from './productDetailTitle.style';
 import { useMotionEffect } from '../../hooks/useMotionEffect';
 
 const ProductDetailTitle = ({ key, title }) => {
