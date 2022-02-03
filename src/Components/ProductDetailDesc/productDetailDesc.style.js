@@ -26,4 +26,5 @@ export const Button = styled.button`
   text-transform: uppercase;
   border: 1px solid var(--rose);
   color: var(--rose);
+  cursor: pointer;
 `;

@@ -2,7 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { products } from '../../productData';
 import { getCoverProductByKey } from '../../Helpers/getProductImages';
-import { Wrapper, Content } from './productDetail.style';
+import {
+  Wrapper,
+  Content,
+  ProductDetailInfo,
+  ProductList,
+  ProductInfo,
+} from './productDetail.style';
 
 import ProductDetailImg from '../ProductDetailImg';
 import ProductDetailSavour from '../ProductDetailSavour';
@@ -100,13 +106,12 @@ const ProductDetail = ({ addProductToCart }) => {
     <Wrapper>
       <Content>
         <ProductDetailImg key={activeImgId} src={img} />
-        <div className='right'>
-          <div className='product-list'>
+        <ProductDetailInfo>
+          <ProductList>
             <ul>{listAllProducts}</ul>
-          </div>
-
-          <div className='product-info'>
-            <div className='product-text'>
+          </ProductList>
+          <ProductInfo>
+            <div className='info-text'>
               <ProductDetailTitle title={name} />
               <ProductDetailDesc
                 price={price}
@@ -115,9 +120,9 @@ const ProductDetail = ({ addProductToCart }) => {
                 addProductToCart={() => addProductToCart(currentProduct)}
               />
             </div>
-            <div className='product-photos'>{thumbnailProducts}</div>
-          </div>
-        </div>
+            <div className='info-thumbnails'>{thumbnailProducts}</div>
+          </ProductInfo>
+        </ProductDetailInfo>
       </Content>
       <Ingredient
         text='Zero Added Sugar'
