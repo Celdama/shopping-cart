@@ -2,25 +2,13 @@ import React from 'react';
 import { Wrapper } from './productDetailImg.style';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const ProductDetailImg = ({ key, src }) => {
+const ProductDetailImg = ({ src }) => {
   const variants = {
-    enter: (direction) => {
-      return {
-        y: direction > 0 ? 1000 : -1000,
-        opacity: 0,
-      };
+    hidden: {
+      opacity: 0,
     },
-    center: {
-      zIndex: 1,
-      y: 0,
+    visible: {
       opacity: 1,
-    },
-    exit: (direction) => {
-      return {
-        zIndex: 0,
-        y: direction < 0 ? 1000 : -1000,
-        opacity: 0,
-      };
     },
   };
 
@@ -29,19 +17,15 @@ const ProductDetailImg = ({ key, src }) => {
       <AnimatePresence>
         <motion.img
           className='product-img-xl'
-          key={key}
+          key={src}
           src={src}
           variants={variants}
-          initial='enter'
-          animate='center'
-          exit='exit'
+          initial='hidden'
+          animate='visible'
           transition={{
             x: { type: 'spring', stiffness: 300, damping: 30 },
-            opacity: { duration: 0.1 },
+            opacity: { duration: 0.8 },
           }}
-          drag='y'
-          dragConstraints={{ top: 0, bottom: 0 }}
-          dragElastic={1}
         />
       </AnimatePresence>
     </Wrapper>

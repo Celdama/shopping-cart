@@ -1,10 +1,7 @@
 import React from 'react';
 import { Title } from './productDetailTitle.style';
-import { useMotionEffect } from '../../hooks/useMotionEffect';
 
-const ProductDetailTitle = ({ key, title }) => {
-  const [controls, ref] = useMotionEffect();
-
+const ProductDetailTitle = ({ title }) => {
   const titleStyle = {
     hidden: {
       y: 50,
@@ -21,13 +18,7 @@ const ProductDetailTitle = ({ key, title }) => {
   };
 
   return (
-    <Title
-      ref={ref}
-      key={key}
-      variants={titleStyle}
-      animate={controls}
-      initial='hidden'
-    >
+    <Title key={title} variants={titleStyle} animate='visible' initial='hidden'>
       {title}
     </Title>
   );

@@ -16,6 +16,7 @@ import ProductDetailTitle from '../ProductDetailTitle';
 import ProductDetailDesc from '../ProductDetailDesc';
 import ProductDetailThumbnails from '../ProductDetailThumbnail';
 import Ingredient from '../Ingredient';
+import ProductThumbnails from '../ProductThumbnails';
 import Space from '../Space';
 import ProductDetailCompare from '../ProductDetailCompare';
 import DisplayProduct from '../DisplayProduct';
@@ -110,24 +111,25 @@ const ProductDetail = ({ addProductToCart }) => {
         isCurrent={id === activeImgId}
         handleChangeCurrentImage={() => handleChangeCurrentImage(src)}
         img={img}
+        // id={id}
       />
     );
   });
 
-  const { name, price, description, id } = currentProduct;
+  const { name, price, description } = currentProduct;
   const { img } = currentProductImage;
 
   return (
     <Wrapper>
-      <Content>
-        <ProductDetailImg key={activeImgId} src={img} />
+      <Content ref={ref}>
+        <ProductDetailImg src={img} />
         <ProductDetailInfo>
           <ProductList>
             <ul>{listAllProducts}</ul>
           </ProductList>
           <ProductInfo>
             <div className='info-text'>
-              <ProductDetailTitle key={id} title={name} />
+              <ProductDetailTitle title={name} />
               <ProductDetailDesc
                 price={price}
                 desc={description}
@@ -137,10 +139,9 @@ const ProductDetail = ({ addProductToCart }) => {
             </div>
 
             <motion.div
-              ref={ref}
               variants={container}
-              animate={controls}
               initial='hidden'
+              animate='visible'
               className='info-thumbnails'
             >
               {thumbnailProducts}
