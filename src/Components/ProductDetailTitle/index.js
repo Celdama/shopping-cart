@@ -1,7 +1,9 @@
 import React from 'react';
 import { Title } from './productDetailTitle.style';
 
-const ProductDetailTitle = ({ title }) => {
+const ProductDetailTitle = ({ currentProduct }) => {
+  const { name } = currentProduct;
+
   const titleStyle = {
     hidden: {
       y: 50,
@@ -18,8 +20,8 @@ const ProductDetailTitle = ({ title }) => {
   };
 
   return (
-    <Title key={title} variants={titleStyle} animate='visible' initial='hidden'>
-      {title}
+    <Title key={name} variants={titleStyle} animate='visible' initial='hidden'>
+      {name}
     </Title>
   );
 };

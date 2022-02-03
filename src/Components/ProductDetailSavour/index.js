@@ -5,7 +5,7 @@ import { useMotionEffect } from '../../hooks/useMotionEffect';
 const ProductDetailSavour = ({
   name,
   handleCurrentProduct,
-  current,
+  isCurrent,
   color,
 }) => {
   const [controls, ref] = useMotionEffect();
@@ -30,9 +30,9 @@ const ProductDetailSavour = ({
     <Item
       ref={ref}
       variants={elementStyle}
+      style={isCurrent ? { borderBottom: `2px solid ${color}` } : {}}
       animate={controls}
       initial='hidden'
-      current={current}
       color={color}
       onClick={handleCurrentProduct}
     >

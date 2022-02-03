@@ -95,7 +95,7 @@ const ProductDetail = ({ addProductToCart }) => {
         key={id}
         name={name}
         handleCurrentProduct={() => handleCurrentProduct(name)}
-        current={isCurrent}
+        isCurrent={isCurrent}
       />
     );
   });
@@ -111,12 +111,10 @@ const ProductDetail = ({ addProductToCart }) => {
         isCurrent={id === activeImgId}
         handleChangeCurrentImage={() => handleChangeCurrentImage(src)}
         img={img}
-        // id={id}
       />
     );
   });
 
-  const { name, price, description } = currentProduct;
   const { img } = currentProductImage;
 
   return (
@@ -129,10 +127,9 @@ const ProductDetail = ({ addProductToCart }) => {
           </ProductList>
           <ProductInfo>
             <div className='info-text'>
-              <ProductDetailTitle title={name} />
+              <ProductDetailTitle currentProduct={currentProduct} />
               <ProductDetailDesc
-                price={price}
-                desc={description}
+                currentProduct={currentProduct}
                 handleCurrentProduct={handleCurrentProduct}
                 addProductToCart={() => addProductToCart(currentProduct)}
               />

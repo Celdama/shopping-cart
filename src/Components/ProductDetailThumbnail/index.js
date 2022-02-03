@@ -6,7 +6,6 @@ const ProductDetailThumbnails = ({
   isCurrent,
   handleChangeCurrentImage,
   img,
-  id,
 }) => {
   const children = {
     hidden: {
@@ -22,14 +21,13 @@ const ProductDetailThumbnails = ({
       },
     },
   };
+
   return (
     <Thumbnail
-      // key={id}
       color={color}
-      isCurrent={isCurrent}
+      style={isCurrent ? { outline: `1px solid ${color}` } : {}}
       src={img}
       variants={children}
-      className='thumbnail'
       alt='thumbnail'
       onClick={handleChangeCurrentImage}
     />

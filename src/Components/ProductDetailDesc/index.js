@@ -1,15 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useMotionEffect } from '../../hooks/useMotionEffect';
 import { Wrapper, Content, Button } from './productDetailDesc.style';
 
 const ProductDetailDesc = ({
-  price,
-  desc,
   handleCurrentProduct,
   addProductToCart,
+  currentProduct,
 }) => {
-  const [controls, ref] = useMotionEffect();
+  const { id, price, description } = currentProduct;
 
   const container = {
     hidden: { opacity: 0 },
@@ -39,17 +37,12 @@ const ProductDetailDesc = ({
 
   return (
     <Wrapper>
-      <Content
-        ref={ref}
-        variants={container}
-        animate={controls}
-        initial='hidden'
-      >
+      <Content key={id} variants={container} animate='visible' initial='hidden'>
         <motion.p variants={children} className='product-price'>
           $ {price}.00 USD
         </motion.p>
         <motion.p variants={children} className='product-desc'>
-          {desc}
+          {description}
         </motion.p>
         <motion.p variants={children} className='product-marketing'>
           can't decide which flavor is right for you ? <br /> try our{' '}
