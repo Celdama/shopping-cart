@@ -1,6 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Wrapper, Content, Button } from './productDetailDesc.style';
+import {
+  getContainerBasicMotionEffect,
+  getChildrenBasicMotionEffect,
+} from '../../Helpers/shopPageMotionEffect';
 
 const ProductDetailDesc = ({
   handleCurrentProduct,
@@ -9,48 +13,71 @@ const ProductDetailDesc = ({
 }) => {
   const { id, price, description } = currentProduct;
 
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const children = {
-    hidden: {
-      y: 50,
-      opacity: 0,
-    },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        transition: 'backInOut',
-        duration: 0.5,
-      },
-    },
-  };
-
   return (
     <Wrapper>
-      <Content key={id} variants={container} animate='visible' initial='hidden'>
-        <motion.p variants={children} className='product-price'>
+      <Content
+        key={id}
+        variants={getContainerBasicMotionEffect(0, 1, 0, 0.2, 0.2)}
+        animate='visible'
+        initial='hidden'
+      >
+        <motion.p
+          variants={getChildrenBasicMotionEffect(
+            50,
+            0,
+            0,
+            1,
+            0,
+            'backInOut',
+            0.5
+          )}
+          className='product-price'
+        >
           $ {price}.00 USD
         </motion.p>
-        <motion.p variants={children} className='product-desc'>
+        <motion.p
+          variants={getChildrenBasicMotionEffect(
+            50,
+            0,
+            0,
+            1,
+            0,
+            'backInOut',
+            0.5
+          )}
+          className='product-desc'
+        >
           {description}
         </motion.p>
-        <motion.p variants={children} className='product-marketing'>
+        <motion.p
+          variants={getChildrenBasicMotionEffect(
+            50,
+            0,
+            0,
+            1,
+            0,
+            'backInOut',
+            0.5
+          )}
+          className='product-marketing'
+        >
           can't decide which flavor is right for you ? <br /> try our{' '}
           <span onClick={() => handleCurrentProduct('variety')}>
             sample pack
           </span>
         </motion.p>
-        <Button variants={children} onClick={addProductToCart}>
+        <Button
+          variants={getChildrenBasicMotionEffect(
+            50,
+            0,
+            0,
+            1,
+            0,
+            'backInOut',
+            0.5
+          )}
+          onClick={addProductToCart}
+        >
           add to card
         </Button>
       </Content>
