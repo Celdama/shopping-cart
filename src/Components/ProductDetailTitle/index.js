@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Wrapper } from './productDetailTitle.style';
+import { Wrapper, Title } from './productDetailTitle.style';
 import { useMotionEffect } from '../../hooks/useMotionEffect';
 
 const ProductDetailTitle = ({ key, title }) => {
@@ -22,17 +22,15 @@ const ProductDetailTitle = ({ key, title }) => {
   };
 
   return (
-    <Wrapper>
-      <motion.h3
-        ref={ref}
-        key={key}
-        variants={titleStyle}
-        animate={controls}
-        initial='hidden'
-      >
-        {title}
-      </motion.h3>
-    </Wrapper>
+    <Title
+      ref={ref}
+      key={key}
+      variants={titleStyle}
+      animate={controls}
+      initial='hidden'
+    >
+      {title}
+    </Title>
   );
 };
 
