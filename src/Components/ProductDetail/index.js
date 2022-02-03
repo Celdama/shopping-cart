@@ -99,8 +99,9 @@ const ProductDetail = ({ addProductToCart }) => {
     );
   });
 
-  const { name, price, description } = currentProduct;
+  const { name, price, description, id } = currentProduct;
   const { img } = currentProductImage;
+  console.log(currentProduct);
 
   return (
     <Wrapper>
@@ -112,7 +113,7 @@ const ProductDetail = ({ addProductToCart }) => {
           </ProductList>
           <ProductInfo>
             <div className='info-text'>
-              <ProductDetailTitle title={name} />
+              <ProductDetailTitle key={id} title={name} />
               <ProductDetailDesc
                 price={price}
                 desc={description}
