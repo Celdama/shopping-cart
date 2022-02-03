@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { GlobalStyle } from './GlobalStyle';
+import { nanoid } from 'nanoid';
 import NavBar from './Components/Navbar';
 import Home from './Components/Home';
 import ScrollToTop from './Components/ScrollToTop';
@@ -12,30 +13,35 @@ const App = () => {
   const [numberOfCartItems, setNumberOfCartItems] = useState(0);
   const [cartItems, setCartItems] = useState([
     {
+      id: nanoid(),
       name: 'mango',
       quantity: 0,
       price: 29,
       img: './Images/products/mango/mainImg.jpg',
     },
     {
+      id: nanoid(),
       name: 'banana',
       quantity: 0,
       price: 29,
       img: './Images/products/banana/mainImg.jpg',
     },
     {
+      id: nanoid(),
       name: 'pineapple',
       quantity: 0,
       price: 29,
       img: './Images/products/pineapple/mainImg.jpg',
     },
     {
+      id: nanoid(),
       name: 'pitahaya',
       quantity: 0,
       price: 29,
       img: './Images/products/pitahaya/mainImg.jpg',
     },
     {
+      id: nanoid(),
       name: 'variety',
       quantity: 0,
       price: 29,

@@ -21,12 +21,13 @@ const Cart = ({
   decrementeProductQuantity,
 }) => {
   const cardItemsList = cartItems.map((item) => {
-    const { quantity, name, price } = item;
+    const { id, quantity, name, price } = item;
 
     return (
       <Item quantity={quantity}>
         {!!quantity && (
           <CartItem
+            key={id}
             thumbnail={getThumbnailProductByKey(name)}
             name={name}
             price={price}
@@ -40,7 +41,7 @@ const Cart = ({
     );
   });
 
-  const sum = cartItems
+  const subTotalProductCart = cartItems
     .map(({ quantity, price }) => quantity > 0 && price * quantity)
     .reduce((prev, curr) => prev + curr, 0);
 
@@ -50,12 +51,12 @@ const Cart = ({
         <CartHeader handleDisplayCart={handleDisplayCart} />
         <ContentCart className='content-cart'>
           <CartItemsContainer className='container'>
-            {sum > 0 ? (
+            {subTotalProductCart ? (
               <div>
                 <ListItems>
                   <ul>{cardItemsList}</ul>
                 </ListItems>
-                <CartCheckout sum={sum} />
+                <CartCheckout subTotal={subTotalProductCart} />
               </div>
             ) : (
               <p className='empty-product'>sorry, there's nothing here yet.</p>
