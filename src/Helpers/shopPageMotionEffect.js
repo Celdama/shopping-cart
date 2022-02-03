@@ -23,6 +23,7 @@ const getChildrenBasicMotionEffect = (
   opacityFrom,
   yTo,
   opacityTo,
+  delay,
   transition,
   duration
 ) => {
@@ -35,6 +36,7 @@ const getChildrenBasicMotionEffect = (
       y: yTo,
       opacity: opacityTo,
       transition: {
+        delay,
         transition,
         duration,
       },
