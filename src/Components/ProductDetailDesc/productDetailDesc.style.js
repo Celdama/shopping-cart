@@ -1,23 +1,27 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const Wrapper = styled.div`
   height: 100%;
   width: 100%;
 `;
 
-export const Content = styled.div`
+export const Content = styled(motion.div)`
   display: flex;
   height: 100%;
-  width: 60%;
   flex-direction: column;
   justify-content: space-between;
 
   span {
     cursor: pointer;
   }
+
+  .product-desc {
+    width: 60%;
+  }
 `;
 
-export const Button = styled.button`
+export const Button = styled(motion.button)`
   width: 280px;
   height: 64px;
   background-color: transparent;
