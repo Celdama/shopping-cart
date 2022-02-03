@@ -1,26 +1,17 @@
 import React from 'react';
 import { Title } from './productDetailTitle.style';
+import { getTitleProductShopPageEffect } from '../../Helpers/basicMotionEffect';
 
 const ProductDetailTitle = ({ currentProduct }) => {
   const { name } = currentProduct;
 
-  const titleStyle = {
-    hidden: {
-      y: 50,
-      opacity: 0,
-    },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        transition: 'ease',
-        duration: 0.4,
-      },
-    },
-  };
-
   return (
-    <Title key={name} variants={titleStyle} animate='visible' initial='hidden'>
+    <Title
+      key={name}
+      variants={getTitleProductShopPageEffect()}
+      animate='visible'
+      initial='hidden'
+    >
       {name}
     </Title>
   );
