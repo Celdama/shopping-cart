@@ -14,7 +14,7 @@ const ProductThumbnails = ({
       opacity: 1,
       transition: {
         delayChildren: 0.2,
-        staggerChildren: 0.4,
+        staggerChildren: 0.2,
       },
     },
   };
@@ -29,7 +29,7 @@ const ProductThumbnails = ({
       opacity: 1,
       transition: {
         transition: 'backInOut',
-        duration: 1,
+        duration: 0.4,
       },
     },
   };
