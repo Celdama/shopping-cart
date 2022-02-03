@@ -58,12 +58,4 @@ export const ProductInfo = styled.div`
   .info-text {
     width: 80%;
   }
-
-  .info-thumbnails {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  }
 `;

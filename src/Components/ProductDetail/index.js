@@ -14,14 +14,11 @@ import ProductDetailImg from '../ProductDetailImg';
 import ProductDetailSavour from '../ProductDetailSavour';
 import ProductDetailTitle from '../ProductDetailTitle';
 import ProductDetailDesc from '../ProductDetailDesc';
-import ProductDetailThumbnails from '../ProductDetailThumbnail';
 import Ingredient from '../Ingredient';
 import ProductThumbnails from '../ProductThumbnails';
 import Space from '../Space';
 import ProductDetailCompare from '../ProductDetailCompare';
 import DisplayProduct from '../DisplayProduct';
-import { motion } from 'framer-motion';
-import { useMotionEffect } from '../../hooks/useMotionEffect';
 
 const ProductDetail = ({ addProductToCart }) => {
   const [currentProduct, setCurrentProduct] = useState({});
@@ -32,19 +29,6 @@ const ProductDetail = ({ addProductToCart }) => {
 
   const location = useLocation();
   const { id: locationId } = location.state || [];
-
-  const [controls, ref] = useMotionEffect();
-
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.2,
-      },
-    },
-  };
 
   useEffect(() => {
     products.forEach((product) => {
@@ -100,27 +84,10 @@ const ProductDetail = ({ addProductToCart }) => {
     );
   });
 
-  const thumbnailProducts = allProductsImages.map((src) => {
-    const { id, img } = src;
-
-    return (
-      <ProductDetailThumbnails
-        color={colors[currentProduct.name]}
-        currentProduct={currentProduct}
-        key={id}
-        isCurrent={id === activeImgId}
-        handleChangeCurrentImage={() => handleChangeCurrentImage(src)}
-        img={img}
-      />
-    );
-  });
-
-  const { img } = currentProductImage;
-
   return (
     <Wrapper>
-      <Content ref={ref}>
-        <ProductDetailImg src={img} />
+      <Content>
+        <ProductDetailImg currentProductImage={currentProductImage} />
         <ProductDetailInfo>
           <ProductList>
             <ul>{listAllProducts}</ul>
@@ -134,15 +101,13 @@ const ProductDetail = ({ addProductToCart }) => {
                 addProductToCart={() => addProductToCart(currentProduct)}
               />
             </div>
-
-            <motion.div
-              variants={container}
-              initial='hidden'
-              animate='visible'
-              className='info-thumbnails'
-            >
-              {thumbnailProducts}
-            </motion.div>
+            <ProductThumbnails
+              color={colors[currentProduct.name]}
+              currentProduct={currentProduct}
+              productImages={allProductsImages}
+              activeImgId={activeImgId}
+              handleChangeCurrentImage={handleChangeCurrentImage}
+            />
           </ProductInfo>
         </ProductDetailInfo>
       </Content>

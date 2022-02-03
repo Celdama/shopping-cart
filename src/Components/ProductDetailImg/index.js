@@ -2,7 +2,8 @@ import React from 'react';
 import { Wrapper } from './productDetailImg.style';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const ProductDetailImg = ({ src }) => {
+const ProductDetailImg = ({ currentProductImage }) => {
+  const { img } = currentProductImage;
   const variants = {
     hidden: {
       opacity: 0,
@@ -17,8 +18,8 @@ const ProductDetailImg = ({ src }) => {
       <AnimatePresence>
         <motion.img
           className='product-img-xl'
-          key={src}
-          src={src}
+          key={img}
+          src={img}
           variants={variants}
           initial='hidden'
           animate='visible'
