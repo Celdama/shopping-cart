@@ -59,8 +59,20 @@ const getTitleProductShopPageEffect = () => {
   };
 };
 
+const getMainImgProductShopPageEffect = () => {
+  return {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+    },
+  };
+};
+
 export {
   getContainerBasicMotionEffect,
   getChildrenBasicMotionEffect,
   getTitleProductShopPageEffect,
+  getMainImgProductShopPageEffect,
 };

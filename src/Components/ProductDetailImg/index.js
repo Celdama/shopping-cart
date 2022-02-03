@@ -1,17 +1,10 @@
 import React from 'react';
 import { Wrapper } from './productDetailImg.style';
 import { motion, AnimatePresence } from 'framer-motion';
+import { getMainImgProductShopPageEffect } from '../../Helpers/shopPageMotionEffect';
 
 const ProductDetailImg = ({ currentProductImage }) => {
   const { img } = currentProductImage;
-  const variants = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-    },
-  };
 
   return (
     <Wrapper>
@@ -20,7 +13,7 @@ const ProductDetailImg = ({ currentProductImage }) => {
           className='product-img-xl'
           key={img}
           src={img}
-          variants={variants}
+          variants={getMainImgProductShopPageEffect()}
           initial='hidden'
           animate='visible'
           transition={{

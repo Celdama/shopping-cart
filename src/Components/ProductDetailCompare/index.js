@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import {
   getContainerBasicMotionEffect,
   getChildrenBasicMotionEffect,
-} from '../../Helpers/basicMotionEffect';
+} from '../../Helpers/shopPageMotionEffect';
 
 const ProductDetailCompare = ({ title, sugar, calories, tala }) => {
   const [controls, ref] = useMotionEffect();

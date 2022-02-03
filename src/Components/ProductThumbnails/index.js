@@ -3,7 +3,7 @@ import { Wrapper, Thumbnail } from './productThumbnails.style';
 import {
   getContainerBasicMotionEffect,
   getChildrenBasicMotionEffect,
-} from '../../Helpers/basicMotionEffect';
+} from '../../Helpers/shopPageMotionEffect';
 
 const ProductThumbnails = ({
   productImages,
