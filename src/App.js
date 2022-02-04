@@ -7,6 +7,7 @@ import Home from './Components/Home';
 import ScrollToTop from './Components/ScrollToTop';
 import ProductDetail from './Components/ProductDetail';
 import Cart from './Components/Cart';
+import Checkout from './Components/Checkout';
 
 const App = () => {
   const [displayCart, setDisplayCart] = useState(false);
@@ -124,6 +125,7 @@ const App = () => {
             path='/shop'
             element={<ProductDetail addProductToCart={addProductToCart} />}
           />
+          <Route path='/checkout' element={<Checkout />} />
         </Routes>
         <Cart
           displayCart={displayCart}
