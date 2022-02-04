@@ -2,7 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Wrapper, Content, PriceInfo, Button } from './cartCheckout.style';
 
-const CartCheckout = ({ subTotal, cartItems, handleDisplayCart }) => {
+const CartCheckout = ({ subTotal, handleDisplayCart }) => {
+  const handleCartAndNav = () => {
+    handleDisplayCart();
+  };
+
   return (
     <Wrapper>
       <Content>
@@ -10,7 +14,7 @@ const CartCheckout = ({ subTotal, cartItems, handleDisplayCart }) => {
           <span>Subtotal</span>
           <span className='price'> $ {subTotal}.00 USD</span>
         </PriceInfo>
-        <Link onClick={handleDisplayCart} to={'checkout'}>
+        <Link onClick={handleCartAndNav} to={'checkout'}>
           <Button>checkout</Button>
         </Link>
       </Content>

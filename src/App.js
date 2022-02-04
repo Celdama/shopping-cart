@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Outlet } from 'react-router-dom';
 import { GlobalStyle } from './GlobalStyle';
 import { nanoid } from 'nanoid';
 import NavBar from './Components/Navbar';
@@ -111,20 +111,28 @@ const App = () => {
     setDisplayCart((prevState) => !prevState);
   };
 
+  const NavLayout = () => (
+    <>
+      <NavBar
+        numberOfCartItems={numberOfCartItems}
+        handleDisplayCart={handleDisplayCart}
+      />
+      <Outlet />
+    </>
+  );
+
   return (
     <div className='App'>
       <BrowserRouter>
         <ScrollToTop />
-        <NavBar
-          numberOfCartItems={numberOfCartItems}
-          handleDisplayCart={handleDisplayCart}
-        />
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route
-            path='/shop'
-            element={<ProductDetail addProductToCart={addProductToCart} />}
-          />
+          <Route path='/' element={<NavLayout />}>
+            <Route index element={<Home />} />
+            <Route
+              path='/shop'
+              element={<ProductDetail addProductToCart={addProductToCart} />}
+            />
+          </Route>
           <Route
             path='/checkout'
             element={<Checkout cartItems={cartItems} />}

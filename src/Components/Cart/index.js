@@ -56,7 +56,6 @@ const Cart = ({
                   <ul>{cardItemsList}</ul>
                 </ListItems>
                 <CartCheckout
-                  cartItems={cartItems}
                   subTotal={subTotal}
                   handleDisplayCart={handleDisplayCart}
                 />
