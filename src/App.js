@@ -125,7 +125,10 @@ const App = () => {
             path='/shop'
             element={<ProductDetail addProductToCart={addProductToCart} />}
           />
-          <Route path='/checkout' element={<Checkout />} />
+          <Route
+            path='/checkout'
+            element={<Checkout cartItems={cartItems} />}
+          />
         </Routes>
         <Cart
           displayCart={displayCart}

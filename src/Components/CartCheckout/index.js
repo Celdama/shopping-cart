@@ -10,11 +10,7 @@ const CartCheckout = ({ subTotal, cartItems, handleDisplayCart }) => {
           <span>Subtotal</span>
           <span className='price'> $ {subTotal}.00 USD</span>
         </PriceInfo>
-        <Link
-          onClick={handleDisplayCart}
-          to={'checkout'}
-          state={{ cartItems, subTotal }}
-        >
+        <Link onClick={handleDisplayCart} to={'checkout'}>
           <Button>checkout</Button>
         </Link>
       </Content>

@@ -11,6 +11,7 @@ import {
 import CartHeader from '../CartHeader';
 import CartItem from '../CartItem';
 import CartCheckout from '../CartCheckout';
+import getSubTotal from '../../Helpers/subTotalOrder';
 
 const Cart = ({
   cartItems,
@@ -41,9 +42,7 @@ const Cart = ({
     );
   });
 
-  const subTotalProductCart = cartItems
-    .map(({ quantity, price }) => quantity > 0 && price * quantity)
-    .reduce((prev, curr) => prev + curr, 0);
+  const subTotal = getSubTotal(cartItems);
 
   return (
     <Wrapper displayCart={displayCart}>
@@ -51,14 +50,14 @@ const Cart = ({
         <CartHeader handleDisplayCart={handleDisplayCart} />
         <ContentCart className='content-cart'>
           <CartItemsContainer className='container'>
-            {subTotalProductCart ? (
+            {subTotal ? (
               <div>
                 <ListItems>
                   <ul>{cardItemsList}</ul>
                 </ListItems>
                 <CartCheckout
                   cartItems={cartItems}
-                  subTotal={subTotalProductCart}
+                  subTotal={subTotal}
                   handleDisplayCart={handleDisplayCart}
                 />
               </div>

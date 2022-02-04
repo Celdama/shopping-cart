@@ -1,30 +1,35 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import getSubTotal from '../../Helpers/subTotalOrder';
 
-const Checkout = () => {
-  const location = useLocation();
-  const { cartItems, subTotal } = location.state;
-
+const Checkout = ({ cartItems }) => {
   const order = cartItems.map(({ quantity, name, price }) => {
     return (
       !!quantity && (
         <>
           <p>{name}</p>
           <p>{quantity}</p>
-          <p>$ {quantity * price}</p>
+          <p>$ {quantity * price}.00 USD</p>
           <br />
         </>
       )
     );
   });
 
+  const subTotal = getSubTotal(cartItems);
+
   return (
     <div style={{ textAlign: 'center' }}>
       <h1>Checkout page</h1>
       <div className='order'>
-        <h5>Check your order before buy</h5>
-        {order}
-        <p>Total Order : {subTotal}</p>
+        {subTotal ? (
+          <div>
+            <h5>Check your order before buy</h5>
+            <div>{order}</div>
+            <p>Total Order : $ {subTotal}.00 USD </p>
+          </div>
+        ) : (
+          <p>no order</p>
+        )}
       </div>
     </div>
   );
