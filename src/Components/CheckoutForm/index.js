@@ -18,8 +18,6 @@ const CheckoutForm = () => {
     discountCode: '',
   });
 
-
-
   const handleChange = (e) => {
     const { name, type, value, checked } = e.target;
 
@@ -52,15 +50,16 @@ const CheckoutForm = () => {
               <span>* Required</span>
             </div>
             <div className='section-body'>
-              <label htmlFor='email'>Email</label>
-              <input
-                onChange={handleChange}
-                // required
-                type='email'
-                placeholder='email'
-                name='email'
-                value={formData.email}
-              />
+              <div>
+                <label htmlFor='email'>Email *</label>
+                <input
+                  onChange={handleChange}
+                  // required
+                  type='email'
+                  name='email'
+                  value={formData.email}
+                />
+              </div>
             </div>
           </div>
           <div className='form-section'>
@@ -69,66 +68,62 @@ const CheckoutForm = () => {
               <span>* Required</span>
             </div>
             <div className='section-body'>
-              <label htmlFor='fullName'>Full Name</label>
-              <input
-                onChange={handleChange}
-                type='text'
-                name='fullName'
-                placeholder='full name'
-                value={formData.fullName}
-              />
-            </div>
-            <div>
-              <label htmlFor='adress'>Street Adress</label>
-              <input
-                onChange={handleChange}
-                type='text'
-                name='adress'
-                placeholder='street adress'
-                value={formData.adress}
-              />
-            </div>
-            <div>
               <div>
-                <label htmlFor='city'>City</label>
+                <label htmlFor='fullName'>Full Name *</label>
                 <input
                   onChange={handleChange}
                   type='text'
-                  name='city'
-                  placeholder='city'
-                  value={formData.city}
+                  name='fullName'
+                  value={formData.fullName}
                 />
               </div>
               <div>
-                <label htmlFor='state'>State</label>
+                <label htmlFor='adress'>Street Adress *</label>
                 <input
                   onChange={handleChange}
                   type='text'
-                  name='state'
-                  placeholder='state'
-                  value={formData.state}
+                  name='adress'
+                  value={formData.adress}
                 />
+              </div>
+              <div className='collapse-container'>
+                <div>
+                  <label htmlFor='city'>City *</label>
+                  <input
+                    onChange={handleChange}
+                    type='text'
+                    name='city'
+                    value={formData.city}
+                  />
+                </div>
+                <div>
+                  <label htmlFor='state'>State</label>
+                  <input
+                    onChange={handleChange}
+                    type='text'
+                    name='state'
+                    value={formData.state}
+                  />
+                </div>
+                <div>
+                  <label htmlFor='zip'>Zip *</label>
+                  <input
+                    onChange={handleChange}
+                    type='text'
+                    name='zip'
+                    value={formData.zip}
+                  />
+                </div>
               </div>
               <div>
-                <label htmlFor='zip'>Zip</label>
+                <label htmlFor='country'>Country *</label>
                 <input
                   onChange={handleChange}
                   type='text'
-                  name='zip'
-                  placeholder='zip'
-                  value={formData.zip}
+                  name='country'
+                  value={formData.country}
                 />
               </div>
-            </div>
-            <div>
-              <label htmlFor='country'>Country</label>
-              <input
-                onChange={handleChange}
-                type='text'
-                name='country'
-                placeholder='country'
-                value={formData.country}
-              />
             </div>
           </div>
           <div className='form-section'>
@@ -136,14 +131,16 @@ const CheckoutForm = () => {
               <h4>Shipping Method</h4>
             </div>
             <div className='section-body'>
-              <label htmlFor='freeShipping'>Free Shipping</label>
-              <input
-                onChange={handleChange}
-                type='checkbox'
-                name='freeShipping'
-                value={formData.freeShipping}
-                checked={formData.freeShipping}
-              />
+              <div>
+                <label htmlFor='freeShipping'>Free Shipping</label>
+                <input
+                  onChange={handleChange}
+                  type='checkbox'
+                  name='freeShipping'
+                  value={formData.freeShipping}
+                  checked={formData.freeShipping}
+                />
+              </div>
             </div>
           </div>
           <div className='form-section'>
@@ -152,35 +149,37 @@ const CheckoutForm = () => {
               <span>* Required</span>
             </div>
             <div className='section-body'>
-              <label htmlFor='cardNumber'>Email</label>
-              <input
-                onChange={handleChange}
-                type='number'
-                placeholder='card number'
-                name='cardNumber'
-                value={formData.cardNumber}
-              />
-            </div>
-            <div>
               <div>
-                <label htmlFor='expirationDate'>Expiration Date</label>
+                <label htmlFor='cardNumber'>Card Number *</label>
                 <input
                   onChange={handleChange}
                   type='number'
-                  name='expirationDatae'
-                  placeholder='MM / YY'
-                  value={formData.expirationDate}
+                  placeholder='1234 1234 1234 1234'
+                  name='cardNumber'
+                  value={formData.cardNumber}
                 />
               </div>
-              <div>
-                <label htmlFor='securityCode'>Security Code</label>
-                <input
-                  onChange={handleChange}
-                  type='number'
-                  name='securityCode'
-                  placeholder='MM / YY'
-                  value={formData.securityCode}
-                />
+              <div className='collapse-container'>
+                <div>
+                  <label htmlFor='expirationDate'>Expiration Date *</label>
+                  <input
+                    onChange={handleChange}
+                    type='number'
+                    name='expirationDatae'
+                    placeholder='MM / YY'
+                    value={formData.expirationDate}
+                  />
+                </div>
+                <div>
+                  <label htmlFor='securityCode'>Security Code *</label>
+                  <input
+                    onChange={handleChange}
+                    type='number'
+                    name='securityCode'
+                    placeholder='CVC'
+                    value={formData.securityCode}
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -200,9 +199,17 @@ const CheckoutForm = () => {
             </div>
           </div>
         </form>
-        <button form='form' type='submit'>
-          Place order
-        </button>
+        <div className='summary'>
+          <div className='summary-section'>
+            <div className='summary-header'>
+              <h4>Order Summary</h4>
+            </div>
+            <p>Total $ 400 USD</p>
+            <button form='form' type='submit'>
+              Place order
+            </button>
+          </div>
+        </div>
       </Content>
     </Wrapper>
   );
