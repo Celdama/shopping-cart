@@ -56,7 +56,11 @@ const Cart = ({
                 <ListItems>
                   <ul>{cardItemsList}</ul>
                 </ListItems>
-                <CartCheckout subTotal={subTotalProductCart} />
+                <CartCheckout
+                  cartItems={cartItems}
+                  subTotal={subTotalProductCart}
+                  handleDisplayCart={handleDisplayCart}
+                />
               </div>
             ) : (
               <p className='empty-product'>sorry, there's nothing here yet.</p>
