@@ -7,6 +7,4 @@ export const Wrapper = styled.div`
   padding: 20px;
 `;
 
-export const Content = styled.div`
-  outline: 1px solid blue;
-`;
+export const Content = styled.div``;
