@@ -51,7 +51,7 @@ Should also have a button next to it where you can go to the cart to checkout an
 
 - add About page
 - make shop page responsive
-- add checkout page
+- add checkout page [DONE]
 
 ## Component
 
