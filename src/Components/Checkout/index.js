@@ -1,5 +1,6 @@
 import React from 'react';
 import getSubTotal from '../../Helpers/subTotalOrder';
+import { Wrapper, Content } from './checkout.style';
 
 const Checkout = ({ cartItems }) => {
   const order = cartItems.map(({ quantity, name, price }) => {
@@ -18,20 +19,22 @@ const Checkout = ({ cartItems }) => {
   const subTotal = getSubTotal(cartItems);
 
   return (
-    <div style={{ textAlign: 'center' }}>
-      <h1>Checkout page</h1>
-      <div className='order'>
-        {subTotal ? (
-          <div>
-            <h5>Check your order before buy</h5>
-            <div>{order}</div>
-            <p>Total Order : $ {subTotal}.00 USD </p>
-          </div>
-        ) : (
-          <p>no order</p>
-        )}
-      </div>
-    </div>
+    <Wrapper>
+      <Content>
+        <h1>Checkout page</h1>
+        <div className='order'>
+          {subTotal ? (
+            <div>
+              <h5>Check your order before buy</h5>
+              <div>{order}</div>
+              <p>Total Order : $ {subTotal}.00 USD </p>
+            </div>
+          ) : (
+            <p>no order</p>
+          )}
+        </div>
+      </Content>
+    </Wrapper>
   );
 };
 
