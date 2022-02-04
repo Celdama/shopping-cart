@@ -22,7 +22,6 @@ const Checkout = ({ cartItems }) => {
   return (
     <Wrapper>
       <Content>
-        <h1>Checkout page</h1>
         {/* <div className='order'>
           {subTotal ? (
             <div>
