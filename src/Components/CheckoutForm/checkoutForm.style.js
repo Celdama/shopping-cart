@@ -30,6 +30,27 @@ export const Content = styled.div`
     }
 
     .section-body {
+      padding-top: 10px;
+      label {
+        font-weight: 500;
+        font-size: 14px;
+      }
+
+      .shipping {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 12px;
+
+        input {
+          margin: 0;
+        }
+
+        label  {
+          text-transform: uppercase;
+        }
+      }
+
       input {
         margin: 10px 0;
         padding: 8px 6px;
@@ -60,6 +81,35 @@ export const Content = styled.div`
         display: flex;
         flex-direction: column;
         margin: 10px;
+      }
+    }
+
+    .discount {
+      color: red;
+      padding: 0;
+
+      div {
+        padding: 0 12px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        margin: 0;
+
+        input {
+          flex: 1 1 auto;
+        }
+
+        button {
+          padding: 9px 15px;
+          border-radius: 3px;
+          border: none;
+          background-color: #3898ec;
+          color: #fff;
+          cursor: pointer;
+          flex-shrink: 0;
+        }
       }
     }
   }

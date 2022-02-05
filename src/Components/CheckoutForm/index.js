@@ -131,8 +131,7 @@ const CheckoutForm = () => {
               <h4>Shipping Method</h4>
             </div>
             <div className='section-body'>
-              <div>
-                <label htmlFor='freeShipping'>Free Shipping</label>
+              <div className='shipping'>
                 <input
                   onChange={handleChange}
                   type='checkbox'
@@ -140,6 +139,7 @@ const CheckoutForm = () => {
                   value={formData.freeShipping}
                   checked={formData.freeShipping}
                 />
+                <label htmlFor='freeShipping'>Free Shipping</label>
               </div>
             </div>
           </div>
@@ -188,14 +188,16 @@ const CheckoutForm = () => {
               <h4>Discount Code</h4>
               <span>* Required</span>
             </div>
-            <div className='section-body'>
-              <input
-                onChange={handleChange}
-                type='text'
-                name='discountCode'
-                value={formData.discountCode}
-              />
-              <button onClick={setDiscount}>Apply</button>
+            <div className='section-body discount'>
+              <div>
+                <input
+                  onChange={handleChange}
+                  type='text'
+                  name='discountCode'
+                  value={formData.discountCode}
+                />
+                <button onClick={setDiscount}>Apply</button>
+              </div>
             </div>
           </div>
         </form>
