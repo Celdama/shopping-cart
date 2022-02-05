@@ -33,7 +33,6 @@ const Checkout = ({ cartItems, handleOrderComplete }) => {
 
   const handleChange = (e) => {
     const { name, type, value, checked } = e.target;
-    console.log(formData);
 
     setFormData((prevState) => {
       return {
