@@ -3,14 +3,12 @@ import { Wrapper, Content } from './checkoutItems.style';
 import { getThumbnailProductByKey } from '../../Helpers/getProductImages';
 
 const CheckoutItems = ({ cartItems, subTotal }) => {
-  console.log(cartItems);
-
-  const order = cartItems.map(({ quantity, name, price }) => {
+  const order = cartItems.map(({ id, quantity, name, price }) => {
     return (
       !!quantity && (
-        <div className='product-items'>
+        <div key={id} className='product-items'>
           <div>
-            <img src={getThumbnailProductByKey(name)} alt='' />
+            <img src={getThumbnailProductByKey(name)} alt='product' />
             <div>
               <p className='product-name'>{name}</p>
               <p>Quantity: {quantity}</p>
@@ -23,6 +21,7 @@ const CheckoutItems = ({ cartItems, subTotal }) => {
       )
     );
   });
+
   return (
     <Wrapper>
       <Content>

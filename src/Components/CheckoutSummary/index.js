@@ -1,7 +1,7 @@
 import React from 'react';
 import { Wrapper, Content } from './checkoutSummary.style';
 
-const CheckoutSummary = () => {
+const CheckoutSummary = ({ subTotal }) => {
   return (
     <Wrapper>
       <Content>
@@ -12,7 +12,7 @@ const CheckoutSummary = () => {
           <div className='summary-body'>
             <div>
               <span>Subtotal</span>
-              <span>$ 400 USD</span>
+              <span>$ {subTotal} USD</span>
             </div>
             <div>
               <span>Shipping</span>
@@ -20,7 +20,7 @@ const CheckoutSummary = () => {
             </div>
             <div>
               <span>Total</span>
-              <span>$ 400 USD</span>
+              <span>$ {subTotal} USD</span>
             </div>
           </div>
         </div>

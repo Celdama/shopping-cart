@@ -12,12 +12,20 @@ export const Content = styled.div`
   flex-wrap: wrap;
 
   .left-side {
-    flex: 1 1 auto;
-    max-width: 600px;
+    width: 600px;
+
+    @media screen and (min-width: 992px) {
+      flex: 1 1 auto;
+      max-width: 600px;
+    }
   }
 
   .right-side {
-    width: 35%;
-    max-width: 320px;
+    width: 100%;
+
+    @media screen and (min-width: 992px) {
+      width: 35%;
+      max-width: 320px;
+    }
   }
 `;

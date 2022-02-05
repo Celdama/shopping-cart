@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   padding: 10px;
+  width: 100%;
 `;
 
 export const Content = styled.div`
@@ -11,8 +12,11 @@ export const Content = styled.div`
   flex-wrap: wrap;
 
   .form-container {
-    flex: 1 1 auto;
-    max-width: 600px;
+    width: 100%;
+    @media screen and (min-width: 992px) {
+      flex: 1 1 auto;
+      max-width: 600px;
+    }
 
     .payment-btn-container {
       .paypal,
@@ -89,9 +93,13 @@ export const Content = styled.div`
 
       .collapse-container {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
         gap: 8px;
+
+        @media screen and (min-width: 992px) {
+          flex-direction: row;
+        }
         > div {
           display: flex;
           flex-direction: column;

@@ -16,7 +16,7 @@ const Checkout = ({ cartItems }) => {
           <CheckoutItems cartItems={cartItems} subTotal={subTotal} />
         </div>
         <div className='right-side'>
-          <CheckoutSummary />
+          <CheckoutSummary subTotal={subTotal} />
         </div>
       </Content>
     </Wrapper>
