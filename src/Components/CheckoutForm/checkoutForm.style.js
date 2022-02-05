@@ -10,9 +10,34 @@ export const Content = styled.div`
   display: flex;
   flex-wrap: wrap;
 
-  form {
+  .form-container {
     flex: 1 1 auto;
     max-width: 600px;
+
+    .payment-btn-container {
+      .paypal,
+      .credit-card {
+        width: 100%;
+        background-color: #ffc439;
+        border: none;
+        border-radius: 3px;
+        padding: 9px 15px;
+        cursor: pointer;
+
+        img {
+          width: 95px;
+          height: auto;
+        }
+      }
+
+      .credit-card {
+        background-color: var(--black);
+        color: #fff;
+        margin-top: 12px;
+        font-size: 18px;
+        height: 45px;
+      }
+    }
   }
   .form-section,
   .summary-section {
@@ -117,5 +142,30 @@ export const Content = styled.div`
   .summary {
     width: 35%;
     max-width: 320px;
+
+    .summary-body {
+      padding: 8px 12px;
+
+      > div {
+        display: flex;
+        justify-content: space-between;
+        margin: 12px 0;
+      }
+
+      > div:last-child {
+        margin-top: 22px;
+        font-weight: bold;
+      }
+    }
+
+    button {
+      background-color: #3898ec;
+      border: none;
+      border-radius: 3px;
+      padding: 9px 15px;
+      width: 100%;
+      color: #fff;
+      cursor: pointer;
+    }
   }
 `;
