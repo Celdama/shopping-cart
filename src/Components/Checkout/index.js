@@ -6,37 +6,14 @@ import CheckoutItems from '../CheckoutItems';
 import CheckoutSummary from '../CheckoutSummary';
 
 const Checkout = ({ cartItems }) => {
-  const order = cartItems.map(({ quantity, name, price }) => {
-    return (
-      !!quantity && (
-        <>
-          <p>{name}</p>
-          <p>{quantity}</p>
-          <p>$ {quantity * price}.00 USD</p>
-          <br />
-        </>
-      )
-    );
-  });
-
   const subTotal = getSubTotal(cartItems);
 
   return (
     <Wrapper>
       <Content>
-        {/* <div className='order'>
-          {subTotal ? (
-            <div>
-              <div>{order}</div>
-              <p>Total Order : $ {subTotal}.00 USD </p>
-            </div>
-          ) : (
-            <p>no order</p>
-          )}
-        </div> */}
         <div className='left-side'>
           <CheckoutForm />
-          <CheckoutItems />
+          <CheckoutItems cartItems={cartItems} subTotal={subTotal} />
         </div>
         <div className='right-side'>
           <CheckoutSummary />

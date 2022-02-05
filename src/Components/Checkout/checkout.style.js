@@ -8,7 +8,6 @@ export const Wrapper = styled.div`
 
 export const Content = styled.div`
   display: flex;
-  outline: 1px solid red;
   justify-content: center;
   flex-wrap: wrap;
 

@@ -69,7 +69,7 @@ export const Content = styled.div`
           margin: 0;
         }
 
-        label  {
+        label {
           text-transform: uppercase;
         }
       }

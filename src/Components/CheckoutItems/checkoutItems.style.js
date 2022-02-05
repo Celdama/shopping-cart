@@ -19,11 +19,38 @@ export const Content = styled.div`
 
   .section-body {
     padding-top: 10px;
+    margin: 10px;
+    font-size: 14px;
 
-    div {
-      display: flex;
-      flex-direction: column;
-      margin: 10px;
+    .product-list {
+      .product-items {
+        margin: 18px 10px;
+        display: flex;
+        justify-content: space-between;
+
+        div:first-child {
+          display: flex;
+          gap: 10px;
+
+          img {
+            width: 60px;
+            height: 67px;
+          }
+
+          div {
+            .product-name {
+              padding: 8px 0;
+              font-weight: bold;
+              text-transform: capitalize;
+            }
+
+            p {
+              padding: 0;
+              margin: 0;
+            }
+          }
+        }
+      }
     }
   }
 `;
