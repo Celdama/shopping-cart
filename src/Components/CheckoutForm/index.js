@@ -209,15 +209,6 @@ const CheckoutForm = () => {
             </button>
             <button className='credit-card'>Credit Card</button>
           </div>
-
-          <div className='items-in-order form-section'>
-            <div className='section-header'>
-              <h4>Items in Order</h4>
-            </div>
-            <div className='section-body'>
-              <div>on item</div>
-            </div>
-          </div>
         </div>
       </Content>
     </Wrapper>

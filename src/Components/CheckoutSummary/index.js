@@ -5,7 +5,6 @@ const CheckoutSummary = () => {
   return (
     <Wrapper>
       <Content>
-        {/* <div className='summary'> */}
         <div className='summary-section'>
           <div className='summary-header'>
             <h4>Order Summary</h4>
@@ -28,7 +27,6 @@ const CheckoutSummary = () => {
         <button form='form' type='submit'>
           Place order
         </button>
-        {/* </div> */}
       </Content>
     </Wrapper>
   );

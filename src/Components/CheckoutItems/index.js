@@ -5,13 +5,11 @@ const CheckoutItems = () => {
   return (
     <Wrapper>
       <Content>
-        <div className='items-in-order form-section'>
-          <div className='section-header'>
-            <h4>Items in Order</h4>
-          </div>
-          <div className='section-body'>
-            <div>on item</div>
-          </div>
+        <div className='section-header'>
+          <h4>Items in Order</h4>
+        </div>
+        <div className='section-body'>
+          <div>on item</div>
         </div>
       </Content>
     </Wrapper>
