@@ -1,13 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Wrapper, Content } from './checkoutForm.style';
 import Paypal from '../../Images/paypal.svg';
 
 const CheckoutForm = ({ formData, handleChange, handleSubmit }) => {
-  const setDiscount = (e) => {
-    e.preventDefault();
-    console.log('discount');
-  };
-
+  const {
+    email,
+    fullName,
+    adress,
+    city,
+    state,
+    zip,
+    country,
+    freeShipping,
+    cardNumber,
+    expirationDate,
+    securityCode,
+    discountCode,
+  } = formData;
   return (
     <Wrapper>
       <Content>
@@ -26,7 +35,7 @@ const CheckoutForm = ({ formData, handleChange, handleSubmit }) => {
                     required
                     type='email'
                     name='email'
-                    value={formData.email}
+                    value={email}
                   />
                 </div>
               </div>
@@ -44,7 +53,7 @@ const CheckoutForm = ({ formData, handleChange, handleSubmit }) => {
                     required
                     type='text'
                     name='fullName'
-                    value={formData.fullName}
+                    value={fullName}
                   />
                 </div>
                 <div>
@@ -54,7 +63,7 @@ const CheckoutForm = ({ formData, handleChange, handleSubmit }) => {
                     required
                     type='text'
                     name='adress'
-                    value={formData.adress}
+                    value={adress}
                   />
                 </div>
                 <div className='collapse-container'>
@@ -65,7 +74,7 @@ const CheckoutForm = ({ formData, handleChange, handleSubmit }) => {
                       onChange={handleChange}
                       type='text'
                       name='city'
-                      value={formData.city}
+                      value={city}
                     />
                   </div>
                   <div>
@@ -74,7 +83,7 @@ const CheckoutForm = ({ formData, handleChange, handleSubmit }) => {
                       onChange={handleChange}
                       type='text'
                       name='state'
-                      value={formData.state}
+                      value={state}
                     />
                   </div>
                   <div>
@@ -84,7 +93,7 @@ const CheckoutForm = ({ formData, handleChange, handleSubmit }) => {
                       onChange={handleChange}
                       type='text'
                       name='zip'
-                      value={formData.zip}
+                      value={zip}
                     />
                   </div>
                 </div>
@@ -95,7 +104,7 @@ const CheckoutForm = ({ formData, handleChange, handleSubmit }) => {
                     onChange={handleChange}
                     type='text'
                     name='country'
-                    value={formData.country}
+                    value={country}
                   />
                 </div>
               </div>
@@ -110,8 +119,8 @@ const CheckoutForm = ({ formData, handleChange, handleSubmit }) => {
                     onChange={handleChange}
                     type='checkbox'
                     name='freeShipping'
-                    value={formData.freeShipping}
-                    checked={formData.freeShipping}
+                    value={freeShipping}
+                    checked={freeShipping}
                   />
                   <label htmlFor='freeShipping'>Free Shipping</label>
                 </div>
@@ -131,7 +140,7 @@ const CheckoutForm = ({ formData, handleChange, handleSubmit }) => {
                     type='number'
                     placeholder='1234 1234 1234 1234'
                     name='cardNumber'
-                    value={formData.cardNumber}
+                    value={cardNumber}
                   />
                 </div>
                 <div className='collapse-container'>
@@ -143,7 +152,7 @@ const CheckoutForm = ({ formData, handleChange, handleSubmit }) => {
                       type='number'
                       name='expirationDate'
                       placeholder='MM / YY'
-                      value={formData.expirationDate}
+                      value={expirationDate}
                     />
                   </div>
                   <div>
@@ -154,7 +163,7 @@ const CheckoutForm = ({ formData, handleChange, handleSubmit }) => {
                       type='number'
                       name='securityCode'
                       placeholder='CVC'
-                      value={formData.securityCode}
+                      value={securityCode}
                     />
                   </div>
                 </div>
@@ -170,9 +179,9 @@ const CheckoutForm = ({ formData, handleChange, handleSubmit }) => {
                     onChange={handleChange}
                     type='text'
                     name='discountCode'
-                    value={formData.discountCode}
+                    value={discountCode}
                   />
-                  <button onClick={setDiscount}>Apply</button>
+                  <button>Apply</button>
                 </div>
               </div>
             </div>
