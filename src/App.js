@@ -111,6 +111,15 @@ const App = () => {
     setDisplayCart((prevState) => !prevState);
   };
 
+  const handleOrderComplete = () => {
+    console.log('order complete');
+    setCartItems((prevState) => {
+      return prevState.map((item) => {
+        return { ...item, quantity: 0 };
+      });
+    });
+  };
+
   return (
     <div className='App'>
       <BrowserRouter>
@@ -127,7 +136,12 @@ const App = () => {
           />
           <Route
             path='/checkout'
-            element={<Checkout cartItems={cartItems} />}
+            element={
+              <Checkout
+                handleOrderComplete={handleOrderComplete}
+                cartItems={cartItems}
+              />
+            }
           />
         </Routes>
         <Cart

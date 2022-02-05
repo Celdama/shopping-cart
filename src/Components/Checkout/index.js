@@ -6,7 +6,7 @@ import CheckoutItems from '../CheckoutItems';
 import CheckoutSummary from '../CheckoutSummary';
 import { useNavigate } from 'react-router-dom';
 
-const Checkout = ({ cartItems }) => {
+const Checkout = ({ cartItems, handleOrderComplete }) => {
   let navigate = useNavigate();
   const [redirect, setRedirect] = useState(false);
   const [formData, setFormData] = useState({
@@ -49,6 +49,7 @@ const Checkout = ({ cartItems }) => {
     alert(
       `Dear ${formData.fullName} your order has been registered, and will be delivered to the adress ${formData.adress} ${formData.city} within 5 days.`
     );
+    handleOrderComplete();
     setRedirect(true);
   };
 
