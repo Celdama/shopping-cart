@@ -52,6 +52,8 @@ Should also have a button next to it where you can go to the cart to checkout an
 - add About page
 - make shop page responsive
 - add checkout page [DONE]
+- make checkout page responsive [DONE]
+- display cart in all page on mobile
 
 ## Component
 

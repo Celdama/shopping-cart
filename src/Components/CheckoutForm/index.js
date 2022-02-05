@@ -188,7 +188,7 @@ const CheckoutForm = ({ formData, handleChange, handleSubmit }) => {
           </form>
           <div className='payment-btn-container'>
             <button className='paypal'>
-              <img src={Paypal} alt='' />
+              <img src={Paypal} alt='paypal logo' />
             </button>
             <button className='credit-card'>Credit Card</button>
           </div>
