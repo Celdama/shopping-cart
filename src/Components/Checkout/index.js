@@ -2,6 +2,8 @@ import React from 'react';
 import getSubTotal from '../../Helpers/subTotalOrder';
 import { Wrapper, Content } from './checkout.style';
 import CheckoutForm from '../CheckoutForm';
+import CheckoutItems from '../CheckoutItems';
+import CheckoutSummary from '../CheckoutSummary';
 
 const Checkout = ({ cartItems }) => {
   const order = cartItems.map(({ quantity, name, price }) => {
@@ -32,7 +34,13 @@ const Checkout = ({ cartItems }) => {
             <p>no order</p>
           )}
         </div> */}
-        <CheckoutForm />
+        <div className='left-side'>
+          <CheckoutForm />
+          <CheckoutItems />
+        </div>
+        <div className='right-side'>
+          <CheckoutSummary />
+        </div>
       </Content>
     </Wrapper>
   );

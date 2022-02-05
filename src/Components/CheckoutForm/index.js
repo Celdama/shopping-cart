@@ -202,11 +202,6 @@ const CheckoutForm = () => {
                 </div>
               </div>
             </div>
-            {/* <div className='form-section'>
-              <div>
-                <img src={Paypal} alt='' />
-              </div>
-            </div> */}
           </form>
           <div className='payment-btn-container'>
             <button className='paypal'>
@@ -214,32 +209,15 @@ const CheckoutForm = () => {
             </button>
             <button className='credit-card'>Credit Card</button>
           </div>
-        </div>
 
-        <div className='summary'>
-          <div className='summary-section'>
-            <div className='summary-header'>
-              <h4>Order Summary</h4>
+          <div className='items-in-order form-section'>
+            <div className='section-header'>
+              <h4>Items in Order</h4>
             </div>
-            <div className='summary-body'>
-              <div>
-                <span>Subtotal</span>
-                <span>$ 400 USD</span>
-              </div>
-              <div>
-                <span>Shipping</span>
-                <span>$ 0.00 USD</span>
-              </div>
-              <div>
-                <span>Total</span>
-                <span>$ 400 USD</span>
-              </div>
+            <div className='section-body'>
+              <div>on item</div>
             </div>
           </div>
-          <img src={Paypal} alt='' />
-          <button form='form' type='submit'>
-            Place order
-          </button>
         </div>
       </Content>
     </Wrapper>

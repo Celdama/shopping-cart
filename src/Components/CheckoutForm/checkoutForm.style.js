@@ -39,14 +39,12 @@ export const Content = styled.div`
       }
     }
   }
-  .form-section,
-  .summary-section {
+  .form-section {
     background-color: #fff;
     margin: 20px 0;
     border: 1px solid lightgray;
 
-    .section-header,
-    .summary-header {
+    .section-header {
       display: flex;
       padding: 0 12px;
       align-items: center;
@@ -136,36 +134,6 @@ export const Content = styled.div`
           flex-shrink: 0;
         }
       }
-    }
-  }
-
-  .summary {
-    width: 35%;
-    max-width: 320px;
-
-    .summary-body {
-      padding: 8px 12px;
-
-      > div {
-        display: flex;
-        justify-content: space-between;
-        margin: 12px 0;
-      }
-
-      > div:last-child {
-        margin-top: 22px;
-        font-weight: bold;
-      }
-    }
-
-    button {
-      background-color: #3898ec;
-      border: none;
-      border-radius: 3px;
-      padding: 9px 15px;
-      width: 100%;
-      color: #fff;
-      cursor: pointer;
     }
   }
 `;

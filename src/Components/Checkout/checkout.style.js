@@ -6,4 +6,19 @@ export const Wrapper = styled.div`
   padding: 20px;
 `;
 
-export const Content = styled.div``;
+export const Content = styled.div`
+  display: flex;
+  outline: 1px solid red;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .left-side {
+    flex: 1 1 auto;
+    max-width: 600px;
+  }
+
+  .right-side {
+    width: 35%;
+    max-width: 320px;
+  }
+`;
