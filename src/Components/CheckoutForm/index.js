@@ -2,40 +2,7 @@ import React, { useState } from 'react';
 import { Wrapper, Content } from './checkoutForm.style';
 import Paypal from '../../Images/paypal.svg';
 
-const CheckoutForm = () => {
-  const [formData, setFormData] = useState({
-    email: '',
-    fullName: '',
-    adress: '',
-    city: '',
-    state: '',
-    zip: '',
-    country: '',
-    freeShipping: true,
-    cardNumber: '',
-    expirationDate: '',
-    securityCode: '',
-    billingAddressSameAsShipping: false,
-    discountCode: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, type, value, checked } = e.target;
-
-    setFormData((prevState) => {
-      return {
-        ...prevState,
-        [name]: type === 'checkbox' ? checked : value,
-      };
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('test');
-    console.log(formData);
-  };
-
+const CheckoutForm = ({ formData, handleChange, handleSubmit }) => {
   const setDiscount = (e) => {
     e.preventDefault();
     console.log('discount');
@@ -56,7 +23,7 @@ const CheckoutForm = () => {
                   <label htmlFor='email'>Email *</label>
                   <input
                     onChange={handleChange}
-                    // required
+                    required
                     type='email'
                     name='email'
                     value={formData.email}
@@ -74,6 +41,7 @@ const CheckoutForm = () => {
                   <label htmlFor='fullName'>Full Name *</label>
                   <input
                     onChange={handleChange}
+                    required
                     type='text'
                     name='fullName'
                     value={formData.fullName}
@@ -83,6 +51,7 @@ const CheckoutForm = () => {
                   <label htmlFor='adress'>Street Adress *</label>
                   <input
                     onChange={handleChange}
+                    required
                     type='text'
                     name='adress'
                     value={formData.adress}
@@ -92,6 +61,7 @@ const CheckoutForm = () => {
                   <div>
                     <label htmlFor='city'>City *</label>
                     <input
+                      required
                       onChange={handleChange}
                       type='text'
                       name='city'
@@ -110,6 +80,7 @@ const CheckoutForm = () => {
                   <div>
                     <label htmlFor='zip'>Zip *</label>
                     <input
+                      required
                       onChange={handleChange}
                       type='text'
                       name='zip'
@@ -120,6 +91,7 @@ const CheckoutForm = () => {
                 <div>
                   <label htmlFor='country'>Country *</label>
                   <input
+                    required
                     onChange={handleChange}
                     type='text'
                     name='country'
@@ -154,6 +126,7 @@ const CheckoutForm = () => {
                 <div>
                   <label htmlFor='cardNumber'>Card Number *</label>
                   <input
+                    required
                     onChange={handleChange}
                     type='number'
                     placeholder='1234 1234 1234 1234'
@@ -165,9 +138,10 @@ const CheckoutForm = () => {
                   <div>
                     <label htmlFor='expirationDate'>Expiration Date *</label>
                     <input
+                      required
                       onChange={handleChange}
                       type='number'
-                      name='expirationDatae'
+                      name='expirationDate'
                       placeholder='MM / YY'
                       value={formData.expirationDate}
                     />
@@ -175,6 +149,7 @@ const CheckoutForm = () => {
                   <div>
                     <label htmlFor='securityCode'>Security Code *</label>
                     <input
+                      required
                       onChange={handleChange}
                       type='number'
                       name='securityCode'
@@ -188,7 +163,6 @@ const CheckoutForm = () => {
             <div className='form-section'>
               <div className='section-header'>
                 <h4>Discount Code</h4>
-                <span>* Required</span>
               </div>
               <div className='section-body discount'>
                 <div>
