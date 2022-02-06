@@ -18,6 +18,6 @@ export const Text = styled.h2`
 
   p {
     padding: 0;
-    margin: 0;
+    margin: 10px;
   }
 `;
