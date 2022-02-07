@@ -10,6 +10,7 @@ const ProductImgSmallScreen = ({
     const { id } = src;
     return (
       <div
+        key={id}
         className='controller'
         style={id === activeImgId ? { opacity: '1' } : { opacity: '0.4' }}
         onClick={() => handleChangeCurrentImage(src)}

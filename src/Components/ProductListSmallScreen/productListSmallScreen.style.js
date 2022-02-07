@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  /* padding: 0 20px; */
   display: block;
 
   @media screen and (min-width: 766px) {
@@ -10,8 +9,6 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  /* padding: 0 10px; */
-
   .dropdown {
     display: flex;
     justify-content: space-between;
@@ -36,7 +33,7 @@ export const Content = styled.div`
     background-color: var(--black);
     position: absolute;
     top: 68px;
-    width: 97%;
+    width: 95%;
     list-style: none;
     padding: 0 0 20px 0;
     transition: max-height 0.3s ease-out;
