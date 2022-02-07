@@ -1,4 +1,8 @@
 import React from 'react';
+import CartHeader from '../CartHeader';
+import CartItem from '../CartItem';
+import CartCheckout from '../CartCheckout';
+import getSubTotal from '../../Helpers/subTotalOrder';
 import { getThumbnailProductByKey } from '../../Helpers/getProductImages';
 import {
   Wrapper,
@@ -8,10 +12,6 @@ import {
   CartItemsContainer,
   ListItems,
 } from './cart.style';
-import CartHeader from '../CartHeader';
-import CartItem from '../CartItem';
-import CartCheckout from '../CartCheckout';
-import getSubTotal from '../../Helpers/subTotalOrder';
 
 const Cart = ({
   cartItems,
@@ -25,10 +25,9 @@ const Cart = ({
     const { id, quantity, name, price } = item;
 
     return (
-      <Item quantity={quantity}>
+      <Item key={id} quantity={quantity}>
         {!!quantity && (
           <CartItem
-            key={id}
             thumbnail={getThumbnailProductByKey(name)}
             name={name}
             price={price}

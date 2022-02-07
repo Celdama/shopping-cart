@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaMinus, FaPlus } from 'react-icons/fa';
 import {
   Wrapper,
   Content,
@@ -7,7 +8,6 @@ import {
   ContentQuantity,
   QuantityBtn,
 } from './cartItem.style';
-import { FaMinus, FaPlus } from 'react-icons/fa';
 
 const CartItem = ({
   thumbnail,

@@ -47,7 +47,6 @@ export const Content = styled.div`
 export const ContentCart = styled.div`
   display: flex;
   align-items: center;
-  flex: 1 1 auto;
 `;
 
 export const CartItemsContainer = styled.div`
