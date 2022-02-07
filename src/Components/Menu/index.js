@@ -1,6 +1,8 @@
 import React from 'react';
 import TalaLogo from '../../Images/logo.svg';
 import { Wrapper, Content, NavMenu, MenuTitle, MenuLink } from './menu.style';
+import { Link } from 'react-router-dom';
+import { FaTimes } from 'react-icons/fa';
 
 const Menu = ({ displayMenu, handleDisplayMenu }) => {
   return (
@@ -12,7 +14,7 @@ const Menu = ({ displayMenu, handleDisplayMenu }) => {
               <img src={TalaLogo} alt='logo' />
             </li>
             <li className='close' onClick={handleDisplayMenu}>
-              x
+              <FaTimes />
             </li>
           </ul>
         </NavMenu>
@@ -22,11 +24,51 @@ const Menu = ({ displayMenu, handleDisplayMenu }) => {
         <MenuLink>
           <div className='products'>
             <ul>
-              <li>Mango</li>
-              <li>Banana</li>
-              <li>Pineapple</li>
-              <li>Pitahaya</li>
-              <li>Variety</li>
+              <li>
+                <Link
+                  to={'shop'}
+                  onClick={handleDisplayMenu}
+                  state={{ id: 'aa001' }}
+                >
+                  Mango
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={'shop'}
+                  onClick={handleDisplayMenu}
+                  state={{ id: 'ab002' }}
+                >
+                  Banana
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={'shop'}
+                  onClick={handleDisplayMenu}
+                  state={{ id: 'ac003' }}
+                >
+                  Pineapple
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={'shop'}
+                  onClick={handleDisplayMenu}
+                  state={{ id: 'ad004' }}
+                >
+                  Pitahaya
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to={'shop'}
+                  onClick={handleDisplayMenu}
+                  state={{ id: 'ae005' }}
+                >
+                  Variety
+                </Link>
+              </li>
             </ul>
           </div>
           <div className='links'>

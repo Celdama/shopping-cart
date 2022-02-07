@@ -7,7 +7,7 @@ import {
   ContentQuantity,
   QuantityBtn,
 } from './cartItem.style';
-import { ImPlus, ImMinus } from 'react-icons/im';
+import { FaMinus, FaPlus } from 'react-icons/fa';
 
 const CartItem = ({
   thumbnail,
@@ -34,14 +34,14 @@ const CartItem = ({
             onClick={decrementeProductQuantity}
             className='decremente'
           >
-            <ImMinus />
+            <FaMinus />
           </QuantityBtn>
           <span>{quantity}</span>
           <QuantityBtn
             onClick={incrementeProductQuantity}
             className='incremente'
           >
-            <ImPlus />
+            <FaPlus />
           </QuantityBtn>
         </ContentQuantity>
       </Content>

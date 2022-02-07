@@ -56,6 +56,9 @@ export const MenuLink = styled.div`
   flex-direction: column;
   ul {
     list-style: none;
+    a {
+      color: var(--black);
+    }
 
     li {
       cursor: pointer;

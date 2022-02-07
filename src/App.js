@@ -11,7 +11,7 @@ import Cart from './Components/Cart';
 import Checkout from './Components/Checkout';
 
 const App = () => {
-  const [displayMenu, setDisplayMenu] = useState(true);
+  const [displayMenu, setDisplayMenu] = useState(false);
   const [displayCart, setDisplayCart] = useState(false);
   const [numberOfCartItems, setNumberOfCartItems] = useState(0);
   const [cartItems, setCartItems] = useState([
@@ -128,8 +128,8 @@ const App = () => {
 
   return (
     <div className='App'>
-      <Menu displayMenu={displayMenu} handleDisplayMenu={handleDisplayMenu} />
       <BrowserRouter>
+        <Menu displayMenu={displayMenu} handleDisplayMenu={handleDisplayMenu} />
         <NavBar
           numberOfCartItems={numberOfCartItems}
           handleDisplayCart={handleDisplayCart}

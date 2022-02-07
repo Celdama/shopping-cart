@@ -46,7 +46,7 @@ const ProductDetail = ({ addProductToCart }) => {
       !allProducts.length &&
         setAllProducts((prevState) => [...prevState, product]);
     });
-  }, []);
+  }, [locationId]);
 
   const setAllImages = (imgArray) => {
     setAllProductsImages(imgArray);
