@@ -49,7 +49,8 @@ Should also have a button next to it where you can go to the cart to checkout an
 
 ### Page
 
-- add About page
+- add About page [STAND BY]
+- add Menu Component [DONE]
 - make shop page responsive [DONE]
 - add checkout page [DONE]
 - make checkout page responsive [DONE]
