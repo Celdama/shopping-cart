@@ -1,19 +1,20 @@
 import styled from 'styled-components';
+import breakpoints from '../../Helpers/breakpoints';
 
 export const Wrapper = styled.div`
-  padding: 10px;
+  padding: 1rem;
   width: 100%;
 `;
 
 export const Content = styled.div`
-  justify-content: center;
-  gap: 20px;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 2rem;
 
   .form-container {
     width: 100%;
-    @media screen and (min-width: 992px) {
+    @media screen and (min-width: ${breakpoints.md}) {
       flex: 1 1 auto;
       max-width: 600px;
     }
@@ -22,10 +23,10 @@ export const Content = styled.div`
       .paypal,
       .credit-card {
         width: 100%;
-        background-color: #ffc439;
+        background-color: var(--paypalColor);
         border: none;
         border-radius: 3px;
-        padding: 9px 15px;
+        padding: 0.9rem 1.5rem;
         cursor: pointer;
 
         img {
@@ -36,38 +37,38 @@ export const Content = styled.div`
 
       .credit-card {
         background-color: var(--black);
-        color: #fff;
-        margin-top: 12px;
-        font-size: 18px;
+        color: var(--white);
+        margin-top: 1.2rem;
+        font-size: 1.8rem;
         height: 45px;
       }
     }
   }
   .form-section {
-    background-color: #fff;
-    margin: 20px 0;
+    background-color: var(--white);
+    margin: 2rem 0;
     border: 1px solid lightgray;
 
     .section-header {
       display: flex;
-      padding: 0 12px;
       align-items: center;
       justify-content: space-between;
+      padding: 0 1.2rem;
       border-bottom: 1px solid lightgray;
     }
 
     .section-body {
-      padding-top: 10px;
+      padding-top: 1rem;
       label {
         font-weight: 500;
-        font-size: 14px;
+        font-size: 1.4rem;
       }
 
       .shipping {
         display: flex;
         align-items: center;
         flex-direction: row;
-        gap: 12px;
+        gap: 1.2rem;
 
         input {
           margin: 0;
@@ -79,15 +80,15 @@ export const Content = styled.div`
       }
 
       input {
-        margin: 10px 0;
-        padding: 8px 6px;
-        background-color: #f5f5f5;
+        margin: 1rem 0;
+        padding: 0.8rem 0.6rem;
+        background-color: var(--bgCheckout);
         border: 1px solid lightgray;
         border-radius: 3px;
         outline: none;
 
         :focus {
-          border-color: #3898ec;
+          border-color: var(--inputFocus);
         }
       }
 
@@ -95,9 +96,9 @@ export const Content = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        gap: 8px;
+        gap: 0.8rem;
 
-        @media screen and (min-width: 992px) {
+        @media screen and (min-width: ${breakpoints.md}) {
           flex-direction: row;
         }
         > div {
@@ -111,21 +112,20 @@ export const Content = styled.div`
       > div {
         display: flex;
         flex-direction: column;
-        margin: 10px;
+        margin: 1rem;
       }
     }
 
     .discount {
-      color: red;
       padding: 0;
 
       div {
-        padding: 0 12px;
         display: flex;
         flex-direction: row;
         justify-content: center;
+        padding: 0 1.2rem;
         align-items: center;
-        gap: 12px;
+        gap: 1.2rem;
         margin: 0;
 
         input {
@@ -133,13 +133,13 @@ export const Content = styled.div`
         }
 
         button {
-          padding: 9px 15px;
+          padding: 0.9rem 1.5rem;
           border-radius: 3px;
           border: none;
-          background-color: #3898ec;
-          color: #fff;
-          cursor: pointer;
+          background-color: var(--inputFocus);
+          color: var(--white);
           flex-shrink: 0;
+          cursor: pointer;
         }
       }
     }

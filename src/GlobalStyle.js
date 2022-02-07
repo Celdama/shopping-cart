@@ -3,10 +3,13 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyle = createGlobalStyle`
   :root {
     --maxWidth: 2100px;
+    --white: #fff;
+    --inputFocus: #3898ec;
     --black: #232025;
     --rose: #d5cdc4;
     --bgCart: #e2ddd7;
     --bgCheckout: #f5f5f5;
+    --paypalColor: #ffc439;
     --fontSuperBig: 2.5rem;
     --fontBig: 1.5rem;
     --fontMed: 1.2rem;
