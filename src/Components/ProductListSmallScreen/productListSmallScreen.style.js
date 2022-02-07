@@ -22,6 +22,10 @@ export const Content = styled.div`
     span {
       cursor: pointer;
 
+      .icon {
+        transition: transform 0.3s ease-out;
+      }
+
       .down {
         transform: rotate(180deg);
       }
@@ -31,13 +35,11 @@ export const Content = styled.div`
   ul {
     background-color: var(--black);
     position: absolute;
-    top: 80px;
+    top: 60px;
     width: 97%;
     list-style: none;
     padding: 0 0 20px 0;
-    /* left: 90px; */
-    /* z-index: 10; */
-
+    transition: max-height 0.3s ease-out;
     li {
       padding: 18px 0;
       font-size: 16px;
