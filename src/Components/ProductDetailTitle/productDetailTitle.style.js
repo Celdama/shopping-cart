@@ -15,4 +15,9 @@ export const Title = styled(motion.h3)`
   text-shadow: -1px 0 0 #d5cdc4, 0 1px 0 #d5cdc4, 1px 0 0 #d5cdc4,
     0 -1px 0 #d5cdc4;
   color: #232025;
+  display: none;
+
+  @media screen and (min-width: 766px) {
+    display: block;
+  }
 `;

@@ -18,6 +18,7 @@ import Ingredient from '../Ingredient';
 import ProductThumbnails from '../ProductThumbnails';
 import Space from '../Space';
 import ProductDetailCompare from '../ProductDetailCompare';
+import ProductListSmallScreen from '../ProductListSmallScreen';
 
 const ProductDetail = ({ addProductToCart }) => {
   const [currentProduct, setCurrentProduct] = useState({});
@@ -86,6 +87,12 @@ const ProductDetail = ({ addProductToCart }) => {
   return (
     <Wrapper>
       <Content>
+        <ProductListSmallScreen
+          handleCurrentProduct={handleCurrentProduct}
+          currentProduct={currentProduct}
+          allProducts={allProducts}
+          color={colors[currentProduct.name]}
+        />
         <ProductDetailImg currentProductImage={currentProductImage} />
         <ProductDetailInfo>
           <ProductList>
