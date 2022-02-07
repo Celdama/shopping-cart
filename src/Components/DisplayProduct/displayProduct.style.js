@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import breakpoints from '../../Helpers/breakpoints';
 
 export const Wrapper = styled.section`
   display: flex;
@@ -6,18 +7,18 @@ export const Wrapper = styled.section`
 `;
 
 export const Content = styled.div`
-  font-size: 26px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-size: 2.6rem;
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: ${breakpoints.md}) {
     font-size: 4vw;
   }
 
   .products {
-    margin-top: 30px;
+    margin-top: 3rem;
     position: relative;
     z-index: 1;
     div {
@@ -30,14 +31,14 @@ export const Content = styled.div`
       transition: all ease 0.5s;
       cursor: pointer;
 
-      @media screen and (min-width: 992px) {
-        margin: 0 -6px;
-      }
-
       :hover {
         transform: translate3d(0px, 0px, 0px) scale3d(1.05, 1.05, 1.05)
           rotateX(0deg) rotateY(0deg) rotateZ(10deg) skew(0deg);
         transform-style: preserve-3d;
+      }
+
+      @media screen and (min-width: ${breakpoints.md}) {
+        margin: 0 -6px;
       }
     }
 
@@ -47,17 +48,17 @@ export const Content = styled.div`
       width: 61px;
       height: 80px;
 
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: ${breakpoints.sm}) {
         width: 111px;
         height: 130px;
       }
 
-      @media screen and (min-width: 992px) {
+      @media screen and (min-width: ${breakpoints.md}) {
         width: 141px;
         height: 275px;
       }
 
-      @media screen and (min-width: 1200px) {
+      @media screen and (min-width: ${breakpoints.lg}) {
         width: 241px;
         height: 375px;
       }
@@ -66,17 +67,17 @@ export const Content = styled.div`
     .medium {
       width: 99px;
       height: 155px;
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: ${breakpoints.sm}) {
         width: 149px;
         height: 205px;
       }
 
-      @media screen and (min-width: 992px) {
+      @media screen and (min-width: ${breakpoints.md}) {
         width: 179px;
         height: 320px;
       }
 
-      @media screen and (min-width: 1200px) {
+      @media screen and (min-width: ${breakpoints.lg}) {
         width: 279px;
         height: 420px;
       }
@@ -86,17 +87,17 @@ export const Content = styled.div`
       width: 137px;
       height: 218px;
 
-      @media screen and (min-width: 768px) {
+      @media screen and (min-width: ${breakpoints.sm}) {
         width: 187px;
         height: 268px;
       }
 
-      @media screen and (min-width: 992px) {
+      @media screen and (min-width: ${breakpoints.md}) {
         width: 217px;
         height: 393px;
       }
 
-      @media screen and (min-width: 1200px) {
+      @media screen and (min-width: ${breakpoints.lg}) {
         width: 317px;
         height: 493px;
       }

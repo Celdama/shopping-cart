@@ -1,13 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useMotionEffect } from '../../hooks/useMotionEffect';
 import { Wrapper, Content } from './displayProduct.style';
 import Product1 from '../../Images/products/01.png';
 import Product2 from '../../Images/products/02.png';
 import Product3 from '../../Images/products/03.png';
 import Product4 from '../../Images/products/04.png';
 import Product5 from '../../Images/products/05.png';
-import { useMotionEffect } from '../../hooks/useMotionEffect';
-import { Link } from 'react-router-dom';
 
 const DisplayProduct = () => {
   const [controls, ref] = useMotionEffect();
