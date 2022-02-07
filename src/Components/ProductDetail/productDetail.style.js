@@ -1,16 +1,13 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
-  .compare-container {
-    display: flex;
-    height: 100vh;
-  }
+  outline: 1px solid yellow;
 `;
 
 export const Content = styled.div`
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
   display: flex;
-  padding: 10px 10px;
+  padding: 10px 18px;
   flex-direction: column;
   position: relative;
   margin: 0 auto;
@@ -22,6 +19,7 @@ export const Content = styled.div`
 
   @media screen and (min-width: 766px) {
     flex-direction: row;
+    padding: 10px;
   }
 
   .right {
@@ -75,5 +73,16 @@ export const ProductInfo = styled.div`
       width: 80%;
       padding: 0 30px;
     }
+  }
+`;
+
+export const CompareContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  outline: 1px solid red;
+  @media screen and (min-width: 766px) {
+    flex-direction: row;
+    height: 100vh;
   }
 `;

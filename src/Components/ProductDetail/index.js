@@ -8,6 +8,7 @@ import {
   ProductDetailInfo,
   ProductList,
   ProductInfo,
+  CompareContainer,
 } from './productDetail.style';
 
 import ProductDetailImg from '../ProductDetailImg';
@@ -129,7 +130,7 @@ const ProductDetail = ({ addProductToCart }) => {
         repeat={1}
       />
       <Space productPage={true} />
-      <div className='compare-container'>
+      <CompareContainer>
         <ProductDetailCompare
           title='tala'
           sugar={6}
@@ -142,7 +143,7 @@ const ProductDetail = ({ addProductToCart }) => {
           calories={90}
           tala={false}
         />
-      </div>
+      </CompareContainer>
       {/* <DisplayProduct /> */}
     </Wrapper>
   );
