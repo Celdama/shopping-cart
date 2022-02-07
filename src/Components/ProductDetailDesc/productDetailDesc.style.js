@@ -16,13 +16,25 @@ export const Content = styled(motion.div)`
     cursor: pointer;
   }
 
+  .product-price,
+  .product-marketing {
+    display: none;
+    @media screen and (min-width: 766px) {
+      display: block;
+    }
+  }
+
   .product-desc {
-    width: 60%;
+    width: 100%;
+
+    @media screen and (min-width: 766px) {
+      width: 60%;
+    }
   }
 `;
 
 export const Button = styled(motion.button)`
-  width: 280px;
+  width: 100%;
   height: 64px;
   background-color: transparent;
   border-radius: 32px;
@@ -31,4 +43,8 @@ export const Button = styled(motion.button)`
   border: 1px solid var(--rose);
   color: var(--rose);
   cursor: pointer;
+
+  @media screen and (min-width: 766px) {
+    width: 280px;
+  }
 `;

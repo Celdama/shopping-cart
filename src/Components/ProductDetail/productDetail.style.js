@@ -36,9 +36,12 @@ export const Content = styled.div`
 export const ProductDetailInfo = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 100%;
   justify-content: flex-end;
   align-items: flex-end;
+  @media screen and (min-width: 766px) {
+    width: 50%;
+  }
 `;
 
 export const ProductList = styled.div`
@@ -60,12 +63,17 @@ export const ProductList = styled.div`
 `;
 
 export const ProductInfo = styled.div`
-  padding: 0 30px;
+  padding: 0;
   height: 58%;
   width: 100%;
 
   display: flex;
   .info-text {
-    width: 80%;
+    width: 100%;
+
+    @media screen and (min-width: 766px) {
+      width: 80%;
+      padding: 0 30px;
+    }
   }
 `;

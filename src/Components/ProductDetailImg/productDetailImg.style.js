@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 390px;
+  height: 420px;
 
   @media screen and (min-width: 766px) {
     width: 50%;

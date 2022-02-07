@@ -39,6 +39,7 @@ export const Content = styled.div`
       font-size: 16px;
       text-transform: uppercase;
       width: 10%;
+      cursor: pointer;
     }
   }
 
@@ -59,7 +60,7 @@ export const Content = styled.div`
 `;
 
 export const Title = styled.h3`
-  font-size: 14vw;
+  font-size: 12vw;
   text-transform: uppercase;
   margin: 0;
 `;

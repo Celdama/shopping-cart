@@ -7,6 +7,12 @@ export const Wrapper = styled(motion.div)`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+
+  display: none;
+
+  @media screen and (min-width: 766px) {
+    display: block;
+  }
 `;
 
 export const Thumbnail = styled(motion.img)`
