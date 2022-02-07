@@ -22,7 +22,6 @@ export const Content = styled.div`
     gap: 36px;
     list-style: none;
     cursor: pointer;
-
     span {
       padding-left: 8px;
     }

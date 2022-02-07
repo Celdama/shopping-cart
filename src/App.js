@@ -128,7 +128,7 @@ const App = () => {
 
   return (
     <div className='App'>
-      <Menu displayMenu={displayMenu} />
+      <Menu displayMenu={displayMenu} handleDisplayMenu={handleDisplayMenu} />
       <BrowserRouter>
         <NavBar
           numberOfCartItems={numberOfCartItems}
