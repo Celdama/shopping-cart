@@ -1,54 +1,29 @@
 import styled from 'styled-components';
+import breakpoints from '../../Helpers/breakpoints';
 
 export const Wrapper = styled.main`
-  padding: 80px 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 8rem 2rem;
 
-  @media screen and (min-width: 1600px) {
-    padding: 200px 20px;
+  @media screen and (min-width: ${breakpoints.xl}) {
+    padding: 20rem 2rem;
   }
 `;
 
 export const Content = styled.div`
-  padding: 20px 0;
+  padding: 2rem 0;
   width: 100%;
 
   max-width: var(--maxWidth);
-
-  // small devices (landscape phone, 576px and up)
-  @media screen and (min-width: 576px) {
-  }
-
-  // medium devices (tablets, 768px and up)
-  @media screen and (min-width: 768px) {
-  }
-
-  // large devices (desktops, 992px and up)
-  @media screen and (min-width: 992px) {
-    max-width: 90%;
-  }
-
-  // x-large device (large desktops, 992px and up)
-  @media screen and (min-width: 1200px) {
-  }
-
-  // xx-large devices (larger desktops, 1400px and up)
-  @media screen and (min-width: 1400px) {
-  }
-
-  // xxx-large devices (x larger desktops, 1600px and up)
-  @media screen and (min-width: 1600px) {
-  }
 
   .text-content {
     display: flex;
     justify-content: center;
     flex-direction: column;
 
-    @media screen and (min-width: 992px) {
-      /* width: 50%; */
+    @media screen and (min-width: ${breakpoints.md}) {
       flex-direction: row;
     }
     .left {
@@ -56,14 +31,14 @@ export const Content = styled.div`
       display: flex;
       flex-direction: column;
 
-      @media screen and (min-width: 992px) {
+      @media screen and (min-width: ${breakpoints.md}) {
         width: 50%;
       }
 
       h1 {
         margin: 0;
-        font-size: 130px;
-        @media screen and (min-width: 992px) {
+        font-size: 13rem;
+        @media screen and (min-width: ${breakpoints.md}) {
           font-size: 13vw;
         }
       }
@@ -71,18 +46,18 @@ export const Content = styled.div`
       p {
         width: 55%;
         align-self: flex-start;
-        font-size: 22px;
+        font-size: 2.2rem;
 
-        @media screen and (min-width: 992px) {
+        @media screen and (min-width: ${breakpoints.md}) {
           font-size: 3vw;
           align-self: flex-end;
         }
 
         span {
-          padding-left: 76px;
+          padding-left: 7.6rem;
 
-          @media screen and (min-width: 992px) {
-            padding-left: 170px;
+          @media screen and (min-width: ${breakpoints.md}) {
+            padding-left: 17rem;
           }
         }
       }
@@ -95,7 +70,7 @@ export const Content = styled.div`
       width: 96%;
       flex-direction: column;
 
-      @media screen and (min-width: 992px) {
+      @media screen and (min-width: ${breakpoints.md}) {
         display: flex;
         width: 50%;
         align-items: center;

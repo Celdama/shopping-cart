@@ -1,5 +1,4 @@
 import React from 'react';
-import { Wrapper, Content } from './home.style';
 import Hero from '../Hero';
 import Informations from '../Informations';
 import Divider from '../Divider';
@@ -10,6 +9,7 @@ import Ingredient from '../Ingredient';
 import Questions from '../Questions';
 import DisplayProduct from '../DisplayProduct';
 import Instagram from '../Instagram';
+import { Wrapper, Content } from './home.style';
 
 const Home = () => {
   return (
