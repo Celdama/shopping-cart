@@ -1,37 +1,37 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  padding: 10px;
+  padding: 1rem;
   width: 100%;
 `;
 
 export const Content = styled.div`
-  background-color: #fff;
-  margin: 20px 0;
+  background-color: var(--white);
+  margin: 2rem 0;
   border: 1px solid lightgray;
 
   .section-header {
     display: flex;
-    padding: 0 12px;
+    padding: 0 1.2rem;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid lightgray;
   }
 
   .section-body {
-    padding-top: 10px;
-    margin: 10px;
-    font-size: 14px;
+    padding-top: 1rem;
+    margin: 1rem;
+    font-size: 1.4rem;
 
     .product-list {
       .product-items {
-        margin: 18px 10px;
         display: flex;
         justify-content: space-between;
+        margin: 1.8rem 1rem;
 
         div:first-child {
           display: flex;
-          gap: 10px;
+          gap: 1rem;
 
           img {
             width: 60px;
@@ -40,7 +40,7 @@ export const Content = styled.div`
 
           div {
             .product-name {
-              padding: 8px 0;
+              padding: 0.8rem 0;
               font-weight: bold;
               text-transform: capitalize;
             }
