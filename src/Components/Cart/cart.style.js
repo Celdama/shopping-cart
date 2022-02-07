@@ -31,7 +31,7 @@ export const Content = styled.div`
   height: 50%;
   width: 70%;
   margin: 0 auto;
-  @media screen and (min-width: 562px) {
+  @media screen and (min-width: ${breakpoints.xs}) {
     height: 100%;
     width: 100%;
   }
@@ -60,7 +60,7 @@ export const CartItemsContainer = styled.div`
 
 export const ListItems = styled.div`
   height: 100%;
-  padding: 0 24px;
+  padding: 0 2.4rem;
   display: flex;
   flex-direction: column;
 
@@ -72,5 +72,5 @@ export const ListItems = styled.div`
 
 export const Item = styled.li`
   display: ${({ quantity }) => (quantity ? 'block' : 'none')};
-  padding: 12px 0;
+  padding: 1.2rem 0;
 `;
