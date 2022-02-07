@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import getSubTotal from '../../Helpers/subTotalOrder';
-import { Wrapper, Content } from './checkout.style';
 import CheckoutForm from '../CheckoutForm';
 import CheckoutItems from '../CheckoutItems';
 import CheckoutSummary from '../CheckoutSummary';
-import { useNavigate } from 'react-router-dom';
+import { Wrapper, Content } from './checkout.style';
 
 const Checkout = ({ cartItems, handleOrderComplete }) => {
   let navigate = useNavigate();

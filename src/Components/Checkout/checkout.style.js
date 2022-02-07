@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import breakpoints from '../../Helpers/breakpoints';
 
 export const Wrapper = styled.div`
-  background-color: #f5f5f5;
+  background-color: var(--bgCheckout);
+  padding: 2rem;
   color: var(--black);
-  padding: 20px;
 `;
 
 export const Content = styled.div`
@@ -14,7 +15,7 @@ export const Content = styled.div`
   .left-side {
     width: 600px;
 
-    @media screen and (min-width: 992px) {
+    @media screen and (min-width: ${breakpoints.md}) {
       flex: 1 1 auto;
       max-width: 600px;
     }
@@ -23,7 +24,7 @@ export const Content = styled.div`
   .right-side {
     width: 600px;
 
-    @media screen and (min-width: 992px) {
+    @media screen and (min-width: ${breakpoints.md}) {
       width: 35%;
       max-width: 320px;
     }

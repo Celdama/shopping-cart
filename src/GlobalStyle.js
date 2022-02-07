@@ -6,6 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     --black: #232025;
     --rose: #d5cdc4;
     --bgCart: #e2ddd7;
+    --bgCheckout: #f5f5f5;
     --fontSuperBig: 2.5rem;
     --fontBig: 1.5rem;
     --fontMed: 1.2rem;
