@@ -32,11 +32,13 @@ const ProductListSmallScreen = ({
     );
   });
 
+  const { name } = currentProduct;
+
   return (
     <Wrapper>
       <Content>
         <div className='dropdown'>
-          <Title>{currentProduct.name}</Title>
+          <Title>{name}</Title>
           <span onClick={toggleDropDown}>
             <FaCaretDown className={collapseDropDown ? 'icon' : 'icon down'} />
           </span>

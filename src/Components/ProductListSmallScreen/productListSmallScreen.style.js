@@ -37,6 +37,8 @@ export const Content = styled.div`
     list-style: none;
     padding: 0 0 20px 0;
     transition: max-height 0.3s ease-out;
+    overflow: hidden;
+
     li {
       padding: 18px 0;
       font-size: 16px;
@@ -48,18 +50,11 @@ export const Content = styled.div`
 
   .collapse {
     max-height: 0px;
-    overflow: hidden;
   }
 
   .not-collapse {
     max-height: 300px;
-    overflow: hidden;
   }
-  /* 
-  ul {
-    max-height: 300px;
-    overflow: hidden;
-  } */
 `;
 
 export const Title = styled.h3`
