@@ -26,9 +26,11 @@ export const Content = styled(motion.div)`
 
   .product-desc {
     width: 100%;
+    padding: 12px 0;
 
     @media screen and (min-width: 766px) {
       width: 60%;
+      padding: 0;
     }
   }
 `;

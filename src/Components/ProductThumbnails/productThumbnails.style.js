@@ -2,16 +2,16 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 
 export const Wrapper = styled(motion.div)`
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-
   display: none;
 
   @media screen and (min-width: 766px) {
     display: block;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+
+    flex-direction: column;
   }
 `;
 

@@ -19,6 +19,7 @@ import ProductThumbnails from '../ProductThumbnails';
 import Space from '../Space';
 import ProductDetailCompare from '../ProductDetailCompare';
 import ProductListSmallScreen from '../ProductListSmallScreen';
+import ProductImgSmallScreen from '../ProductImgSmallScreen';
 
 const ProductDetail = ({ addProductToCart }) => {
   const [currentProduct, setCurrentProduct] = useState({});
@@ -94,6 +95,11 @@ const ProductDetail = ({ addProductToCart }) => {
           color={colors[currentProduct.name]}
         />
         <ProductDetailImg currentProductImage={currentProductImage} />
+        <ProductImgSmallScreen
+          productImages={allProductsImages}
+          activeImgId={activeImgId}
+          handleChangeCurrentImage={handleChangeCurrentImage}
+        />
         <ProductDetailInfo>
           <ProductList>
             <ul>{listAllProducts}</ul>
