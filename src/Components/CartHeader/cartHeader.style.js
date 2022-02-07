@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  padding: 18px 24px;
+  padding: 1.8rem 2.4rem;
   border-bottom: 1px dotted var(--black);
   flex: 0 1 auto;
 `;
@@ -14,13 +14,13 @@ export const Content = styled.div`
   h4 {
     padding: 0;
     margin: 0;
-    font-size: 16px;
+    font-size: 1.6rem;
     text-transform: uppercase;
     color: var(--black);
   }
 
   svg {
-    font-size: 24px;
+    font-size: 2.4rem;
     border: none;
     padding: 0;
     margin: 0;
