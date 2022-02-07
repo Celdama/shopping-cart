@@ -7,7 +7,7 @@ const ProductImgSmallScreen = ({
   handleChangeCurrentImage,
 }) => {
   const productImgController = productImages.map((src) => {
-    const { id, img } = src;
+    const { id } = src;
     return (
       <div
         className='controller'

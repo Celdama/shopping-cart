@@ -21,6 +21,10 @@ export const Content = styled.div`
 
     span {
       cursor: pointer;
+
+      .down {
+        transform: rotate(180deg);
+      }
     }
   }
 

@@ -1,11 +1,8 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.section`
-  outline: 1px solid yellow;
-`;
+export const Wrapper = styled.section``;
 
 export const Content = styled.div`
-  /* outline: 1px solid red; */
   display: flex;
   padding: 10px 18px;
   flex-direction: column;

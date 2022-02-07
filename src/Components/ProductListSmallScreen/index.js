@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Wrapper, Content, Title } from './productListSmallScreen.style';
+import { FaCaretDown } from 'react-icons/fa';
 
 const ProductListSmallScreen = ({
   allProducts,
@@ -36,7 +37,9 @@ const ProductListSmallScreen = ({
       <Content>
         <div className='dropdown'>
           <Title>{currentProduct.name}</Title>
-          <span onClick={toggleDropDown}>v</span>
+          <span onClick={toggleDropDown}>
+            <FaCaretDown className={collapseDropDown ? 'icon' : 'icon down'} />
+          </span>
         </div>
         <ul className={collapseDropDown ? 'collapse' : 'not-collapse'}>
           {productsList}
