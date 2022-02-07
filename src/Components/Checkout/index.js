@@ -44,8 +44,9 @@ const Checkout = ({ cartItems, handleOrderComplete }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const { fullName, adress, city } = formData;
     alert(
-      `Dear ${formData.fullName} your order has been registered, and will be delivered to the adress ${formData.adress} ${formData.city} within 5 days.`
+      `Dear ${fullName} your order has been registered, and will be delivered to the adress ${adress} ${city} within 5 days.`
     );
     handleOrderComplete();
     setRedirect(true);

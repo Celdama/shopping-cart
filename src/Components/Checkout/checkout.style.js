@@ -21,7 +21,7 @@ export const Content = styled.div`
   }
 
   .right-side {
-    width: 100%;
+    width: 600px;
 
     @media screen and (min-width: 992px) {
       width: 35%;
