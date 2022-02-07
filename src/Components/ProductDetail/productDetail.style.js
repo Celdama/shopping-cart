@@ -77,7 +77,6 @@ export const CompareContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: auto;
-  outline: 1px solid red;
   @media screen and (min-width: 766px) {
     flex-direction: row;
     height: 100vh;

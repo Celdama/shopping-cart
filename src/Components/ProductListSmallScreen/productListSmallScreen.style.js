@@ -35,7 +35,7 @@ export const Content = styled.div`
   ul {
     background-color: var(--black);
     position: absolute;
-    top: 60px;
+    top: 68px;
     width: 97%;
     list-style: none;
     padding: 0 0 20px 0;
