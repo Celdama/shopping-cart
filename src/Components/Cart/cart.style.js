@@ -1,23 +1,24 @@
 import styled from 'styled-components';
+import breakpoints from '../../Helpers/breakpoints';
 
 export const Wrapper = styled.div`
   width: 100%;
-  background-color: #e2ddd7;
+  background-color: var(--bgCart);
   position: fixed;
   border: 1px solid #000;
   border-radius: 8px;
   top: 0px;
   left: 0px;
   height: 100%;
-  right: 180px;
+  right: 18rem;
   color: var(--black);
   z-index: 5;
   display: ${({ displayCart }) => (displayCart ? 'block' : 'none')};
 
-  @media screen and (min-width: 562px) {
+  @media screen and (min-width: ${breakpoints.xs}) {
     min-width: 320px;
     max-width: 320px;
-    top: 80px;
+    top: 8rem;
     left: initial;
     right: 10%;
     height: auto;
@@ -37,7 +38,7 @@ export const Content = styled.div`
 
   .empty-product {
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: 1rem;
     color: var(--black);
     font-weight: bold;
     text-align: center;

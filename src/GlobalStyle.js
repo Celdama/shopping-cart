@@ -1,21 +1,24 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-  :root{
+  :root {
     --maxWidth: 2100px;
     --black: #232025;
     --rose: #d5cdc4;
+    --bgCart: #e2ddd7;
     --fontSuperBig: 2.5rem;
     --fontBig: 1.5rem;
     --fontMed: 1.2rem;
     --fontSmall: 1rem;
-    --fontSuperSmall: 0.8rem
+    --fontSuperSmall: 0.8rem;
+    font-size: 10px
   }
 
   * {
     box-sizing: border-box;
     font-family: sans-serif;
   }
+
 
   body {
     margin: 0;
