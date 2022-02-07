@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { GlobalStyle } from './GlobalStyle';
 import { nanoid } from 'nanoid';
+import Menu from './Components/Menu';
 import NavBar from './Components/Navbar';
 import Home from './Components/Home';
 import ScrollToTop from './Components/ScrollToTop';
@@ -10,6 +11,7 @@ import Cart from './Components/Cart';
 import Checkout from './Components/Checkout';
 
 const App = () => {
+  const [displayMenu, setDisplayMenu] = useState(true);
   const [displayCart, setDisplayCart] = useState(false);
   const [numberOfCartItems, setNumberOfCartItems] = useState(0);
   const [cartItems, setCartItems] = useState([
@@ -120,12 +122,18 @@ const App = () => {
     });
   };
 
+  const handleDisplayMenu = () => {
+    setDisplayMenu(!displayMenu);
+  };
+
   return (
     <div className='App'>
+      <Menu displayMenu={displayMenu} />
       <BrowserRouter>
         <NavBar
           numberOfCartItems={numberOfCartItems}
           handleDisplayCart={handleDisplayCart}
+          handleDisplayMenu={handleDisplayMenu}
         />
         <ScrollToTop />
         <Routes>

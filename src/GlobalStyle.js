@@ -37,5 +37,13 @@ export const GlobalStyle = createGlobalStyle`
     text-transform: capitalize;
   }
 
+  .show-menu {
+    transform: translateY(0px);
+  }
+
+  .hide-menu {
+    transform: translateY(-101%);
+  }
+
 
 `;

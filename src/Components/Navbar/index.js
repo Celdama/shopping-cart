@@ -2,7 +2,11 @@ import React from 'react';
 import { Wrapper, Content, Logo } from './navbar.style';
 import { Link } from 'react-router-dom';
 
-const NavBar = ({ handleDisplayCart, numberOfCartItems }) => {
+const NavBar = ({
+  handleDisplayCart,
+  handleDisplayMenu,
+  numberOfCartItems,
+}) => {
   return (
     <Wrapper>
       <Content>
@@ -13,7 +17,7 @@ const NavBar = ({ handleDisplayCart, numberOfCartItems }) => {
           <li onClick={handleDisplayCart}>
             Cart {numberOfCartItems > 0 && <span>{numberOfCartItems}</span>}
           </li>
-          <li>Menu</li>
+          <li onClick={handleDisplayMenu}>Menu</li>
         </ul>
       </Content>
     </Wrapper>
