@@ -47,8 +47,8 @@ const Cart = ({
     <Wrapper displayCart={displayCart}>
       <Content>
         <CartHeader handleDisplayCart={handleDisplayCart} />
-        <ContentCart className='content-cart'>
-          <CartItemsContainer className='container'>
+        <ContentCart>
+          <CartItemsContainer>
             {subTotal ? (
               <div>
                 <ListItems>
