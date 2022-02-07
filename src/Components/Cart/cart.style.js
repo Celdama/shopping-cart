@@ -1,25 +1,39 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-  /* min-height: 281px; */
-  min-width: 320px;
-  max-width: 320px;
+  width: 100%;
   background-color: #e2ddd7;
   position: fixed;
   border: 1px solid #000;
   border-radius: 8px;
-  /* padding: 16px 0px; */
-  top: 80px;
+  top: 0px;
+  left: 0px;
+  height: 100%;
   right: 180px;
   color: var(--black);
   z-index: 5;
   display: ${({ displayCart }) => (displayCart ? 'block' : 'none')};
+
+  @media screen and (min-width: 562px) {
+    min-width: 320px;
+    max-width: 320px;
+    top: 80px;
+    left: initial;
+    right: 10%;
+    height: auto;
+  }
 `;
 
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 50%;
+  width: 70%;
+  margin: 0 auto;
+  @media screen and (min-width: 562px) {
+    height: 100%;
+    width: 100%;
+  }
 
   .empty-product {
     text-transform: uppercase;
