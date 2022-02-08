@@ -144,7 +144,6 @@ const ProductDetail = ({ addProductToCart }) => {
           tala={false}
         />
       </CompareContainer>
-      {/* <DisplayProduct /> */}
     </Wrapper>
   );
 };

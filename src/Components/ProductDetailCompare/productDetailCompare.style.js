@@ -12,6 +12,11 @@ export const Wrapper = styled.div`
     width: 50%;
     padding: 6rem;
   }
+
+  .sugar {
+    border-right: ${({ tala }) =>
+      tala ? '1px dotted var(--black)' : '1px dotted var(--rose)'};
+  }
 `;
 
 export const Content = styled(motion.div)`
@@ -54,9 +59,5 @@ export const ContentContainer = styled(motion.div)`
         font-size: 8vw;
       }
     }
-  }
-  .sugar {
-    border-right: ${({ tala }) =>
-      tala ? '1px dotted var(--black)' : '1px dotted var(--rose)'};
   }
 `;
