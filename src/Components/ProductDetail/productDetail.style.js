@@ -1,51 +1,52 @@
 import styled from 'styled-components';
+import breakpoints from '../../Helpers/breakpoints';
 
 export const Wrapper = styled.section``;
 
 export const Content = styled.div`
   display: flex;
-  padding: 10px 18px;
   flex-direction: column;
+  padding: 1rem 1.8rem;
   position: relative;
   margin: 0 auto;
   max-width: var(--maxWidth);
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: ${breakpoints.md}) {
     max-width: 95%;
   }
 
-  @media screen and (min-width: 766px) {
+  @media screen and (min-width: ${breakpoints.sm}) {
     flex-direction: row;
-    padding: 10px;
+    padding: 1rem;
   }
 
   .right {
     display: flex;
-    flex-direction: column;
-    width: 50%;
     justify-content: flex-end;
     align-items: flex-end;
+    flex-direction: column;
+    width: 50%;
   }
 `;
 
 export const ProductDetailInfo = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
   justify-content: flex-end;
   align-items: flex-end;
-  @media screen and (min-width: 766px) {
+  width: 100%;
+  @media screen and (min-width: ${breakpoints.sm}) {
     width: 50%;
   }
 `;
 
 export const ProductList = styled.div`
   width: 100%;
-  padding: 16px 30px;
+  padding: 1.6rem 3rem;
   z-index: 2;
   display: none;
 
-  @media screen and (min-width: 766px) {
+  @media screen and (min-width: ${breakpoints.sm}) {
     display: block;
   }
   ul {
@@ -66,9 +67,9 @@ export const ProductInfo = styled.div`
   .info-text {
     width: 100%;
 
-    @media screen and (min-width: 766px) {
+    @media screen and (min-width: ${breakpoints.sm}) {
       width: 80%;
-      padding: 0 30px;
+      padding: 0 3rem;
     }
   }
 `;
@@ -77,7 +78,7 @@ export const CompareContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: auto;
-  @media screen and (min-width: 766px) {
+  @media screen and (min-width: ${breakpoints.sm}) {
     flex-direction: row;
     height: 100vh;
   }
