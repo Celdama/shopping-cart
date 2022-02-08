@@ -45,7 +45,7 @@ Should also have a button next to it where you can go to the cart to checkout an
 
 ### Cart itself
 
-- Once a user has submitted their order, the amount on the cart itself should adjust.
+- Once a user has submitted their order, the amount on the cart itself should adjust. [DONE]
 
 ### Page
 
@@ -58,9 +58,9 @@ Should also have a button next to it where you can go to the cart to checkout an
 
 ## Component
 
-- create Footer component
+- create Footer component [STAND BY]
 
 ## Global
 
-- add typo
-- refactoring
+- add typo [DONE]
+- refactoring [DONE]
