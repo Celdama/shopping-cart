@@ -1,56 +1,28 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Wrapper, Content } from './divider.style';
+import { Wrapper, Content, DividerBox, Title } from './divider.style';
 import { useMotionEffect } from '../../hooks/useMotionEffect';
+import {
+  getDividerTitleEffect,
+  getDividerEffect,
+} from '../../Helpers/motionEffect';
 
 const Divider = () => {
   const [controls, ref] = useMotionEffect();
 
-  const styleDivider = {
-    hidden: {
-      width: '0%',
-    },
-    visible: {
-      width: '100%',
-      transition: {
-        delay: 0.5,
-        transition: 'backInOut',
-        duration: 1.3,
-      },
-    },
-  };
-
-  const styleh6 = {
-    hidden: {
-      y: 10,
-      opacity: 0,
-    },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        delay: 1,
-        transition: 'ease',
-        duration: 1,
-      },
-    },
-  };
-
   return (
     <Wrapper>
       <Content>
-        <motion.h6
+        <Title
           ref={ref}
-          variants={styleh6}
+          variants={getDividerTitleEffect()}
           animate={controls}
           initial='hidden'
         >
           available in
-        </motion.h6>
-        <motion.div
-          className='divider'
+        </Title>
+        <DividerBox
           ref={ref}
-          variants={styleDivider}
+          variants={getDividerEffect()}
           animate={controls}
           initial='hidden'
         />
