@@ -1,10 +1,14 @@
 import React from 'react';
-import { Wrapper, Content } from './productDetailCompare.style';
-import { useMotionEffect } from '../../hooks/useMotionEffect';
-import { motion } from 'framer-motion';
 import {
-  getContainerBasicMotionEffect,
-  getChildrenBasicMotionEffect,
+  Wrapper,
+  Content,
+  Title,
+  ContentContainer,
+} from './productDetailCompare.style';
+import { useMotionEffect } from '../../hooks/useMotionEffect';
+import {
+  getContainerInstaEffect,
+  getChildrenInstaEffect,
 } from '../../Helpers/shopPageMotionEffect';
 
 const ProductDetailCompare = ({ title, sugar, calories, tala }) => {
@@ -13,34 +17,15 @@ const ProductDetailCompare = ({ title, sugar, calories, tala }) => {
   return (
     <Wrapper tala={tala}>
       <Content
-        variants={getContainerBasicMotionEffect(0, 1, 0.6, 0.6, 0.4)}
+        variants={getContainerInstaEffect()}
         animate={controls}
         initial='hidden'
       >
-        <motion.h2
-          ref={ref}
-          variants={getChildrenBasicMotionEffect(
-            0,
-            0,
-            5,
-            1,
-            0,
-            'backInOut',
-            0.4
-          )}
-        >
+        <Title ref={ref} variants={getChildrenInstaEffect()}>
           {title}
-        </motion.h2>
-        <motion.div
-          variants={getChildrenBasicMotionEffect(
-            0,
-            0,
-            5,
-            1,
-            1,
-            'backInOut',
-            0.4
-          )}
+        </Title>
+        <ContentContainer
+          variants={getChildrenInstaEffect()}
           className='container'
         >
           <div className='sugar'>
@@ -51,7 +36,7 @@ const ProductDetailCompare = ({ title, sugar, calories, tala }) => {
             <span className='value'>{calories}</span>
             <span>Calories</span>
           </div>
-        </motion.div>
+        </ContentContainer>
       </Content>
     </Wrapper>
   );
