@@ -10,7 +10,7 @@ const getContainerBasicMotionEffect = (
     visible: {
       opacity: opacityTo,
       transition: {
-        delay: delay,
+        delay,
         delayChildren,
         staggerChildren,
       },

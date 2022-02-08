@@ -1,36 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Wrapper, Content, Text } from './informations.style';
 import { useMotionEffect } from '../../hooks/useMotionEffect';
+import { Wrapper, Content, Text } from './informations.style';
+import {
+  getContainerBasicMotionEffect,
+  getChildrenBasicMotionEffect,
+} from '../../Helpers/shopPageMotionEffect';
 
 const Informations = () => {
   const [controls, ref] = useMotionEffect();
-
-  const container = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.2,
-        staggerChildren: 0.4,
-      },
-    },
-  };
-
-  const children = {
-    hidden: {
-      y: 0,
-      opacity: 0,
-    },
-    visible: {
-      y: 5,
-      opacity: 1,
-      transition: {
-        transition: 'backInOut',
-        duration: 1,
-      },
-    },
-  };
 
   return (
     <Wrapper>
@@ -38,20 +16,50 @@ const Informations = () => {
         <Text>
           <motion.div
             ref={ref}
-            variants={container}
+            variants={getContainerBasicMotionEffect(0, 1, 0, 0.2, 0.4)}
             animate={controls}
             initial='hidden'
           >
-            <motion.div variants={children}>
+            <motion.div
+              variants={getChildrenBasicMotionEffect(
+                0,
+                0,
+                5,
+                1,
+                0.2,
+                'backInOut',
+                1
+              )}
+            >
               <p>We're bringing fruit snacks back to </p>
             </motion.div>
-            <motion.div variants={children}>
+            <motion.div
+              variants={getChildrenBasicMotionEffect(
+                0,
+                0,
+                5,
+                1,
+                0.4,
+                'backInOut',
+                1
+              )}
+            >
               <p>
                 their roots with{' '}
                 <span className='serif'>perfectly ripe fruit</span>{' '}
               </p>
             </motion.div>
-            <motion.div variants={children}>
+            <motion.div
+              variants={getChildrenBasicMotionEffect(
+                0,
+                0,
+                5,
+                1,
+                0.6,
+                'backInOut',
+                1
+              )}
+            >
               <p>
                 <span className='serif'>bursting with flavor.</span>
               </p>
