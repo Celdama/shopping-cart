@@ -1,143 +1,99 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useMotionEffect } from '../../hooks/useMotionEffect';
+import {
+  getVerticalDividerEffect,
+  getHorizontalDividerEffect,
+  getContainerMarketingEffect,
+  getSubContainerMarketingEffect,
+  getChildrenMarketingEffect,
+} from '../../Helpers/shopPageMotionEffect';
 
-import { Wrapper, Content } from './marketing.style';
+import {
+  Wrapper,
+  Content,
+  MainContent,
+  HorizontalDivider,
+  Quote,
+  SubContent,
+  SubContentContainer,
+  VerticalDivider,
+} from './marketing.style';
 
 const Marketing = () => {
   const [controls, ref] = useMotionEffect();
 
-  const verticalStyle = {
-    hidden: {
-      height: '0%',
-      opacity: 0,
-    },
-    visible: {
-      height: '100%',
-      opacity: 1,
-      transition: {
-        delay: 0.6,
-        transition: 'ease',
-        duration: 0.7,
-      },
-    },
-  };
-
-  const horizontalStyle = {
-    hidden: {
-      width: '0%',
-    },
-    visible: {
-      width: '100%',
-      transition: {
-        transition: 'ease',
-        duration: 1.3,
-      },
-    },
-  };
-
-  const mainContainerStyle = {
-    hidden: {},
-    visible: {
-      transition: {
-        delayChildren: 0.9,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const subContainerStyle = {
-    hidden: {},
-    visible: {
-      transition: {
-        delayChildren: 0.5,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const textChildrenStyle = {
-    hidden: {
-      y: 0,
-      opacity: 0,
-    },
-    visible: {
-      y: 5,
-      opacity: 1,
-    },
-  };
-
   return (
     <Wrapper>
       <Content>
-        <div className='main-content'>
-          <motion.p
-            variants={mainContainerStyle}
+        <MainContent>
+          <Quote
+            variants={getContainerMarketingEffect()}
             animate={controls}
             initial='hidden'
-            className='quote'
           >
-            <motion.span variants={textChildrenStyle}>
+            <motion.span variants={getChildrenMarketingEffect()}>
               i finished the
             </motion.span>
-            <motion.span variants={textChildrenStyle}>box & regret</motion.span>
-            <motion.span variants={textChildrenStyle}>nothing.</motion.span>
-          </motion.p>
-        </div>
-        <motion.div
+            <motion.span variants={getChildrenMarketingEffect()}>
+              box & regret
+            </motion.span>
+            <motion.span variants={getChildrenMarketingEffect()}>
+              nothing.
+            </motion.span>
+          </Quote>
+        </MainContent>
+        <HorizontalDivider
           ref={ref}
-          variants={horizontalStyle}
+          variants={getHorizontalDividerEffect()}
           animate={controls}
           initial='hidden'
-          className='horizontal-divider'
-        ></motion.div>
-        <div className='sub-content'>
-          <div className='container'>
-            <div className='left'>
+        ></HorizontalDivider>
+        <SubContent>
+          <SubContentContainer>
+            <div className='left-side'>
               <motion.p
-                variants={subContainerStyle}
+                variants={getSubContainerMarketingEffect()}
                 animate={controls}
                 initial='hidden'
               >
-                <motion.span variants={textChildrenStyle}>
+                <motion.span variants={getChildrenMarketingEffect()}>
                   so crunchy i get
                 </motion.span>
-                <motion.span variants={textChildrenStyle}>
+                <motion.span variants={getChildrenMarketingEffect()}>
                   noise complaints.
                 </motion.span>
               </motion.p>
             </div>
-            <motion.div
-              className='divider'
-              variants={verticalStyle}
+            <VerticalDivider
+              variants={getVerticalDividerEffect()}
               animate={controls}
               initial='hidden'
-            ></motion.div>
-            <div className='right'>
+            ></VerticalDivider>
+            <div className='right-side'>
               <motion.p
-                variants={subContainerStyle}
+                variants={getSubContainerMarketingEffect()}
                 animate={controls}
                 initial='hidden'
               >
-                <motion.span variants={textChildrenStyle}>
+                <motion.span variants={getChildrenMarketingEffect()}>
                   this is what "fruit
                 </motion.span>
-                <motion.span variants={textChildrenStyle}>
+                <motion.span variants={getChildrenMarketingEffect()}>
                   snacks" should have
                 </motion.span>
-                <motion.span variants={textChildrenStyle}>
+                <motion.span variants={getChildrenMarketingEffect()}>
                   always been
                 </motion.span>
               </motion.p>
             </div>
-          </div>
-        </div>
-        <motion.div
-          variants={horizontalStyle}
+          </SubContentContainer>
+        </SubContent>
+        <HorizontalDivider
+          variants={getHorizontalDividerEffect()}
           animate={controls}
           initial='hidden'
-          className='horizontal-divider'
-        ></motion.div>
+        ></HorizontalDivider>
       </Content>
     </Wrapper>
   );

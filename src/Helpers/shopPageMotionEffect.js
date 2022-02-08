@@ -138,6 +138,66 @@ const getChildrenItemListEffect = () => ({
   },
 });
 
+const getVerticalDividerEffect = () => ({
+  hidden: {
+    height: '0%',
+    opacity: 0,
+  },
+  visible: {
+    height: '100%',
+    opacity: 1,
+    transition: {
+      delay: 0.6,
+      transition: 'ease',
+      duration: 0.7,
+    },
+  },
+});
+
+const getHorizontalDividerEffect = () => ({
+  hidden: {
+    width: '0%',
+  },
+  visible: {
+    width: '100%',
+    transition: {
+      transition: 'ease',
+      duration: 1.3,
+    },
+  },
+});
+
+const getContainerMarketingEffect = () => ({
+  hidden: {},
+  visible: {
+    transition: {
+      delayChildren: 0.9,
+      staggerChildren: 0.2,
+    },
+  },
+});
+
+const getSubContainerMarketingEffect = () => ({
+  hidden: {},
+  visible: {
+    transition: {
+      delayChildren: 1.6,
+      staggerChildren: 0.2,
+    },
+  },
+});
+
+const getChildrenMarketingEffect = () => ({
+  hidden: {
+    y: 0,
+    opacity: 0,
+  },
+  visible: {
+    y: 5,
+    opacity: 1,
+  },
+});
+
 export {
   getContainerBasicMotionEffect,
   getChildrenBasicMotionEffect,
@@ -148,4 +208,9 @@ export {
   getContainerInstaEffect,
   getChildrenInstaEffect,
   getChildrenItemListEffect,
+  getVerticalDividerEffect,
+  getHorizontalDividerEffect,
+  getContainerMarketingEffect,
+  getSubContainerMarketingEffect,
+  getChildrenMarketingEffect,
 };
