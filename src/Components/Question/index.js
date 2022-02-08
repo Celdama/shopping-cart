@@ -2,6 +2,10 @@ import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Content } from './question.style';
+import {
+  getContainerQuestionEffect,
+  getChildrenQuestionEffect,
+} from '../../Helpers/shopPageMotionEffect';
 
 const Question = () => {
   const controls = useAnimation();
@@ -15,40 +19,18 @@ const Question = () => {
     }
   }, [controls, inView]);
 
-  const containerTitleStyle = {
-    hidden: {},
-    visible: {
-      transition: {
-        delayChildren: 0.6,
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const textStyle = {
-    hidden: {
-      y: 0,
-      opacity: 0,
-    },
-    visible: {
-      y: 5,
-      opacity: 1,
-      transition: {
-        ease: 'easeIn',
-        duration: 0.3,
-      },
-    },
-  };
   return (
     <Content>
       <motion.h2
         ref={ref}
-        variants={containerTitleStyle}
+        variants={getContainerQuestionEffect()}
         animate={controls}
         initial='hidden'
       >
-        <motion.span variants={textStyle}>Does your fruit snack </motion.span>
-        <motion.span variants={textStyle} className='serif'>
+        <motion.span variants={getChildrenQuestionEffect()}>
+          Does your fruit snack{' '}
+        </motion.span>
+        <motion.span variants={getChildrenQuestionEffect()} className='serif'>
           contain fruit ?
         </motion.span>
       </motion.h2>

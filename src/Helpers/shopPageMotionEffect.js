@@ -198,6 +198,31 @@ const getChildrenMarketingEffect = () => ({
   },
 });
 
+const getContainerQuestionEffect = () => ({
+  hidden: {},
+  visible: {
+    transition: {
+      delayChildren: 0.6,
+      staggerChildren: 0.3,
+    },
+  },
+});
+
+const getChildrenQuestionEffect = () => ({
+  hidden: {
+    y: 0,
+    opacity: 0,
+  },
+  visible: {
+    y: 5,
+    opacity: 1,
+    transition: {
+      ease: 'easeIn',
+      duration: 0.3,
+    },
+  },
+});
+
 export {
   getContainerBasicMotionEffect,
   getChildrenBasicMotionEffect,
@@ -213,4 +238,6 @@ export {
   getContainerMarketingEffect,
   getSubContainerMarketingEffect,
   getChildrenMarketingEffect,
+  getContainerQuestionEffect,
+  getChildrenQuestionEffect,
 };
