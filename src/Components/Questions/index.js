@@ -1,32 +1,24 @@
-import React, { useState, useEffect } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import Question from '../Question';
-import { Wrapper, Content, BananaGif, SyrupGif } from './questions.style';
+import {
+  Wrapper,
+  Content,
+  AnswersContainer,
+  BananaGif,
+  SyrupGif,
+} from './questions.style';
 import Banana from '../../Images/bananas.gif';
 import Syrup from '../../Images/syrup.gif';
 import { useMotionEffect } from '../../hooks/useMotionEffect';
+import { getAnswersEffect } from '../../Helpers/shopPageMotionEffect';
 
 const Questions = () => {
   const [positionY, setPositionY] = useState(0);
   const [positionX, setPositionX] = useState(0);
   const [controls, ref] = useMotionEffect();
 
-  const style = {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-      transition: {
-        delay: 1,
-        ease: 'easeIn',
-        duration: 1,
-      },
-    },
-  };
-
-  const showBanana = (e) => {
+  const showGif = (e) => {
     let react = e.target.getBoundingClientRect();
     let x = e.clientX - react.left;
     let y = e.clientY - react.top;
@@ -38,22 +30,21 @@ const Questions = () => {
     <Wrapper>
       <Content>
         <Question />
-        <motion.div
+        <AnswersContainer
           ref={ref}
-          variants={style}
+          variants={getAnswersEffect()}
           animate={controls}
           initial='hidden'
-          className='answers'
         >
-          <div className='yes-container' onMouseMove={showBanana}>
+          <div className='yes-container' onMouseMove={showGif}>
             <p className='yes'>Yes</p>
             <BananaGif top={positionY} left={positionX} src={Banana} alt='' />
           </div>
-          <div className='no-container' onMouseMove={showBanana}>
+          <div className='no-container' onMouseMove={showGif}>
             <p className='no'>No</p>
             <SyrupGif top={positionY} left={positionX} src={Syrup} alt='' />
           </div>
-        </motion.div>
+        </AnswersContainer>
       </Content>
     </Wrapper>
   );

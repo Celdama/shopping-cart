@@ -223,6 +223,20 @@ const getChildrenQuestionEffect = () => ({
   },
 });
 
+const getAnswersEffect = () => ({
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 1,
+      ease: 'easeIn',
+      duration: 1,
+    },
+  },
+});
+
 export {
   getContainerBasicMotionEffect,
   getChildrenBasicMotionEffect,
@@ -240,4 +254,5 @@ export {
   getChildrenMarketingEffect,
   getContainerQuestionEffect,
   getChildrenQuestionEffect,
+  getAnswersEffect,
 };
