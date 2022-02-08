@@ -72,9 +72,45 @@ const getMainImgProductShopPageEffect = () => {
   };
 };
 
+const getEffectFromLeftToRight = () => {
+  return {
+    hidden: {
+      x: -400,
+    },
+    visible: {
+      x: 0,
+      transition: {
+        type: 'tween',
+        duration: 6,
+        repeat: Infinity,
+        repeatType: 'mirror',
+      },
+    },
+  };
+};
+
+const getEffectFromRightToLeft = (name) => {
+  return {
+    hidden: {
+      x: 0,
+    },
+    visible: {
+      x: name ? -990 : -400,
+      transition: {
+        type: 'tween',
+        duration: 6,
+        repeat: Infinity,
+        repeatType: 'mirror',
+      },
+    },
+  };
+};
+
 export {
   getContainerBasicMotionEffect,
   getChildrenBasicMotionEffect,
   getTitleProductShopPageEffect,
   getMainImgProductShopPageEffect,
+  getEffectFromLeftToRight,
+  getEffectFromRightToLeft,
 };

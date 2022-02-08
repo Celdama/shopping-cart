@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import breakpoints from '../../Helpers/breakpoints';
 
 export const Wrapper = styled.section``;
 
@@ -7,29 +8,30 @@ export const ContentQuestion = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 140px 0;
+  padding: 14rem 0;
 
-  @media screen and (min-width: 992px) {
-    padding: 320px 0;
+  @media screen and (min-width: ${breakpoints.md}) {
+    padding: 32rem 0;
   }
 
   h3 {
     display: flex;
     flex-direction: column;
-    font-size: 32px;
+    text-align: center;
+    font-size: 3.2rem;
 
-    @media screen and (min-width: 992px) {
+    @media screen and (min-width: ${breakpoints.md}) {
       font-size: 3.5vw;
     }
   }
 `;
 
 export const ContentAnswer = styled.div`
-  font-size: 140px;
+  font-size: 14rem;
   overflow: hidden;
-  padding: 10px 0;
+  padding: 1rem 0;
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: ${breakpoints.md}) {
     font-size: 14.5vw;
   }
 
@@ -39,7 +41,8 @@ export const ContentAnswer = styled.div`
     text-transform: uppercase;
 
     p {
-      text-shadow: -1px 0 #d5cdc4, 0 1px #d5cdc4, 1px 0 #d5cdc4, 0 -1px #d5cdc4;
+      text-shadow: -1px 0 var(--rose), 0 1px var(--rose), 1px 0 var(--rose),
+        0 -1px var(--rose);
       margin: 0;
       line-height: 0.9em;
       padding: 0;

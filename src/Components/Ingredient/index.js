@@ -1,40 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Wrapper, ContentQuestion, ContentAnswer } from './ingredient.style';
 import { useMotionEffect } from '../../hooks/useMotionEffect';
+import {
+  getEffectFromLeftToRight,
+  getEffectFromRightToLeft,
+} from '../../Helpers/shopPageMotionEffect';
+import { Wrapper, ContentQuestion, ContentAnswer } from './ingredient.style';
 
 const Ingredient = ({ text, repeat, name }) => {
   const [controls, ref] = useMotionEffect();
-
-  const fromRightToLeft = {
-    hidden: {
-      x: 0,
-    },
-    visible: {
-      x: name ? -990 : -400,
-      transition: {
-        type: 'tween',
-        duration: 6,
-        repeat: Infinity,
-        repeatType: 'mirror',
-      },
-    },
-  };
-
-  const fromLeftToRight = {
-    hidden: {
-      x: -400,
-    },
-    visible: {
-      x: 0,
-      transition: {
-        type: 'tween',
-        duration: 6,
-        repeat: Infinity,
-        repeatType: 'mirror',
-      },
-    },
-  };
 
   const renderText = () => {
     const row = [];
@@ -44,10 +18,10 @@ const Ingredient = ({ text, repeat, name }) => {
           <motion.div
             key={i}
             ref={ref}
-            variants={fromRightToLeft}
+            variants={getEffectFromRightToLeft()}
             animate='visible'
           >
-            <p className=''>{text}</p>
+            <p>{text}</p>
           </motion.div>
         );
       } else {
@@ -56,7 +30,11 @@ const Ingredient = ({ text, repeat, name }) => {
             <motion.div
               key={i}
               ref={ref}
-              variants={i % 2 === 0 ? fromRightToLeft : fromLeftToRight}
+              variants={
+                i % 2 === 0
+                  ? getEffectFromRightToLeft()
+                  : getEffectFromLeftToRight()
+              }
               animate={controls}
               initial='hidden'
             >
@@ -70,7 +48,11 @@ const Ingredient = ({ text, repeat, name }) => {
           ) : (
             <motion.div
               key={i}
-              variants={i % 2 === 0 ? fromRightToLeft : fromLeftToRight}
+              variants={
+                i % 2 === 0
+                  ? getEffectFromRightToLeft()
+                  : getEffectFromLeftToRight()
+              }
               animate={controls}
               initial='hidden'
             >
@@ -91,10 +73,10 @@ const Ingredient = ({ text, repeat, name }) => {
   return (
     <Wrapper>
       <ContentQuestion>
-        <h3 style={{ textAlign: 'center' }}>
+        <h3>
           <span>{name ? 'Ingredient(s)' : 'Number of'}</span>
           <span className='serif capitalize'>
-            {name ? `${name}` : ' ingredients:'}
+            {name ? name : ' ingredients:'}
           </span>
         </h3>
       </ContentQuestion>
