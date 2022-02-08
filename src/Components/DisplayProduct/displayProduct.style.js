@@ -45,7 +45,7 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
     .small {
-      width: 61px;
+      width: 51px;
       height: 80px;
 
       @media screen and (min-width: ${breakpoints.sm}) {
@@ -65,7 +65,7 @@ export const Content = styled.div`
     }
 
     .medium {
-      width: 99px;
+      width: 89px;
       height: 155px;
       @media screen and (min-width: ${breakpoints.sm}) {
         width: 149px;
@@ -84,7 +84,7 @@ export const Content = styled.div`
     }
 
     .large {
-      width: 137px;
+      width: 127px;
       height: 218px;
 
       @media screen and (min-width: ${breakpoints.sm}) {
