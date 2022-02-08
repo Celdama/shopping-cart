@@ -83,7 +83,7 @@ const ProductDetailDesc = ({
           )}
           onClick={addProductToCart}
         >
-          add to card
+          add to cart
         </Button>
       </Content>
     </Wrapper>

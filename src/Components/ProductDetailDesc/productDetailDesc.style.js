@@ -75,10 +75,16 @@ export const Button = styled(motion.button)`
   text-transform: uppercase;
   border: 1px solid var(--rose);
   color: var(--rose);
-  padding: 1rem 0;
+  padding: 1.8rem 3rem;
   cursor: pointer;
+  font-weight: bold;
 
   @media screen and (min-width: ${breakpoints.sm}) {
     width: 280px;
+  }
+
+  :hover {
+    color: var(--black);
+    background: var(--rose);
   }
 `;
