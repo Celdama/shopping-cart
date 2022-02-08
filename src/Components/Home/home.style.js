@@ -6,7 +6,6 @@ export const Wrapper = styled.main`
   align-items: center;
   justify-content: center;
   padding: 8rem 2rem;
-
   @media screen and (min-width: ${breakpoints.xl}) {
     padding: 20rem 2rem;
   }
@@ -14,7 +13,7 @@ export const Wrapper = styled.main`
 
 export const Content = styled.div`
   padding: 2rem 0;
-  width: 100%;
+  width: 90%;
 
   max-width: var(--maxWidth);
 
@@ -79,7 +78,7 @@ export const Content = styled.div`
       p {
         margin: 0;
         text-transform: uppercase;
-        font-size: var(--fontSuperSmall);
+        font-size: 1.4rem;
       }
     }
   }
