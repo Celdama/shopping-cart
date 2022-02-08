@@ -1,6 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Wrapper, Content, Button } from './productDetailDesc.style';
+import {
+  Wrapper,
+  Content,
+  Button,
+  ContentMarketing,
+  ContentDesc,
+  ContentPrice,
+} from './productDetailDesc.style';
 import {
   getContainerBasicMotionEffect,
   getChildrenBasicMotionEffect,
@@ -21,7 +28,7 @@ const ProductDetailDesc = ({
         animate='visible'
         initial='hidden'
       >
-        <motion.p
+        <ContentPrice
           variants={getChildrenBasicMotionEffect(
             50,
             0,
@@ -31,11 +38,10 @@ const ProductDetailDesc = ({
             'backInOut',
             0.5
           )}
-          className='product-price'
         >
           $ {price}.00 USD
-        </motion.p>
-        <motion.p
+        </ContentPrice>
+        <ContentDesc
           variants={getChildrenBasicMotionEffect(
             50,
             0,
@@ -48,8 +54,8 @@ const ProductDetailDesc = ({
           className='product-desc'
         >
           {description}
-        </motion.p>
-        <motion.p
+        </ContentDesc>
+        <ContentMarketing
           variants={getChildrenBasicMotionEffect(
             50,
             0,
@@ -59,13 +65,12 @@ const ProductDetailDesc = ({
             'backInOut',
             0.5
           )}
-          className='product-marketing'
         >
-          can't decide which flavor is right for you ? <br /> try our{' '}
+          can't decide which flavor is right for you ? <br />
           <span onClick={() => handleCurrentProduct('variety')}>
-            sample pack
+            try our sample pack
           </span>
-        </motion.p>
+        </ContentMarketing>
         <Button
           variants={getChildrenBasicMotionEffect(
             50,

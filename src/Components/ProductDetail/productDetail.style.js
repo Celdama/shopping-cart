@@ -42,7 +42,7 @@ export const ProductDetailInfo = styled.div`
 
 export const ProductList = styled.div`
   width: 100%;
-  padding: 1.6rem 3rem;
+  padding: 3rem;
   z-index: 2;
   display: none;
 
