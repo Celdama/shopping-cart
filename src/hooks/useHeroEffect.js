@@ -11,7 +11,7 @@ export const useHeroEffect = () => {
 
     window.removeEventListener('scroll', onScroll);
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onscroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return [position, random];
