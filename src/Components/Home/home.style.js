@@ -6,6 +6,8 @@ export const Wrapper = styled.main`
   align-items: center;
   justify-content: center;
   padding: 8rem 2rem;
+  font-family: 'Cabin Condensed', sans-serif;
+
   @media screen and (min-width: ${breakpoints.xl}) {
     padding: 20rem 2rem;
   }
@@ -36,7 +38,9 @@ export const Content = styled.div`
 
       h1 {
         margin: 0;
-        font-size: 13rem;
+        font-size: 16rem;
+        font-family: 'Saira Semi Condensed', sans-serif;
+        letter-spacing: 0.6rem;
         @media screen and (min-width: ${breakpoints.md}) {
           font-size: 13vw;
         }

@@ -16,6 +16,7 @@ export const Content = styled.div`
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid lightgray;
+    font-size: 1.6rem;
   }
 
   .section-body {

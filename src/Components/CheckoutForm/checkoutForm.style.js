@@ -11,6 +11,7 @@ export const Content = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
+  font-size: 1.3rem;
 
   .form-container {
     width: 100%;
@@ -55,6 +56,10 @@ export const Content = styled.div`
       justify-content: space-between;
       padding: 0 1.2rem;
       border-bottom: 1px solid lightgray;
+
+      h4 {
+        font-size: 1.6rem;
+      }
     }
 
     .section-body {

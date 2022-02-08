@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
+  font-size: 1.4rem;
   .summary-section {
     background-color: var(--white);
     margin: 2rem 0;
@@ -18,6 +19,7 @@ export const Content = styled.div`
     justify-content: space-between;
     padding: 0 1.2rem;
     border-bottom: 1px solid lightgray;
+    font-size: 1.6rem;
   }
 
   .summary-body {

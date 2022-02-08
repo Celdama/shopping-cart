@@ -178,10 +178,12 @@ const CheckoutForm = ({ formData, handleChange, handleSubmit }) => {
                   <input
                     onChange={handleChange}
                     type='text'
+                    disabled
                     name='discountCode'
+                    placeholder='No new discount code yet'
                     value={discountCode}
                   />
-                  <button>Apply</button>
+                  <button disabled>Apply</button>
                 </div>
               </div>
             </div>
