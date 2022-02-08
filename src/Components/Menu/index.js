@@ -1,6 +1,13 @@
 import React from 'react';
 import TalaLogo from '../../Images/logo.svg';
-import { Wrapper, Content, NavMenu, MenuTitle, MenuLink } from './menu.style';
+import {
+  Wrapper,
+  Content,
+  NavMenu,
+  MenuTitle,
+  MenuLink,
+  Logo,
+} from './menu.style';
 import { Link } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
 
@@ -11,7 +18,7 @@ const Menu = ({ displayMenu, handleDisplayMenu }) => {
         <NavMenu>
           <ul>
             <li>
-              <img src={TalaLogo} alt='logo' />
+              <Logo src={TalaLogo} alt='logo' />
             </li>
             <li className='close' onClick={handleDisplayMenu}>
               <FaTimes />
