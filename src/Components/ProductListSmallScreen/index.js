@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { Wrapper, Content, Title } from './productListSmallScreen.style';
+import {
+  Wrapper,
+  Content,
+  Dropdown,
+  Title,
+  ProductList,
+  ProductListItems,
+} from './productListSmallScreen.style';
 import { FaCaretDown } from 'react-icons/fa';
 
 const ProductListSmallScreen = ({
@@ -19,16 +26,16 @@ const ProductListSmallScreen = ({
     handleCurrentProduct(productName);
   };
 
-  const productsList = allProducts.map(({ name, id }) => {
+  const productsListItems = allProducts.map(({ name, id }) => {
     const isCurrent = name === currentProduct.name;
     return (
-      <li
+      <ProductListItems
         key={id}
         style={isCurrent ? { borderBottom: `2px solid ${color}` } : {}}
         onClick={() => handleCurrent(name)}
       >
         {name}
-      </li>
+      </ProductListItems>
     );
   });
 
@@ -37,16 +44,16 @@ const ProductListSmallScreen = ({
   return (
     <Wrapper>
       <Content>
-        <div className='dropdown'>
+        <Dropdown>
           <Title>{name}</Title>
           <span onClick={toggleDropDown}>
             <FaCaretDown className={collapseDropDown ? 'icon' : 'icon down'} />
           </span>
-        </div>
-        <ul className={collapseDropDown ? 'collapse' : 'not-collapse'}>
-          {productsList}
-        </ul>
-        <p>$29.00 USD</p>
+        </Dropdown>
+        <ProductList className={collapseDropDown ? 'collapse' : 'not-collapse'}>
+          {productsListItems}
+        </ProductList>
+        <p className='price'>$29.00 USD</p>
       </Content>
     </Wrapper>
   );
