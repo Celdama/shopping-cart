@@ -123,6 +123,21 @@ const getChildrenInstaEffect = () => ({
   },
 });
 
+const getChildrenItemListEffect = () => ({
+  hidden: {
+    y: 0,
+    opacity: 0,
+  },
+  visible: {
+    y: 5,
+    opacity: 1,
+    transition: {
+      transition: 'backInOut',
+      duration: 1,
+    },
+  },
+});
+
 export {
   getContainerBasicMotionEffect,
   getChildrenBasicMotionEffect,
@@ -132,4 +147,5 @@ export {
   getEffectFromRightToLeft,
   getContainerInstaEffect,
   getChildrenInstaEffect,
+  getChildrenItemListEffect,
 };
