@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Item } from './productDetailSavour.style';
 import { getChildrenBasicMotionEffect } from '../../Helpers/motionEffect';
 
@@ -20,6 +21,13 @@ const ProductDetailSavour = ({
       {name}
     </Item>
   );
+};
+
+ProductDetailSavour.propTypes = {
+  color: PropTypes.string,
+  name: PropTypes.string,
+  handleCurrentProduct: PropTypes.func,
+  isCurrent: PropTypes.bool,
 };
 
 export default ProductDetailSavour;

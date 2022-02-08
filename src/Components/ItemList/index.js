@@ -13,9 +13,10 @@ const ItemList = () => {
   const [controls, ref] = useMotionEffect();
 
   const content = products.map((item, index) => {
+    const { id, name } = item;
     return (
-      <motion.li key={item.id} variants={getChildrenItemListEffect()}>
-        <Item name={item.name} id={item.id} index={index + 1} />
+      <motion.li key={id} variants={getChildrenItemListEffect()}>
+        <Item name={name} id={id} index={index + 1} />
       </motion.li>
     );
   });

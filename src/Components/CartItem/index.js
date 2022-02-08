@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FaMinus, FaPlus } from 'react-icons/fa';
 import {
   Wrapper,
@@ -47,6 +48,16 @@ const CartItem = ({
       </Content>
     </Wrapper>
   );
+};
+
+CartItem.propTypes = {
+  thumbnail: PropTypes.string,
+  name: PropTypes.string,
+  price: PropTypes.number,
+  quantity: PropTypes.number,
+  deleteProductFromCart: PropTypes.func,
+  decrementeProductQuantity: PropTypes.func,
+  incrementeProductQuantity: PropTypes.func,
 };
 
 export default CartItem;

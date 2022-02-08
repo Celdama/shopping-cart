@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Wrapper, Content } from './productImgSmallScreen.style';
 
 const ProductImgSmallScreen = ({
@@ -23,6 +24,12 @@ const ProductImgSmallScreen = ({
       <Content>{productImgController}</Content>
     </Wrapper>
   );
+};
+
+ProductImgSmallScreen.propTypes = {
+  productImages: PropTypes.array,
+  activeImgId: PropTypes.string,
+  handleChangeCurrentImage: PropTypes.func,
 };
 
 export default ProductImgSmallScreen;

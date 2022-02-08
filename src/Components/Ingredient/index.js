@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import PropTypes from 'prop-types';
 import { useMotionEffect } from '../../hooks/useMotionEffect';
 import {
   getEffectFromLeftToRight,
@@ -83,6 +84,12 @@ const Ingredient = ({ text, repeat, name }) => {
       <ContentAnswer>{renderText()}</ContentAnswer>
     </Wrapper>
   );
+};
+
+Ingredient.propTypes = {
+  text: PropTypes.string,
+  repeat: PropTypes.number,
+  name: PropTypes.string,
 };
 
 export default Ingredient;

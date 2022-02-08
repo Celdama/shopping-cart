@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Wrapper, Content } from './checkoutItems.style';
 import { getThumbnailProductByKey } from '../../Helpers/getProductImages';
 
@@ -34,6 +35,11 @@ const CheckoutItems = ({ cartItems, subTotal }) => {
       </Content>
     </Wrapper>
   );
+};
+
+CheckoutItems.propTypes = {
+  cartItems: PropTypes.array,
+  subTotal: PropTypes.number,
 };
 
 export default CheckoutItems;

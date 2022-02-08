@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Wrapper, Content } from './checkoutSummary.style';
 
 const CheckoutSummary = ({ subTotal }) => {
@@ -30,6 +31,10 @@ const CheckoutSummary = ({ subTotal }) => {
       </Content>
     </Wrapper>
   );
+};
+
+CheckoutSummary.propTypes = {
+  subTotal: PropTypes.number,
 };
 
 export default CheckoutSummary;

@@ -1,4 +1,5 @@
 import React from 'react';
+import Proptypes from 'prop-types';
 import { Wrapper, Thumbnail } from './productThumbnails.style';
 import {
   getContainerInstaEffect,
@@ -38,6 +39,14 @@ const ProductThumbnails = ({
       {thumbnailProducts}
     </Wrapper>
   );
+};
+
+ProductThumbnails.propTypes = {
+  color: Proptypes.string,
+  currentProduct: Proptypes.object,
+  productImages: Proptypes.array,
+  activeImgId: Proptypes.string,
+  handleChangeCurrentImage: Proptypes.func,
 };
 
 export default ProductThumbnails;

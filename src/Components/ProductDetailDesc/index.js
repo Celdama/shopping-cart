@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import PropTypes from 'prop-types';
 import {
   Wrapper,
   Content,
@@ -88,6 +88,12 @@ const ProductDetailDesc = ({
       </Content>
     </Wrapper>
   );
+};
+
+ProductDetailDesc.propTypes = {
+  currentProduct: PropTypes.object,
+  handleCurrentProduct: PropTypes.func,
+  addProductToCart: PropTypes.func,
 };
 
 export default ProductDetailDesc;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Wrapper, Content } from './navbar.style';
 import { Link } from 'react-router-dom';
 import { FaGripLines } from 'react-icons/fa';
@@ -26,6 +27,12 @@ const NavBar = ({
       </Content>
     </Wrapper>
   );
+};
+
+NavBar.propTypes = {
+  numberOfCartItems: PropTypes.number,
+  handleDisplayCart: PropTypes.func,
+  handleDisplayMenu: PropTypes.func,
 };
 
 export default NavBar;

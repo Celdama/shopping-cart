@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Wrapper, Content } from './cartHeader.style';
 import { VscClose } from 'react-icons/vsc';
 
@@ -11,6 +12,10 @@ const CartHeader = ({ handleDisplayCart }) => {
       </Content>
     </Wrapper>
   );
+};
+
+CartHeader.propTypes = {
+  handleDisplayCart: PropTypes.func,
 };
 
 export default CartHeader;

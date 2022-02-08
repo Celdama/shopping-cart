@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import LogoDark from '../../Images/logoDark.svg';
 import {
   Wrapper,
@@ -89,6 +90,11 @@ const Menu = ({ displayMenu, handleDisplayMenu }) => {
       </Content>
     </Wrapper>
   );
+};
+
+Menu.propTypes = {
+  displayMenu: PropTypes.bool,
+  handleDisplayMenu: PropTypes.func,
 };
 
 export default Menu;

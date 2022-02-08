@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import PropTypes from 'prop-types';
 import { Wrapper, Content, Title, Smiley } from './space.style';
 import SmileySrc from '../../Images/smiley.svg';
 import { useMotionEffect } from '../../hooks/useMotionEffect';
@@ -65,6 +66,10 @@ const Space = ({ productPage }) => {
       <Content>{productPage ? contentProductPage : contentHomePage}</Content>
     </Wrapper>
   );
+};
+
+Space.propTypes = {
+  productPage: PropTypes.bool,
 };
 
 export default Space;

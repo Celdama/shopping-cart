@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { getMainImgProductShopPageEffect } from '../../Helpers/motionEffect';
 import { Wrapper, Image } from './productDetailImg.style';
 
@@ -21,6 +22,10 @@ const ProductDetailImg = ({ currentProductImage }) => {
       />
     </Wrapper>
   );
+};
+
+ProductDetailImg.propTypes = {
+  currentProductImage: PropTypes.object,
 };
 
 export default ProductDetailImg;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
 import { products } from '../../productData';
 import { getCoverProductByKey } from '../../Helpers/getProductImages';
@@ -24,7 +25,7 @@ import ProductImgSmallScreen from '../ProductImgSmallScreen';
 
 const ProductDetail = ({ addProductToCart }) => {
   const [currentProduct, setCurrentProduct] = useState({});
-  const [currentProductImage, setCurrentProductImage] = useState([]);
+  const [currentProductImage, setCurrentProductImage] = useState({});
   const [allProductsImages, setAllProductsImages] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
   const [activeImgId, setActiveImgId] = useState('');
@@ -77,14 +78,16 @@ const ProductDetail = ({ addProductToCart }) => {
     const isCurrent = name === currentProduct.name;
     return (
       <ProductDetailSavour
-        color={colors[currentProduct.name]}
         key={id}
+        color={colors[currentProduct.name]}
         name={name}
         handleCurrentProduct={() => handleCurrentProduct(name)}
         isCurrent={isCurrent}
       />
     );
   });
+
+  const { name } = currentProduct;
 
   return (
     <Wrapper>
@@ -93,7 +96,7 @@ const ProductDetail = ({ addProductToCart }) => {
           handleCurrentProduct={handleCurrentProduct}
           currentProduct={currentProduct}
           allProducts={allProducts}
-          color={colors[currentProduct.name]}
+          color={colors[name]}
         />
         <ProductDetailImg currentProductImage={currentProductImage} />
         <ProductImgSmallScreen
@@ -115,7 +118,7 @@ const ProductDetail = ({ addProductToCart }) => {
               />
             </div>
             <ProductThumbnails
-              color={colors[currentProduct.name]}
+              color={colors[name]}
               currentProduct={currentProduct}
               productImages={allProductsImages}
               activeImgId={activeImgId}
@@ -124,11 +127,7 @@ const ProductDetail = ({ addProductToCart }) => {
           </ProductInfo>
         </ProductDetailInfo>
       </Content>
-      <Ingredient
-        text='Zero Added Sugar'
-        name={currentProduct.name}
-        repeat={1}
-      />
+      <Ingredient text='Zero Added Sugar' name={name} repeat={1} />
       <Space productPage={true} />
       <CompareContainer>
         <ProductDetailCompare
@@ -146,6 +145,10 @@ const ProductDetail = ({ addProductToCart }) => {
       </CompareContainer>
     </Wrapper>
   );
+};
+
+ProductDetail.propTypes = {
+  addProductToCart: PropTypes.func,
 };
 
 export default ProductDetail;

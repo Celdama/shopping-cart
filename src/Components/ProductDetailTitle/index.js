@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Title } from './productDetailTitle.style';
 import { getTitleProductShopPageEffect } from '../../Helpers/motionEffect';
 
@@ -15,6 +16,10 @@ const ProductDetailTitle = ({ currentProduct }) => {
       {name}
     </Title>
   );
+};
+
+ProductDetailTitle.propTypes = {
+  currentProduct: PropTypes.object,
 };
 
 export default ProductDetailTitle;

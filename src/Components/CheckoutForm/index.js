@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Wrapper, Content } from './checkoutForm.style';
 import Paypal from '../../Images/paypal.svg';
 
@@ -198,6 +199,12 @@ const CheckoutForm = ({ formData, handleChange, handleSubmit }) => {
       </Content>
     </Wrapper>
   );
+};
+
+CheckoutForm.propTypes = {
+  formData: PropTypes.object,
+  handleChange: PropTypes.func,
+  handleSubmit: PropTypes.func,
 };
 
 export default CheckoutForm;

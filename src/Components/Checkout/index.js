@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import getSubTotal from '../../Helpers/subTotalOrder';
 import CheckoutForm from '../CheckoutForm';
@@ -71,6 +72,11 @@ const Checkout = ({ cartItems, handleOrderComplete }) => {
       </Content>
     </Wrapper>
   );
+};
+
+Checkout.propTypes = {
+  cartItems: PropTypes.array,
+  handleOrderComplete: PropTypes.func,
 };
 
 export default Checkout;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CartHeader from '../CartHeader';
 import CartItem from '../CartItem';
 import CartCheckout from '../CartCheckout';
@@ -67,6 +68,15 @@ const Cart = ({
       </Content>
     </Wrapper>
   );
+};
+
+Cart.propTypes = {
+  cartItems: PropTypes.array,
+  displayCart: PropTypes.bool,
+  handleDisplayCart: PropTypes.func,
+  deleteProductFromCart: PropTypes.func,
+  incrementeProductQuantity: PropTypes.func,
+  decrementeProductQuantity: PropTypes.func,
 };
 
 export default Cart;

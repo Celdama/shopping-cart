@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   Wrapper,
   Content,
@@ -40,6 +41,13 @@ const ProductDetailCompare = ({ title, sugar, calories, tala }) => {
       </Content>
     </Wrapper>
   );
+};
+
+ProductDetailCompare.propTypes = {
+  title: PropTypes.string,
+  sugar: PropTypes.number,
+  calories: PropTypes.number,
+  tala: PropTypes.bool,
 };
 
 export default ProductDetailCompare;

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import {
   Wrapper,
   Content,
@@ -57,6 +58,13 @@ const ProductListSmallScreen = ({
       </Content>
     </Wrapper>
   );
+};
+
+ProductListSmallScreen.propTypes = {
+  handleCurrentProduct: PropTypes.func,
+  currentProduct: PropTypes.object,
+  allProducts: PropTypes.array,
+  color: PropTypes.string,
 };
 
 export default ProductListSmallScreen;
