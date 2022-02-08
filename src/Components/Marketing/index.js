@@ -7,7 +7,7 @@ import {
   getContainerMarketingEffect,
   getSubContainerMarketingEffect,
   getChildrenMarketingEffect,
-} from '../../Helpers/shopPageMotionEffect';
+} from '../../Helpers/motionEffect';
 
 import {
   Wrapper,

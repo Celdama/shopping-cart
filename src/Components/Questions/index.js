@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 import Question from '../Question';
 import {
   Wrapper,
@@ -11,7 +10,7 @@ import {
 import Banana from '../../Images/bananas.gif';
 import Syrup from '../../Images/syrup.gif';
 import { useMotionEffect } from '../../hooks/useMotionEffect';
-import { getAnswersEffect } from '../../Helpers/shopPageMotionEffect';
+import { getAnswersEffect } from '../../Helpers/motionEffect';
 
 const Questions = () => {
   const [positionY, setPositionY] = useState(0);

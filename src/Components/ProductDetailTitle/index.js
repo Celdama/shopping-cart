@@ -1,6 +1,6 @@
 import React from 'react';
 import { Title } from './productDetailTitle.style';
-import { getTitleProductShopPageEffect } from '../../Helpers/shopPageMotionEffect';
+import { getTitleProductShopPageEffect } from '../../Helpers/motionEffect';
 
 const ProductDetailTitle = ({ currentProduct }) => {
   const { name } = currentProduct;

@@ -4,7 +4,7 @@ import { useMotionEffect } from '../../hooks/useMotionEffect';
 import {
   getEffectFromLeftToRight,
   getEffectFromRightToLeft,
-} from '../../Helpers/shopPageMotionEffect';
+} from '../../Helpers/motionEffect';
 import { Wrapper, ContentQuestion, ContentAnswer } from './ingredient.style';
 
 const Ingredient = ({ text, repeat, name }) => {

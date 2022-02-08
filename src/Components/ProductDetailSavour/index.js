@@ -1,6 +1,6 @@
 import React from 'react';
 import { Item } from './productDetailSavour.style';
-import { getChildrenBasicMotionEffect } from '../../Helpers/shopPageMotionEffect';
+import { getChildrenBasicMotionEffect } from '../../Helpers/motionEffect';
 
 const ProductDetailSavour = ({
   name,

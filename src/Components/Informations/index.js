@@ -5,7 +5,7 @@ import { Wrapper, Content, Text } from './informations.style';
 import {
   getContainerBasicMotionEffect,
   getChildrenBasicMotionEffect,
-} from '../../Helpers/shopPageMotionEffect';
+} from '../../Helpers/motionEffect';
 
 const Informations = () => {
   const [controls, ref] = useMotionEffect();

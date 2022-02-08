@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import {
   getContainerInstaEffect,
   getChildrenInstaEffect,
-} from '../../Helpers/shopPageMotionEffect';
+} from '../../Helpers/motionEffect';
 import { useMotionEffect } from '../../hooks/useMotionEffect';
 import { Wrapper, Content, InstagramItem } from './instagram.style';
 

@@ -9,7 +9,7 @@ import { useMotionEffect } from '../../hooks/useMotionEffect';
 import {
   getContainerInstaEffect,
   getChildrenInstaEffect,
-} from '../../Helpers/shopPageMotionEffect';
+} from '../../Helpers/motionEffect';
 
 const ProductDetailCompare = ({ title, sugar, calories, tala }) => {
   const [controls, ref] = useMotionEffect();

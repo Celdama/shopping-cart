@@ -7,7 +7,7 @@ import {
   getContainerTitleSpaceEffect,
   getContainerParaSpaceEffect,
   getTextSpaceEffect,
-} from '../../Helpers/shopPageMotionEffect';
+} from '../../Helpers/motionEffect';
 
 const Space = ({ productPage }) => {
   const [controls, ref] = useMotionEffect();

@@ -11,7 +11,7 @@ import {
 import {
   getContainerBasicMotionEffect,
   getChildrenBasicMotionEffect,
-} from '../../Helpers/shopPageMotionEffect';
+} from '../../Helpers/motionEffect';
 
 const ProductDetailDesc = ({
   handleCurrentProduct,

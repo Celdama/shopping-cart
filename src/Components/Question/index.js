@@ -5,7 +5,7 @@ import { Content } from './question.style';
 import {
   getContainerQuestionEffect,
   getChildrenQuestionEffect,
-} from '../../Helpers/shopPageMotionEffect';
+} from '../../Helpers/motionEffect';
 
 const Question = () => {
   const controls = useAnimation();

@@ -6,7 +6,7 @@ import Item from '../Item';
 import {
   getContainerBasicMotionEffect,
   getChildrenItemListEffect,
-} from '../../Helpers/shopPageMotionEffect';
+} from '../../Helpers/motionEffect';
 import { products } from '../../productData';
 
 const ItemList = () => {

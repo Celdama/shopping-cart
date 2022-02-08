@@ -1,5 +1,5 @@
 import React from 'react';
-import { getMainImgProductShopPageEffect } from '../../Helpers/shopPageMotionEffect';
+import { getMainImgProductShopPageEffect } from '../../Helpers/motionEffect';
 import { Wrapper, Image } from './productDetailImg.style';
 
 const ProductDetailImg = ({ currentProductImage }) => {
