@@ -1,14 +1,15 @@
 import styled from 'styled-components';
+import breakpoints from '../../Helpers/breakpoints';
 
 export const Wrapper = styled.section`
-  margin-top: 80px;
-  padding: 80px 20px;
   display: flex;
   justify-content: center;
+  margin-top: 8rem;
+  padding: 8rem 2rem;
 
-  @media screen and (min-width: 992px) {
-    margin-top: 180px;
-    padding: 100px 0;
+  @media screen and (min-width: ${breakpoints.md}) {
+    margin-top: 18rem;
+    padding: 10rem 0;
   }
 `;
 
@@ -16,28 +17,26 @@ export const Content = styled.div`
   width: 100%;
   max-width: var(--maxWidth);
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: ${breakpoints.md}) {
     max-width: 90%;
   }
 
   .title {
     display: flex;
-    font-size: 12px;
-    text-transform: uppercase;
-    width: 50%;
     justify-content: space-between;
     align-items: center;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    width: 50%;
   }
 
   .photos {
-    padding: 60px 0;
+    padding: 6rem 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    gap: 40px;
 
-    @media screen and (min-width: 992px) {
-      gap: 20px;
+    @media screen and (min-width: ${breakpoints.md}) {
       justify-content: space-between;
     }
   }
@@ -52,8 +51,8 @@ export const InstagramItem = styled.div`
   filter: ${({ img }) =>
     img ? 'drop-shadow(0px 16px 40px rgba(0, 0, 0, 0.9))' : ''};
   background-size: cover;
-
-  @media screen and (min-width: 992px) {
+  margin: 1rem;
+  @media screen and (min-width: ${breakpoints.md}) {
     display: block;
   }
 `;

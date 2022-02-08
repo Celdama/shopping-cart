@@ -44,67 +44,84 @@ const getChildrenBasicMotionEffect = (
   };
 };
 
-const getTitleProductShopPageEffect = () => {
-  return {
-    hidden: {
-      y: 50,
-      opacity: 0,
+const getTitleProductShopPageEffect = () => ({
+  hidden: {
+    y: 50,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      transition: 'ease',
+      duration: 0.4,
     },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        transition: 'ease',
-        duration: 0.4,
-      },
-    },
-  };
-};
+  },
+});
 
-const getMainImgProductShopPageEffect = () => {
-  return {
-    hidden: {
-      opacity: 0,
-    },
-    visible: {
-      opacity: 1,
-    },
-  };
-};
+const getMainImgProductShopPageEffect = () => ({
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+  },
+});
 
-const getEffectFromLeftToRight = () => {
-  return {
-    hidden: {
-      x: -400,
+const getEffectFromLeftToRight = () => ({
+  hidden: {
+    x: -400,
+  },
+  visible: {
+    x: 0,
+    transition: {
+      type: 'tween',
+      duration: 6,
+      repeat: Infinity,
+      repeatType: 'mirror',
     },
-    visible: {
-      x: 0,
-      transition: {
-        type: 'tween',
-        duration: 6,
-        repeat: Infinity,
-        repeatType: 'mirror',
-      },
-    },
-  };
-};
+  },
+});
 
-const getEffectFromRightToLeft = (name) => {
-  return {
-    hidden: {
-      x: 0,
+const getEffectFromRightToLeft = (name) => ({
+  hidden: {
+    x: 0,
+  },
+  visible: {
+    x: name ? -990 : -400,
+    transition: {
+      type: 'tween',
+      duration: 6,
+      repeat: Infinity,
+      repeatType: 'mirror',
     },
-    visible: {
-      x: name ? -990 : -400,
-      transition: {
-        type: 'tween',
-        duration: 6,
-        repeat: Infinity,
-        repeatType: 'mirror',
-      },
+  },
+});
+
+const getContainerInstaEffect = () => ({
+  hidden: {},
+  visible: {
+    transition: {
+      delayChildren: 0.6,
+      staggerChildren: 0.3,
     },
-  };
-};
+  },
+});
+
+const getChildrenInstaEffect = () => ({
+  hidden: {
+    y: 15,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: 'tween',
+      duration: 0.3,
+    },
+  },
+});
 
 export {
   getContainerBasicMotionEffect,
@@ -113,4 +130,6 @@ export {
   getMainImgProductShopPageEffect,
   getEffectFromLeftToRight,
   getEffectFromRightToLeft,
+  getContainerInstaEffect,
+  getChildrenInstaEffect,
 };
