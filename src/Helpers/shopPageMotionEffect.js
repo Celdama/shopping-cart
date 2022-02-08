@@ -237,6 +237,41 @@ const getAnswersEffect = () => ({
   },
 });
 
+const getContainerTitleSpaceEffect = () => ({
+  hidden: {},
+  visible: {
+    transition: {
+      delayChildren: 0.8,
+      staggerChildren: 0.2,
+    },
+  },
+});
+
+const getContainerParaSpaceEffect = () => ({
+  hidden: {},
+  visible: {
+    transition: {
+      delayChildren: 1.6,
+      staggerChildren: 0.2,
+    },
+  },
+});
+
+const getTextSpaceEffect = () => ({
+  hidden: {
+    y: 0,
+    opacity: 0,
+  },
+  visible: {
+    y: 5,
+    opacity: 1,
+    transition: {
+      ease: 'easeIn',
+      duration: 0.3,
+    },
+  },
+});
+
 export {
   getContainerBasicMotionEffect,
   getChildrenBasicMotionEffect,
@@ -255,4 +290,7 @@ export {
   getContainerQuestionEffect,
   getChildrenQuestionEffect,
   getAnswersEffect,
+  getContainerTitleSpaceEffect,
+  getContainerParaSpaceEffect,
+  getTextSpaceEffect,
 };

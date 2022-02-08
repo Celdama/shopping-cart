@@ -1,93 +1,63 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Wrapper, Content } from './space.style';
-import Smiley from '../../Images/smiley.svg';
+import { Wrapper, Content, Title, Smiley } from './space.style';
+import SmileySrc from '../../Images/smiley.svg';
 import { useMotionEffect } from '../../hooks/useMotionEffect';
+import {
+  getContainerTitleSpaceEffect,
+  getContainerParaSpaceEffect,
+  getTextSpaceEffect,
+} from '../../Helpers/shopPageMotionEffect';
 
 const Space = ({ productPage }) => {
   const [controls, ref] = useMotionEffect();
 
-  const containerTitleStyle = {
-    hidden: {},
-    visible: {
-      transition: {
-        delayChildren: 0.1,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const containerPStyle = {
-    hidden: {},
-    visible: {
-      transition: {
-        delayChildren: 0.8,
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const textStyle = {
-    hidden: {
-      y: 0,
-      opacity: 0,
-    },
-    visible: {
-      y: 5,
-      opacity: 1,
-      transition: {
-        ease: 'easeIn',
-        duration: 0.3,
-      },
-    },
-  };
-
   const contentHomePage = (
     <>
-      <motion.h2
+      <Title
         ref={ref}
-        variants={containerTitleStyle}
+        variants={getContainerTitleSpaceEffect()}
         animate={controls}
         initial='hidden'
       >
-        <motion.span variants={textStyle}>
+        <motion.span variants={getTextSpaceEffect()}>
           Guil-free satisfaction for
         </motion.span>
-        <motion.span variants={textStyle} className='serif'>
+        <motion.span variants={getTextSpaceEffect()} className='serif'>
           every occasion.
         </motion.span>
-      </motion.h2>
+      </Title>
       <motion.div
         ref={ref}
-        variants={containerPStyle}
+        variants={getContainerParaSpaceEffect()}
         animate={controls}
         initial='hidden'
       >
-        <motion.p variants={textStyle}>
+        <motion.p variants={getTextSpaceEffect()}>
           Yes you can actually eat TALA in space.
         </motion.p>
-        <motion.p variants={textStyle}>
+        <motion.p variants={getTextSpaceEffect()}>
           Now you just have to figure out how to get there.
         </motion.p>
       </motion.div>
-      <img src={Smiley} alt='' />
+      <Smiley src={SmileySrc} alt='smiley' />
     </>
   );
 
   const contentProductPage = (
-    <motion.h2
+    <Title
       ref={ref}
-      variants={containerTitleStyle}
+      variants={getContainerTitleSpaceEffect()}
       animate={controls}
       initial='hidden'
     >
-      <motion.span variants={textStyle}>
+      <motion.span variants={getTextSpaceEffect()}>
         Tastes just like real fruit...
       </motion.span>
-      <motion.span variants={textStyle} className='serif'>
+      <motion.span variants={getTextSpaceEffect()} className='serif'>
         because it is real fruit.
       </motion.span>
-    </motion.h2>
+    </Title>
   );
 
   return (
