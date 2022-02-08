@@ -1,7 +1,8 @@
 import React from 'react';
-import { Wrapper, Content, Logo } from './navbar.style';
+import { Wrapper, Content } from './navbar.style';
 import { Link } from 'react-router-dom';
 import { FaGripLines } from 'react-icons/fa';
+import Logo from '../../Images/logo.svg';
 
 const NavBar = ({
   handleDisplayCart,
@@ -11,9 +12,9 @@ const NavBar = ({
   return (
     <Wrapper>
       <Content>
-        <Logo>
-          <Link to={'/'}>tala</Link>
-        </Logo>
+        <Link to={'/'}>
+          <img src={Logo} alt='logo' />
+        </Link>
         <ul>
           <li onClick={handleDisplayCart}>
             Cart {numberOfCartItems > 0 && <span>{numberOfCartItems}</span>}

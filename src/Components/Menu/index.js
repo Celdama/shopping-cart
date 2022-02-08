@@ -1,5 +1,5 @@
 import React from 'react';
-import TalaLogo from '../../Images/logo.svg';
+import LogoDark from '../../Images/logoDark.svg';
 import {
   Wrapper,
   Content,
@@ -18,7 +18,7 @@ const Menu = ({ displayMenu, handleDisplayMenu }) => {
         <NavMenu>
           <ul>
             <li>
-              <Logo src={TalaLogo} alt='logo' />
+              <Logo src={LogoDark} alt='logo' />
             </li>
             <li className='close' onClick={handleDisplayMenu}>
               <FaTimes />

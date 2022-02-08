@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import breakpoints from '../../Helpers/breakpoints';
 
 export const Wrapper = styled.nav`
   padding: 0 20px;
@@ -9,28 +10,22 @@ export const Content = styled.div`
   justify-content: space-between;
   align-items: center;
   max-width: var(--maxWidth);
-  padding: 20px 0;
+  padding: 2rem 0;
   margin: 0 auto;
   text-transform: uppercase;
+  font-size: 1.4rem;
 
-  @media screen and (min-width: 992px) {
+  @media screen and (min-width: ${breakpoints.md}) {
     max-width: 90%;
   }
 
   ul {
     display: flex;
-    gap: 36px;
+    gap: 3.6rem;
     list-style: none;
     cursor: pointer;
     span {
-      padding-left: 8px;
+      padding-left: 0.8rem;
     }
-  }
-`;
-
-export const Logo = styled.h1`
-  margin: 0;
-  a {
-    color: var(--rose);
   }
 `;
