@@ -38,7 +38,7 @@ export const Content = styled.div`
 
       h1 {
         margin: 0;
-        font-size: 16rem;
+        font-size: 13rem;
         font-family: 'Saira Semi Condensed', sans-serif;
         letter-spacing: 0.6rem;
         @media screen and (min-width: ${breakpoints.md}) {
