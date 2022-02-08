@@ -1,8 +1,8 @@
 import React from 'react';
 import { Wrapper, Thumbnail } from './productThumbnails.style';
 import {
-  getContainerBasicMotionEffect,
-  getChildrenBasicMotionEffect,
+  getContainerInstaEffect,
+  getChildrenInstaEffect,
 } from '../../Helpers/shopPageMotionEffect';
 
 const ProductThumbnails = ({
@@ -17,7 +17,7 @@ const ProductThumbnails = ({
 
     return (
       <Thumbnail
-        variants={getChildrenBasicMotionEffect(0, 0, 5, 1, 'backInOut', 0.4)}
+        variants={getChildrenInstaEffect()}
         color={color}
         $currentProduct={currentProduct}
         key={id}
@@ -31,7 +31,7 @@ const ProductThumbnails = ({
   return (
     <Wrapper
       key={currentProduct.id}
-      variants={getContainerBasicMotionEffect(0, 1, 0, 0.2, 0.2)}
+      variants={getContainerInstaEffect()}
       animate='visible'
       initial='hidden'
     >
