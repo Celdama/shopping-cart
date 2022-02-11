@@ -64,3 +64,5 @@ Should also have a button next to it where you can go to the cart to checkout an
 
 - add typo [DONE]
 - refactoring [DONE]
+
+# Add Redux to this project
