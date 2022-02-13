@@ -32,7 +32,7 @@ export const ProductDetail = ({
   currentProduct,
   products,
   handleIncrementeQuantity,
-  handdleSetCurrentProduct,
+  handleSetCurrentProduct,
 }) => {
   const [currentProductImage, setCurrentProductImage] = useState({});
   const [allProductsImages, setAllProductsImages] = useState([]);
@@ -44,11 +44,12 @@ export const ProductDetail = ({
   useEffect(() => {
     products.forEach((product) => {
       const { id, name } = product;
+
       if (id === locationId) {
-        handdleSetCurrentProduct(product);
+        handleSetCurrentProduct(product);
         setAllImages(getCoverProductByKey(name));
-      } else if (locationId === undefined) {
-        handdleSetCurrentProduct(products[0]);
+      } else if (!locationId) {
+        handleSetCurrentProduct(products[0]);
         setAllImages(getCoverProductByKey(products[0].name));
       }
     });
@@ -60,9 +61,9 @@ export const ProductDetail = ({
     setActiveImgId(imgArray[0].id);
   };
 
-  const handleCurrentProduct = (name) => {
-    handdleSetCurrentProduct(products.find((product) => product.name === name));
-    setAllImages(getCoverProductByKey(name));
+  const handleCurrentProduct = (product) => {
+    handleSetCurrentProduct(product);
+    setAllImages(getCoverProductByKey(product.name));
   };
 
   const handleChangeCurrentImage = (img) => {
@@ -71,23 +72,13 @@ export const ProductDetail = ({
     setActiveImgId(id);
   };
 
-  const colors = {
-    mango: 'orange',
-    banana: 'yellow',
-    pineapple: 'green',
-    pitahaya: 'red',
-    variety: 'white',
-  };
-
-  const listAllProducts = products.map(({ name, id }) => {
-    const isCurrent = name === currentProduct.name;
+  const listAllProducts = products.map((product) => {
     return (
       <ProductDetailSavour
-        key={id}
-        color={colors[currentProduct.name]}
-        name={name}
-        handleCurrentProduct={() => handleCurrentProduct(name)}
-        isCurrent={isCurrent}
+        product={product}
+        key={product.id}
+        handleCurrentProduct={() => handleCurrentProduct(product)}
+        isCurrent={product.name === currentProduct.name}
       />
     );
   });
@@ -101,7 +92,6 @@ export const ProductDetail = ({
           handleCurrentProduct={handleCurrentProduct}
           currentProduct={currentProduct}
           allProducts={products}
-          color={colors[name]}
         />
         <ProductDetailImg currentProductImage={currentProductImage} />
         <ProductImgSmallScreen
@@ -126,7 +116,7 @@ export const ProductDetail = ({
               />
             </div>
             <ProductThumbnails
-              color={colors[name]}
+              color={currentProduct.color}
               currentProduct={currentProduct}
               productImages={allProductsImages}
               activeImgId={activeImgId}
@@ -172,7 +162,7 @@ export const ProductDetailStore = () => {
     [dispatch]
   );
 
-  const handdleSetCurrentProduct = useCallback(
+  const handleSetCurrentProduct = useCallback(
     (product) => {
       dispatch(setCurrentProduct(product));
     },
@@ -183,7 +173,7 @@ export const ProductDetailStore = () => {
     <ProductDetail
       products={products}
       currentProduct={currentProduct}
-      handdleSetCurrentProduct={handdleSetCurrentProduct}
+      handleSetCurrentProduct={handleSetCurrentProduct}
       handleIncrementeQuantity={handleIncrementeQuantity}
     />
   );
