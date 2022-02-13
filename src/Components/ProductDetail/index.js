@@ -23,11 +23,17 @@ import ProductListSmallScreen from '../ProductListSmallScreen';
 import ProductImgSmallScreen from '../ProductImgSmallScreen';
 import { useSelector } from 'react-redux';
 import { productsSelector } from '../../Store/selectors/productsSelector';
+import { currentProductSelector } from '../../Store/selectors/currentProductSelector';
 import { useDispatch } from 'react-redux';
 import { incrementeProductQuantity } from '../../Store/actions/productsActions';
+import { setCurrentProduct } from '../../Store/actions/currentProductAction';
 
-export const ProductDetail = ({ products, handleIncrementeQuantity }) => {
-  const [currentProduct, setCurrentProduct] = useState({});
+export const ProductDetail = ({
+  currentProduct,
+  products,
+  handleIncrementeQuantity,
+  handdleSetCurrentProduct,
+}) => {
   const [currentProductImage, setCurrentProductImage] = useState({});
   const [allProductsImages, setAllProductsImages] = useState([]);
   const [allProducts, setAllProducts] = useState([]);
@@ -40,10 +46,10 @@ export const ProductDetail = ({ products, handleIncrementeQuantity }) => {
     products.forEach((product) => {
       const { id, name } = product;
       if (id === locationId) {
-        setCurrentProduct(product);
+        handdleSetCurrentProduct(product);
         setAllImages(getCoverProductByKey(name));
       } else if (locationId === undefined) {
-        setCurrentProduct(products[0]);
+        handdleSetCurrentProduct(products[0]);
         setAllImages(getCoverProductByKey(products[0].name));
       }
 
@@ -59,7 +65,7 @@ export const ProductDetail = ({ products, handleIncrementeQuantity }) => {
   };
 
   const handleCurrentProduct = (name) => {
-    setCurrentProduct(products.find((product) => product.name === name));
+    handdleSetCurrentProduct(products.find((product) => product.name === name));
     setAllImages(getCoverProductByKey(name));
   };
 
@@ -156,6 +162,8 @@ ProductDetail.propTypes = {
 
 export const ProductDetailStore = () => {
   const products = useSelector(productsSelector);
+  const currentProduct = useSelector(currentProductSelector);
+
   const dispatch = useDispatch();
 
   const handleIncrementeQuantity = useCallback(
@@ -165,9 +173,18 @@ export const ProductDetailStore = () => {
     [dispatch]
   );
 
+  const handdleSetCurrentProduct = useCallback(
+    (product) => {
+      dispatch(setCurrentProduct(product));
+    },
+    [dispatch]
+  );
+
   return (
     <ProductDetail
       products={products}
+      currentProduct={currentProduct}
+      handdleSetCurrentProduct={handdleSetCurrentProduct}
       handleIncrementeQuantity={handleIncrementeQuantity}
     />
   );
