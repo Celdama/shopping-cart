@@ -2,35 +2,35 @@ import { nanoid } from 'nanoid';
 
 const initialState = [
   {
-    id: nanoid(),
+    id: 'aa001',
     name: 'mango',
     quantity: 0,
     price: 29,
     img: '../../Images/products/mango/mainImg.jpg',
   },
   {
-    id: nanoid(),
+    id: 'ab002',
     name: 'banana',
     quantity: 0,
     price: 29,
     img: '../../Images/products/banana/mainImg.jpg',
   },
   {
-    id: nanoid(),
+    id: 'ac003',
     name: 'pineapple',
     quantity: 0,
     price: 29,
     img: '../../Images/products/pineapple/mainImg.jpg',
   },
   {
-    id: nanoid(),
+    id: 'ad004',
     name: 'pitahaya',
     quantity: 0,
     price: 29,
     img: '../../Images/products/pitahaya/mainImg.jpg',
   },
   {
-    id: nanoid(),
+    id: 'ae005',
     name: 'variety',
     quantity: 0,
     price: 29,
@@ -44,10 +44,12 @@ export const productsReducer = (state = initialState, action) => {
   switch (action.type) {
     case INCREMENTE_PRODUCT_QUANTITY:
       return state.map((product) => {
-        return product.name === action.payload.name
-          ? { ...product, quantity: action.payload.quantity + 1 }
-          : product;
+        if (product.id === action.payload.id) {
+          return { ...product, quantity: product.quantity + 1 };
+        }
+        return product;
       });
+
     default:
       return state;
   }

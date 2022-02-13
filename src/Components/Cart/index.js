@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import CartHeader from '../CartHeader';
 import CartItem from '../CartItem';
 import CartCheckout from '../CartCheckout';
 import getSubTotal from '../../Helpers/subTotalOrder';
 import { getThumbnailProductByKey } from '../../Helpers/getProductImages';
+import { incrementeProductQuantity } from '../../Store/actions/productsActions';
 import {
   Wrapper,
   Content,
@@ -13,16 +14,19 @@ import {
   CartItemsContainer,
   ListItems,
 } from './cart.style';
+import { useDispatch, useSelector } from 'react-redux';
+import { productsSelector } from '../../Store/selectors/productsSelector';
 
-const Cart = ({
-  cartItems,
+export const Cart = ({
+  productsStore,
   displayCart,
   handleDisplayCart,
   deleteProductFromCart,
   incrementeProductQuantity,
   decrementeProductQuantity,
+  handleIncrementeQuantity,
 }) => {
-  const cardItemsList = cartItems.map((item) => {
+  const cardItemsList = productsStore.map((item) => {
     const { id, quantity, name, price } = item;
 
     return (
@@ -30,19 +34,21 @@ const Cart = ({
         {!!quantity && (
           <CartItem
             thumbnail={getThumbnailProductByKey(name)}
+            item={item}
             name={name}
             price={price}
             quantity={quantity}
             deleteProductFromCart={() => deleteProductFromCart(item)}
             decrementeProductQuantity={() => decrementeProductQuantity(item)}
-            incrementeProductQuantity={() => incrementeProductQuantity(item)}
+            // incrementeProductQuantity={() => incrementeProductQuantity(item)}
+            handleIncrementeQuantity={() => handleIncrementeQuantity(item)}
           />
         )}
       </Item>
     );
   });
 
-  const subTotal = getSubTotal(cartItems);
+  const subTotal = getSubTotal(productsStore);
 
   return (
     <Wrapper displayCart={displayCart}>
@@ -79,4 +85,31 @@ Cart.propTypes = {
   decrementeProductQuantity: PropTypes.func,
 };
 
-export default Cart;
+export const CartStore = ({
+  displayCart,
+  handleDisplayCart,
+  deleteProductFromCart,
+  decrementeProductQuantity,
+}) => {
+  const products = useSelector(productsSelector);
+  const dispatch = useDispatch();
+
+  const handleIncrementeQuantity = useCallback(
+    (product) => {
+      dispatch(incrementeProductQuantity(product));
+    },
+    [dispatch]
+  );
+
+  return (
+    <Cart
+      productsStore={products}
+      displayCart={displayCart}
+      handleDisplayCart={handleDisplayCart}
+      deleteProductFromCart={deleteProductFromCart}
+      incrementeProductQuantity={incrementeProductQuantity}
+      handleIncrementeQuantity={handleIncrementeQuantity}
+      decrementeProductQuantity={decrementeProductQuantity}
+    />
+  );
+};

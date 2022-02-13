@@ -17,6 +17,7 @@ const ProductDetailDesc = ({
   handleCurrentProduct,
   addProductToCart,
   currentProduct,
+  handleIncrementeQuantity,
 }) => {
   const { id, price, description } = currentProduct;
 
@@ -81,7 +82,7 @@ const ProductDetailDesc = ({
             'backInOut',
             0.5
           )}
-          onClick={addProductToCart}
+          onClick={() => handleIncrementeQuantity(currentProduct)}
         >
           add to cart
         </Button>

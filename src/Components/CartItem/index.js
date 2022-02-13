@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { FaMinus, FaPlus } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {
   Wrapper,
   Content,
@@ -11,13 +13,14 @@ import {
 } from './cartItem.style';
 
 const CartItem = ({
+  item,
   thumbnail,
   name,
   price,
   quantity,
   deleteProductFromCart,
   decrementeProductQuantity,
-  incrementeProductQuantity,
+  handleIncrementeQuantity,
 }) => {
   return (
     <Wrapper>
@@ -39,7 +42,7 @@ const CartItem = ({
           </QuantityBtn>
           <span>{quantity}</span>
           <QuantityBtn
-            onClick={incrementeProductQuantity}
+            onClick={handleIncrementeQuantity}
             className='incremente'
           >
             <FaPlus />
@@ -59,5 +62,16 @@ CartItem.propTypes = {
   decrementeProductQuantity: PropTypes.func,
   incrementeProductQuantity: PropTypes.func,
 };
+
+// export const CartItemStore = () => {
+//   const dispatch = useDispatch();
+
+//   const handleIncrementeQuantity = useCallback(
+//     (product) => {
+//       dispatch(incrementeProductQuantity(product));
+//     },
+//     [dispatch]
+//   );
+// };
 
 export default CartItem;

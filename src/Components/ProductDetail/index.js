@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
 import { getCoverProductByKey } from '../../Helpers/getProductImages';
@@ -24,8 +24,9 @@ import ProductImgSmallScreen from '../ProductImgSmallScreen';
 import { useSelector } from 'react-redux';
 import { productsSelector } from '../../Store/selectors/productsSelector';
 import { useDispatch } from 'react-redux';
+import { incrementeProductQuantity } from '../../Store/actions/productsActions';
 
-export const ProductDetail = ({ addProductToCart, productsStore }) => {
+export const ProductDetail = ({ products, handleIncrementeQuantity }) => {
   const [currentProduct, setCurrentProduct] = useState({});
   const [currentProductImage, setCurrentProductImage] = useState({});
   const [allProductsImages, setAllProductsImages] = useState([]);
@@ -34,17 +35,16 @@ export const ProductDetail = ({ addProductToCart, productsStore }) => {
 
   const location = useLocation();
   const { id: locationId } = location.state || [];
-  console.log(productsStore);
 
   useEffect(() => {
-    productsStore.forEach((product) => {
+    products.forEach((product) => {
       const { id, name } = product;
       if (id === locationId) {
         setCurrentProduct(product);
         setAllImages(getCoverProductByKey(name));
       } else if (locationId === undefined) {
-        setCurrentProduct(productsStore[0]);
-        setAllImages(getCoverProductByKey(productsStore[0].name));
+        setCurrentProduct(products[0]);
+        setAllImages(getCoverProductByKey(products[0].name));
       }
 
       !allProducts.length &&
@@ -59,7 +59,7 @@ export const ProductDetail = ({ addProductToCart, productsStore }) => {
   };
 
   const handleCurrentProduct = (name) => {
-    setCurrentProduct(productsStore.find((product) => product.name === name));
+    setCurrentProduct(products.find((product) => product.name === name));
     setAllImages(getCoverProductByKey(name));
   };
 
@@ -117,7 +117,7 @@ export const ProductDetail = ({ addProductToCart, productsStore }) => {
               <ProductDetailDesc
                 currentProduct={currentProduct}
                 handleCurrentProduct={handleCurrentProduct}
-                addProductToCart={() => addProductToCart(currentProduct)}
+                handleIncrementeQuantity={handleIncrementeQuantity}
               />
             </div>
             <ProductThumbnails
@@ -155,10 +155,20 @@ ProductDetail.propTypes = {
 };
 
 export const ProductDetailStore = () => {
-  const productsStore = useSelector(productsSelector);
+  const products = useSelector(productsSelector);
   const dispatch = useDispatch();
 
-  return <ProductDetail productsStore={productsStore} />;
-};
+  const handleIncrementeQuantity = useCallback(
+    (product) => {
+      dispatch(incrementeProductQuantity(product));
+    },
+    [dispatch]
+  );
 
-// export default ProductDetail;
+  return (
+    <ProductDetail
+      products={products}
+      handleIncrementeQuantity={handleIncrementeQuantity}
+    />
+  );
+};

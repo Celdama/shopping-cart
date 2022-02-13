@@ -1,7 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { productsSelector } from './Store/selectors/productsSelector';
-import { incrementeProductQuantity } from './Store/actions/productsActions';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { GlobalStyle } from './GlobalStyle';
 import { nanoid } from 'nanoid';
@@ -10,11 +7,10 @@ import NavBar from './Components/Navbar';
 import Home from './Components/Home';
 import ScrollToTop from './Components/ScrollToTop';
 import { ProductDetailStore } from './Components/ProductDetail';
-import Cart from './Components/Cart';
+import { CartStore } from './Components/Cart';
 import Checkout from './Components/Checkout';
 
-export const App = ({ products }) => {
-  // console.log(products);
+export const App = () => {
   const [displayMenu, setDisplayMenu] = useState(false);
   const [displayCart, setDisplayCart] = useState(false);
   const [numberOfCartItems, setNumberOfCartItems] = useState(0);
@@ -144,12 +140,7 @@ export const App = ({ products }) => {
           <Route path='/' element={<Home />} />
           <Route
             path='/shop'
-            element={
-              <ProductDetailStore
-                // productsStore={products}
-                addProductToCart={addProductToCart}
-              />
-            }
+            element={<ProductDetailStore addProductToCart={addProductToCart} />}
           />
           <Route
             path='/checkout'
@@ -161,32 +152,16 @@ export const App = ({ products }) => {
             }
           />
         </Routes>
-        <Cart
+        <CartStore
           displayCart={displayCart}
           handleDisplayCart={handleDisplayCart}
           deleteProductFromCart={deleteProductFromCart}
           incrementeProductQuantity={incrementeProductQuantity}
           decrementeProductQuantity={decrementeProductQuantity}
-          cartItems={cartItems}
+          // cartItems={cartItems}
         />
       </BrowserRouter>
       <GlobalStyle />
     </div>
   );
-};
-
-// export default App;
-
-export const AppStore = () => {
-  const products = useSelector(productsSelector);
-  const dispatch = useDispatch();
-
-  const handleIncrementeQuantity = useCallback(
-    (product) => {
-      dispatch(incrementeProductQuantity(product));
-    },
-    [dispatch]
-  );
-
-  return <App products={products} />;
 };
