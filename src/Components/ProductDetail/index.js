@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
-import { products } from '../../productData';
 import { getCoverProductByKey } from '../../Helpers/getProductImages';
 import {
   Wrapper,
@@ -22,8 +21,11 @@ import Space from '../Space';
 import ProductDetailCompare from '../ProductDetailCompare';
 import ProductListSmallScreen from '../ProductListSmallScreen';
 import ProductImgSmallScreen from '../ProductImgSmallScreen';
+import { useSelector } from 'react-redux';
+import { productsSelector } from '../../Store/selectors/productsSelector';
+import { useDispatch } from 'react-redux';
 
-const ProductDetail = ({ addProductToCart }) => {
+export const ProductDetail = ({ addProductToCart, productsStore }) => {
   const [currentProduct, setCurrentProduct] = useState({});
   const [currentProductImage, setCurrentProductImage] = useState({});
   const [allProductsImages, setAllProductsImages] = useState([]);
@@ -32,16 +34,17 @@ const ProductDetail = ({ addProductToCart }) => {
 
   const location = useLocation();
   const { id: locationId } = location.state || [];
+  console.log(productsStore);
 
   useEffect(() => {
-    products.forEach((product) => {
+    productsStore.forEach((product) => {
       const { id, name } = product;
       if (id === locationId) {
         setCurrentProduct(product);
         setAllImages(getCoverProductByKey(name));
       } else if (locationId === undefined) {
-        setCurrentProduct(products[0]);
-        setAllImages(getCoverProductByKey(products[0].name));
+        setCurrentProduct(productsStore[0]);
+        setAllImages(getCoverProductByKey(productsStore[0].name));
       }
 
       !allProducts.length &&
@@ -56,7 +59,7 @@ const ProductDetail = ({ addProductToCart }) => {
   };
 
   const handleCurrentProduct = (name) => {
-    setCurrentProduct(products.find((product) => product.name === name));
+    setCurrentProduct(productsStore.find((product) => product.name === name));
     setAllImages(getCoverProductByKey(name));
   };
 
@@ -151,4 +154,11 @@ ProductDetail.propTypes = {
   addProductToCart: PropTypes.func,
 };
 
-export default ProductDetail;
+export const ProductDetailStore = () => {
+  const productsStore = useSelector(productsSelector);
+  const dispatch = useDispatch();
+
+  return <ProductDetail productsStore={productsStore} />;
+};
+
+// export default ProductDetail;

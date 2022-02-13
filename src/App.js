@@ -9,12 +9,12 @@ import Menu from './Components/Menu';
 import NavBar from './Components/Navbar';
 import Home from './Components/Home';
 import ScrollToTop from './Components/ScrollToTop';
-import ProductDetail from './Components/ProductDetail';
+import { ProductDetailStore } from './Components/ProductDetail';
 import Cart from './Components/Cart';
 import Checkout from './Components/Checkout';
 
 export const App = ({ products }) => {
-  console.log(products);
+  // console.log(products);
   const [displayMenu, setDisplayMenu] = useState(false);
   const [displayCart, setDisplayCart] = useState(false);
   const [numberOfCartItems, setNumberOfCartItems] = useState(0);
@@ -144,7 +144,12 @@ export const App = ({ products }) => {
           <Route path='/' element={<Home />} />
           <Route
             path='/shop'
-            element={<ProductDetail addProductToCart={addProductToCart} />}
+            element={
+              <ProductDetailStore
+                // productsStore={products}
+                addProductToCart={addProductToCart}
+              />
+            }
           />
           <Route
             path='/checkout'
