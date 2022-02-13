@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { getMainImgProductShopPageEffect } from '../../Helpers/motionEffect';
 import { Wrapper, Image } from './productDetailImg.style';
 
-const ProductDetailImg = ({ currentProduct }) => {
+const ProductDetailImg = ({ currentProductImage }) => {
   return (
     <Wrapper>
       <Image
         className='product-img-xl'
-        key={currentProduct.mainImg}
-        src={currentProduct.mainImg}
+        key={currentProductImage.id}
+        src={currentProductImage.img}
         variants={getMainImgProductShopPageEffect()}
         initial='hidden'
         animate='visible'
