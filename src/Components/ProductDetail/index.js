@@ -36,7 +36,6 @@ export const ProductDetail = ({
 }) => {
   const [currentProductImage, setCurrentProductImage] = useState({});
   const [allProductsImages, setAllProductsImages] = useState([]);
-  const [allProducts, setAllProducts] = useState([]);
   const [activeImgId, setActiveImgId] = useState('');
 
   const location = useLocation();
@@ -52,9 +51,6 @@ export const ProductDetail = ({
         handdleSetCurrentProduct(products[0]);
         setAllImages(getCoverProductByKey(products[0].name));
       }
-
-      !allProducts.length &&
-        setAllProducts((prevState) => [...prevState, product]);
     });
   }, [locationId]);
 
@@ -83,7 +79,7 @@ export const ProductDetail = ({
     variety: 'white',
   };
 
-  const listAllProducts = allProducts.map(({ name, id }) => {
+  const listAllProducts = products.map(({ name, id }) => {
     const isCurrent = name === currentProduct.name;
     return (
       <ProductDetailSavour
@@ -104,7 +100,7 @@ export const ProductDetail = ({
         <ProductListSmallScreen
           handleCurrentProduct={handleCurrentProduct}
           currentProduct={currentProduct}
-          allProducts={allProducts}
+          allProducts={products}
           color={colors[name]}
         />
         <ProductDetailImg currentProductImage={currentProductImage} />
