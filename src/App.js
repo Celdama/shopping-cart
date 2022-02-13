@@ -172,8 +172,6 @@ export const App = ({ products }) => {
 
 // export default App;
 
-// A SUPPRIMER JUSTE POUR TESTER SI JE RECUPERER BIEN MON STATE
-
 export const AppStore = () => {
   const products = useSelector(productsSelector);
   const dispatch = useDispatch();
