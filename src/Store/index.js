@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 const store = createStore(
   combineReducers({
     products: productsReducer,
-    fiter: () => console.log('filter'),
+    fiter: null,
   }),
   composeWithDevTools(applyMiddleware(thunk))
 );

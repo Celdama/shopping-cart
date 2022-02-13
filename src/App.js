@@ -1,4 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { productsSelector } from './Store/selectors/productsSelector';
+import { incrementeProductQuantity } from './Store/actions/productsActions';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { GlobalStyle } from './GlobalStyle';
 import { nanoid } from 'nanoid';
@@ -10,7 +13,8 @@ import ProductDetail from './Components/ProductDetail';
 import Cart from './Components/Cart';
 import Checkout from './Components/Checkout';
 
-const App = () => {
+export const App = ({ products }) => {
+  console.log(products);
   const [displayMenu, setDisplayMenu] = useState(false);
   const [displayCart, setDisplayCart] = useState(false);
   const [numberOfCartItems, setNumberOfCartItems] = useState(0);
@@ -166,4 +170,17 @@ const App = () => {
   );
 };
 
-export default App;
+// export default App;
+
+// A SUPPRIMER JUSTE POUR TESTER SI JE RECUPERER BIEN MON STATE
+
+export const AppStore = () => {
+  const products = useSelector(productsSelector);
+  const dispatch = useDispatch();
+
+  const handleIncrementeQuantity = useCallback((product) => {
+    dispatch(incrementeProductQuantity(product));
+  });
+
+  return <App products={products} />;
+};
