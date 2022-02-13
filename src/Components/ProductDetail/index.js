@@ -107,7 +107,10 @@ export const ProductDetail = ({
           allProducts={allProducts}
           color={colors[name]}
         />
-        <ProductDetailImg currentProductImage={currentProductImage} />
+        <ProductDetailImg
+          currentProduct={currentProduct}
+          currentProductImage={currentProductImage}
+        />
         <ProductImgSmallScreen
           productImages={allProductsImages}
           activeImgId={activeImgId}
