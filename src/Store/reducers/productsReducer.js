@@ -6,6 +6,7 @@ const initialState = [
     name: 'mango',
     quantity: 0,
     price: 29,
+    color: 'orange',
     description:
       'The OG tala flavor, ripe mangoes from asia frozen in time their ripest. Crunchy, vegan, just guilt free snacking. 12 packs',
   },
@@ -14,6 +15,7 @@ const initialState = [
     name: 'banana',
     quantity: 0,
     price: 29,
+    color: 'yellow',
     description:
       "Bursting with flavor, this is the banana you've always wanted. Crunchy, vegan, just guilt free snacking. 12 PACKS.",
   },
@@ -22,6 +24,7 @@ const initialState = [
     name: 'pineapple',
     quantity: 0,
     price: 29,
+    color: 'green',
     description:
       'A little tart, a little sweet, a lot pineapple. Crunchy, vegan, just guilt free snacking. 12 PACKS.',
   },
@@ -30,6 +33,7 @@ const initialState = [
     name: 'pitahaya',
     quantity: 0,
     price: 29,
+    color: 'red',
     description:
       'Is it pitahaya, pitaya or dragon fruit? Who cares it tastes good. Crunchy, vegan, just guilt free snacking. 12 PACKS.',
   },
@@ -38,6 +42,7 @@ const initialState = [
     name: 'variety',
     quantity: 0,
     price: 29,
+    color: 'white',
     description:
       "Can't decide? Don't blame you. Enjoy our three most popular crunchy, vegan, guilt free flavors. 12 PACKS. ",
   },

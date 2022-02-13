@@ -3,31 +3,25 @@ import PropTypes from 'prop-types';
 import { Item } from './productDetailSavour.style';
 import { getChildrenBasicMotionEffect } from '../../Helpers/motionEffect';
 
-const ProductDetailSavour = ({
-  name,
-  handleCurrentProduct,
-  isCurrent,
-  color,
-}) => {
+const ProductDetailSavour = ({ product, handleCurrentProduct, isCurrent }) => {
   return (
     <Item
       variants={getChildrenBasicMotionEffect(50, 0, 0, 1, 0.2, 'ease', 0.6)}
-      style={isCurrent ? { borderBottom: `2px solid ${color}` } : {}}
+      style={isCurrent ? { borderBottom: `2px solid ${product.color}` } : {}}
       animate='visible'
       initial='hidden'
-      color={color}
+      color={product.color}
       onClick={handleCurrentProduct}
     >
-      {name}
+      {product.name}
     </Item>
   );
 };
 
 ProductDetailSavour.propTypes = {
-  color: PropTypes.string,
-  name: PropTypes.string,
   handleCurrentProduct: PropTypes.func,
   isCurrent: PropTypes.bool,
+  product: PropTypes.object,
 };
 
 export default ProductDetailSavour;

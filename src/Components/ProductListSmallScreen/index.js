@@ -14,7 +14,6 @@ const ProductListSmallScreen = ({
   allProducts,
   handleCurrentProduct,
   currentProduct,
-  color,
 }) => {
   const [collapseDropDown, setCollapseDropDown] = useState(true);
 
@@ -27,15 +26,15 @@ const ProductListSmallScreen = ({
     handleCurrentProduct(productName);
   };
 
-  const productsListItems = allProducts.map(({ name, id }) => {
-    const isCurrent = name === currentProduct.name;
+  const productsListItems = allProducts.map((product) => {
+    const isCurrent = product.name === currentProduct.name;
     return (
       <ProductListItems
-        key={id}
-        style={isCurrent ? { borderBottom: `2px solid ${color}` } : {}}
-        onClick={() => handleCurrent(name)}
+        key={product.id}
+        style={isCurrent ? { borderBottom: `2px solid ${product.color}` } : {}}
+        onClick={() => handleCurrent(product)}
       >
-        {name}
+        {product.name}
       </ProductListItems>
     );
   });
@@ -64,7 +63,6 @@ ProductListSmallScreen.propTypes = {
   handleCurrentProduct: PropTypes.func,
   currentProduct: PropTypes.object,
   allProducts: PropTypes.array,
-  color: PropTypes.string,
 };
 
 export default ProductListSmallScreen;
