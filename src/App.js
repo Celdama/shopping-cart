@@ -178,9 +178,12 @@ export const AppStore = () => {
   const products = useSelector(productsSelector);
   const dispatch = useDispatch();
 
-  const handleIncrementeQuantity = useCallback((product) => {
-    dispatch(incrementeProductQuantity(product));
-  });
+  const handleIncrementeQuantity = useCallback(
+    (product) => {
+      dispatch(incrementeProductQuantity(product));
+    },
+    [dispatch]
+  );
 
   return <App products={products} />;
 };
