@@ -5,6 +5,7 @@ import { CartItemStore } from '../CartItem';
 import CartCheckout from '../CartCheckout';
 import getSubTotal from '../../Helpers/subTotalOrder';
 import { getThumbnailProductByKey } from '../../Helpers/getProductImages';
+import { toggleDisplayCart } from '../../Store/actions/cartOpenAction';
 
 import {
   Wrapper,
@@ -14,8 +15,9 @@ import {
   CartItemsContainer,
   ListItems,
 } from './cart.style';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { productsSelector } from '../../Store/selectors/productsSelector';
+import { cartOpenSelector } from '../../Store/selectors/cartOpenSelector';
 
 export const Cart = ({ products, displayCart, handleDisplayCart }) => {
   const cardItemsList = products.map((product) => {
@@ -67,8 +69,14 @@ Cart.propTypes = {
   handleDisplayCart: PropTypes.func,
 };
 
-export const CartStore = ({ displayCart, handleDisplayCart }) => {
+export const CartStore = () => {
   const products = useSelector(productsSelector);
+  const displayCart = useSelector(cartOpenSelector);
+  const dispatch = useDispatch();
+
+  const handleDisplayCart = useCallback(() => {
+    dispatch(toggleDisplayCart());
+  }, [dispatch]);
 
   return (
     <Cart
@@ -77,9 +85,4 @@ export const CartStore = ({ displayCart, handleDisplayCart }) => {
       handleDisplayCart={handleDisplayCart}
     />
   );
-};
-
-CartStore.propTypes = {
-  displayCart: PropTypes.bool,
-  handleDisplayCart: PropTypes.func,
 };

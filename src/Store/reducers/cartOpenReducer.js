@@ -5,7 +5,7 @@ export const TOGGLE_DISPLAY_CART = 'TOGGLE_DISPLAY_CART';
 export const cartOpenReducer = (state = initialState, action) => {
   switch (action.type) {
     case TOGGLE_DISPLAY_CART:
-      return !state.cartOpen;
+      return !state;
     default:
       return state;
   }

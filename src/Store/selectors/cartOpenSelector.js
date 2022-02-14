@@ -1,1 +1,1 @@
-export const cartSelector = ({ cartOpen }) => cartOpen;
+export const cartOpenSelector = ({ cartOpen }) => cartOpen;

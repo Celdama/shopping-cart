@@ -11,13 +11,8 @@ import { CheckoutStore } from './Components/Checkout';
 
 export const App = () => {
   const [displayMenu, setDisplayMenu] = useState(false);
-  const [displayCart, setDisplayCart] = useState(false);
 
   // ENREGISTRER LE CART DANS LOCALSTORAGE
-
-  const handleDisplayCart = () => {
-    setDisplayCart((prevState) => !prevState);
-  };
 
   const handleDisplayMenu = () => {
     setDisplayMenu(!displayMenu);
@@ -27,20 +22,14 @@ export const App = () => {
     <div className='App'>
       <BrowserRouter>
         <Menu displayMenu={displayMenu} handleDisplayMenu={handleDisplayMenu} />
-        <NavBarStore
-          handleDisplayCart={handleDisplayCart}
-          handleDisplayMenu={handleDisplayMenu}
-        />
+        <NavBarStore handleDisplayMenu={handleDisplayMenu} />
         <ScrollToTop />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/shop' element={<ProductDetailStore />} />
           <Route path='/checkout' element={<CheckoutStore />} />
         </Routes>
-        <CartStore
-          displayCart={displayCart}
-          handleDisplayCart={handleDisplayCart}
-        />
+        <CartStore />
       </BrowserRouter>
       <GlobalStyle />
     </div>

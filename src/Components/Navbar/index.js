@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { Wrapper, Content } from './navbar.style';
 import { Link } from 'react-router-dom';
 import { FaGripLines } from 'react-icons/fa';
 import Logo from '../../Images/logo.svg';
 import { productsSelector } from '../../Store/selectors/productsSelector';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleDisplayCart } from '../../Store/actions/cartOpenAction';
 
 export const NavBar = ({ handleDisplayCart, handleDisplayMenu, products }) => {
   const [numberOfItems, setNumberOfItems] = useState(0);
@@ -47,8 +48,13 @@ NavBar.propTypes = {
   handleDisplayMenu: PropTypes.func,
 };
 
-export const NavBarStore = ({ handleDisplayCart, handleDisplayMenu }) => {
+export const NavBarStore = ({ handleDisplayMenu }) => {
   const products = useSelector(productsSelector);
+  const dispatch = useDispatch();
+
+  const handleDisplayCart = useCallback(() => {
+    dispatch(toggleDisplayCart());
+  }, [dispatch]);
 
   return (
     <NavBar
