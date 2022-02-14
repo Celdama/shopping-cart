@@ -7,6 +7,7 @@ import Logo from '../../Images/logo.svg';
 import { productsSelector } from '../../Store/selectors/productsSelector';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleDisplayCart } from '../../Store/actions/displayCartAction';
+import { toggleDisplayMenu } from '../../Store/actions/displayMenuAction';
 
 export const NavBar = ({ handleDisplayCart, handleDisplayMenu, products }) => {
   const [numberOfItems, setNumberOfItems] = useState(0);
@@ -48,12 +49,16 @@ NavBar.propTypes = {
   handleDisplayMenu: PropTypes.func,
 };
 
-export const NavBarStore = ({ handleDisplayMenu }) => {
+export const NavBarStore = () => {
   const products = useSelector(productsSelector);
   const dispatch = useDispatch();
 
   const handleDisplayCart = useCallback(() => {
     dispatch(toggleDisplayCart());
+  }, [dispatch]);
+
+  const handleDisplayMenu = useCallback(() => {
+    dispatch(toggleDisplayMenu());
   }, [dispatch]);
 
   return (

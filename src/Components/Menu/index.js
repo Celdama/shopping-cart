@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useCallback } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { toggleDisplayMenu } from '../../Store/actions/displayMenuAction';
+import { displayMenuSelector } from '../../Store/selectors/displayMenuSelector';
+
 import PropTypes from 'prop-types';
 import LogoDark from '../../Images/logoDark.svg';
 import {
@@ -12,7 +16,7 @@ import {
 import { Link } from 'react-router-dom';
 import { FaTimes } from 'react-icons/fa';
 
-const Menu = ({ displayMenu, handleDisplayMenu }) => {
+export const Menu = ({ displayMenu, handleDisplayMenu }) => {
   return (
     <Wrapper className={displayMenu ? 'show-menu' : 'hide-menu'}>
       <Content>
@@ -97,4 +101,15 @@ Menu.propTypes = {
   handleDisplayMenu: PropTypes.func,
 };
 
-export default Menu;
+export const MenuStore = () => {
+  const displayMenu = useSelector(displayMenuSelector);
+  const dispatch = useDispatch();
+
+  const handleDisplayMenu = useCallback(() => {
+    dispatch(toggleDisplayMenu());
+  }, [dispatch]);
+
+  return (
+    <Menu displayMenu={displayMenu} handleDisplayMenu={handleDisplayMenu} />
+  );
+};

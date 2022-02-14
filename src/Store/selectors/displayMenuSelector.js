@@ -1,1 +1,1 @@
-export const displayCartSelector = ({ displayMenu }) => displayMenu;
+export const displayMenuSelector = ({ displayMenu }) => displayMenu;
