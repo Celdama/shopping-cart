@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { GlobalStyle } from './GlobalStyle';
-import { nanoid } from 'nanoid';
 import Menu from './Components/Menu';
 import { NavBarStore } from './Components/Navbar';
 import Home from './Components/Home';
