@@ -18,8 +18,17 @@ const ProductDetailDesc = ({
   handleCurrentProduct,
   currentProduct,
   handleIncrementeQuantity,
+  handleDisplayCart,
+  displayCart,
 }) => {
   const { id, price, description } = currentProduct;
+
+  const addProductToCart = (product) => {
+    handleIncrementeQuantity(product);
+    if (!displayCart) {
+      handleDisplayCart();
+    }
+  };
 
   return (
     <Wrapper>
@@ -46,7 +55,7 @@ const ProductDetailDesc = ({
         </ContentMarketing>
         <Button
           variants={getChildrenDescEffect()}
-          onClick={() => handleIncrementeQuantity(currentProduct)}
+          onClick={() => addProductToCart(currentProduct)}
         >
           add to cart
         </Button>
@@ -58,8 +67,10 @@ const ProductDetailDesc = ({
 ProductDetailDesc.propTypes = {
   products: PropTypes.array,
   currentProduct: PropTypes.object,
+  displayCart: PropTypes.bool,
   handleCurrentProduct: PropTypes.func,
-  addProductToCart: PropTypes.func,
+  handleDisplayCart: PropTypes.func,
+  handleIncrementeQuantity: PropTypes.func,
 };
 
 export default ProductDetailDesc;

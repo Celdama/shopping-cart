@@ -26,12 +26,16 @@ import { productsSelector } from '../../Store/selectors/productsSelector';
 import { currentProductSelector } from '../../Store/selectors/currentProductSelector';
 import { incrementeProductQuantity } from '../../Store/actions/productsActions';
 import { setCurrentProduct } from '../../Store/actions/currentProductAction';
+import { toggleDisplayCart } from '../../Store/actions/displayCartAction';
+import { displayCartSelector } from '../../Store/selectors/displayCartSelector';
 
 export const ProductDetail = ({
   currentProduct,
   products,
+  displayCart,
   handleIncrementeQuantity,
   handleSetCurrentProduct,
+  handleDisplayCart,
 }) => {
   const [currentProductImage, setCurrentProductImage] = useState({});
   const [allProductsImages, setAllProductsImages] = useState([]);
@@ -109,8 +113,10 @@ export const ProductDetail = ({
               <ProductDetailDesc
                 products={products}
                 currentProduct={currentProduct}
+                displayCart={displayCart}
                 handleCurrentProduct={handleCurrentProduct}
                 handleIncrementeQuantity={handleIncrementeQuantity}
+                handleDisplayCart={handleDisplayCart}
               />
             </div>
             <ProductThumbnails
@@ -147,11 +153,13 @@ ProductDetail.propTypes = {
   currentProduct: PropTypes.object,
   handleSetCurrentProduct: PropTypes.func,
   handleIncrementeQuantity: PropTypes.func,
+  handleDisplayCart: PropTypes.func,
 };
 
 export const ProductDetailStore = () => {
   const products = useSelector(productsSelector);
   const currentProduct = useSelector(currentProductSelector);
+  const displayCart = useSelector(displayCartSelector);
 
   const dispatch = useDispatch();
 
@@ -169,12 +177,18 @@ export const ProductDetailStore = () => {
     [dispatch]
   );
 
+  const handleDisplayCart = useCallback(() => {
+    dispatch(toggleDisplayCart());
+  }, [dispatch]);
+
   return (
     <ProductDetail
       products={products}
       currentProduct={currentProduct}
+      displayCart={displayCart}
       handleSetCurrentProduct={handleSetCurrentProduct}
       handleIncrementeQuantity={handleIncrementeQuantity}
+      handleDisplayCart={handleDisplayCart}
     />
   );
 };
