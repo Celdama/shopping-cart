@@ -115,7 +115,6 @@ export const ProductDetail = ({
               />
             </div>
             <ProductThumbnails
-              color={currentProduct.color}
               currentProduct={currentProduct}
               productImages={allProductsImages}
               activeImgId={activeImgId}

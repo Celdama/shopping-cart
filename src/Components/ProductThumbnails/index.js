@@ -9,10 +9,11 @@ import {
 const ProductThumbnails = ({
   productImages,
   currentProduct,
-  color,
   activeImgId,
   handleChangeCurrentImage,
 }) => {
+  const { color, id } = currentProduct;
+
   const thumbnailProducts = productImages.map((src) => {
     const { id, img } = src;
 
@@ -31,7 +32,7 @@ const ProductThumbnails = ({
 
   return (
     <Wrapper
-      key={currentProduct.id}
+      key={id}
       variants={getContainerInstaEffect()}
       animate='visible'
       initial='hidden'
@@ -42,7 +43,6 @@ const ProductThumbnails = ({
 };
 
 ProductThumbnails.propTypes = {
-  color: Proptypes.string,
   currentProduct: Proptypes.object,
   productImages: Proptypes.array,
   activeImgId: Proptypes.string,
