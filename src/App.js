@@ -8,7 +8,7 @@ import Home from './Components/Home';
 import ScrollToTop from './Components/ScrollToTop';
 import { ProductDetailStore } from './Components/ProductDetail';
 import { CartStore } from './Components/Cart';
-import Checkout from './Components/Checkout';
+import { CheckoutStore } from './Components/Checkout';
 
 export const App = () => {
   const [displayMenu, setDisplayMenu] = useState(false);
@@ -64,19 +64,6 @@ export const App = () => {
 
     handleNumberOfProduct(cartItems);
   }, [cartItems]);
-
-  const addProductToCart = (product) => {
-    setCartItems((prevState) => {
-      return prevState.map((item) => {
-        const { name, quantity } = item;
-        return name === product.name
-          ? { ...item, quantity: quantity + 1 }
-          : item;
-      });
-    });
-
-    setDisplayCart(true);
-  };
 
   const deleteProductFromCart = (product) => {
     setCartItems((prevState) => {
@@ -138,17 +125,11 @@ export const App = () => {
         <ScrollToTop />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route
-            path='/shop'
-            element={<ProductDetailStore addProductToCart={addProductToCart} />}
-          />
+          <Route path='/shop' element={<ProductDetailStore />} />
           <Route
             path='/checkout'
             element={
-              <Checkout
-                handleOrderComplete={handleOrderComplete}
-                cartItems={cartItems}
-              />
+              <CheckoutStore handleOrderComplete={handleOrderComplete} />
             }
           />
         </Routes>

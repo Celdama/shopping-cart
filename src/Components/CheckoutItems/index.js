@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Wrapper, Content } from './checkoutItems.style';
 import { getThumbnailProductByKey } from '../../Helpers/getProductImages';
 
-const CheckoutItems = ({ cartItems, subTotal }) => {
-  const order = cartItems.map(({ id, quantity, name, price }) => {
+const CheckoutItems = ({ products, subTotal }) => {
+  const order = products.map(({ id, quantity, name, price }) => {
     return (
       !!quantity && (
         <div key={id} className='product-items'>
@@ -38,7 +38,7 @@ const CheckoutItems = ({ cartItems, subTotal }) => {
 };
 
 CheckoutItems.propTypes = {
-  cartItems: PropTypes.array,
+  products: PropTypes.array,
   subTotal: PropTypes.number,
 };
 

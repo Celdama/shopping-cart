@@ -21,10 +21,9 @@ import Space from '../Space';
 import ProductDetailCompare from '../ProductDetailCompare';
 import ProductListSmallScreen from '../ProductListSmallScreen';
 import ProductImgSmallScreen from '../ProductImgSmallScreen';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { productsSelector } from '../../Store/selectors/productsSelector';
 import { currentProductSelector } from '../../Store/selectors/currentProductSelector';
-import { useDispatch } from 'react-redux';
 import { incrementeProductQuantity } from '../../Store/actions/productsActions';
 import { setCurrentProduct } from '../../Store/actions/currentProductAction';
 

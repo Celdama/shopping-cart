@@ -6,8 +6,10 @@ import CheckoutForm from '../CheckoutForm';
 import CheckoutItems from '../CheckoutItems';
 import CheckoutSummary from '../CheckoutSummary';
 import { Wrapper, Content } from './checkout.style';
+import { useSelector } from 'react-redux';
+import { productsSelector } from '../../Store/selectors/productsSelector';
 
-const Checkout = ({ cartItems, handleOrderComplete }) => {
+export const Checkout = ({ products, handleOrderComplete }) => {
   let navigate = useNavigate();
   const [redirect, setRedirect] = useState(false);
   const [formData, setFormData] = useState({
@@ -53,7 +55,7 @@ const Checkout = ({ cartItems, handleOrderComplete }) => {
     setRedirect(true);
   };
 
-  const subTotal = getSubTotal(cartItems);
+  const subTotal = getSubTotal(products);
 
   return (
     <Wrapper>
@@ -64,7 +66,7 @@ const Checkout = ({ cartItems, handleOrderComplete }) => {
             handleChange={handleChange}
             handleSubmit={handleSubmit}
           />
-          <CheckoutItems cartItems={cartItems} subTotal={subTotal} />
+          <CheckoutItems products={products} subTotal={subTotal} />
         </div>
         <div className='right-side'>
           <CheckoutSummary subTotal={subTotal} />
@@ -79,4 +81,14 @@ Checkout.propTypes = {
   handleOrderComplete: PropTypes.func,
 };
 
-export default Checkout;
+export const CheckoutStore = ({ handleOrderComplete }) => {
+  const products = useSelector(productsSelector);
+
+  return (
+    <Checkout products={products} handleOrderComplete={handleOrderComplete} />
+  );
+};
+
+CheckoutStore.propTypes = {
+  handleOrderComplete: PropTypes.func,
+};
