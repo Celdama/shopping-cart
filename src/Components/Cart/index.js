@@ -5,7 +5,7 @@ import { CartItemStore } from '../CartItem';
 import CartCheckout from '../CartCheckout';
 import getSubTotal from '../../Helpers/subTotalOrder';
 import { getThumbnailProductByKey } from '../../Helpers/getProductImages';
-import { toggleDisplayCart } from '../../Store/actions/cartOpenAction';
+import { toggleDisplayCart } from '../../Store/actions/displayCartAction';
 
 import {
   Wrapper,
@@ -17,7 +17,7 @@ import {
 } from './cart.style';
 import { useSelector, useDispatch } from 'react-redux';
 import { productsSelector } from '../../Store/selectors/productsSelector';
-import { cartOpenSelector } from '../../Store/selectors/cartOpenSelector';
+import { displayCartSelector } from '../../Store/selectors/displayCartSelector';
 
 export const Cart = ({ products, displayCart, handleDisplayCart }) => {
   const cardItemsList = products.map((product) => {
@@ -71,7 +71,7 @@ Cart.propTypes = {
 
 export const CartStore = () => {
   const products = useSelector(productsSelector);
-  const displayCart = useSelector(cartOpenSelector);
+  const displayCart = useSelector(displayCartSelector);
   const dispatch = useDispatch();
 
   const handleDisplayCart = useCallback(() => {

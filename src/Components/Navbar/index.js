@@ -6,7 +6,7 @@ import { FaGripLines } from 'react-icons/fa';
 import Logo from '../../Images/logo.svg';
 import { productsSelector } from '../../Store/selectors/productsSelector';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleDisplayCart } from '../../Store/actions/cartOpenAction';
+import { toggleDisplayCart } from '../../Store/actions/displayCartAction';
 
 export const NavBar = ({ handleDisplayCart, handleDisplayMenu, products }) => {
   const [numberOfItems, setNumberOfItems] = useState(0);

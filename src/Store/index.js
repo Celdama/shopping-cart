@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { productsReducer } from './reducers/productsReducer';
 import { currentProductReducer } from './reducers/currentProductReducer';
-import { cartOpenReducer } from './reducers/cartOpenReducer';
+import { displayCartReducer } from './reducers/displayCartReducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
@@ -9,7 +9,7 @@ const store = createStore(
   combineReducers({
     products: productsReducer,
     currentProduct: currentProductReducer,
-    cartOpen: cartOpenReducer,
+    displayCart: displayCartReducer,
     fiter: null,
   }),
   composeWithDevTools(applyMiddleware(thunk))

@@ -2,7 +2,7 @@ const initialState = false;
 
 export const TOGGLE_DISPLAY_CART = 'TOGGLE_DISPLAY_CART';
 
-export const cartOpenReducer = (state = initialState, action) => {
+export const displayCartReducer = (state = initialState, action) => {
   switch (action.type) {
     case TOGGLE_DISPLAY_CART:
       return !state;

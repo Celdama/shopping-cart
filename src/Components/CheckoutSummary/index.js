@@ -13,7 +13,7 @@ const CheckoutSummary = ({ subTotal }) => {
           <div className='summary-body'>
             <div>
               <span>Subtotal</span>
-              <span>$ {subTotal} USD</span>
+              <span>$ {subTotal}.00 USD</span>
             </div>
             <div>
               <span>Shipping</span>
@@ -21,7 +21,7 @@ const CheckoutSummary = ({ subTotal }) => {
             </div>
             <div>
               <span>Total</span>
-              <span>$ {subTotal} USD</span>
+              <span>$ {subTotal}.00 USD</span>
             </div>
           </div>
         </div>
