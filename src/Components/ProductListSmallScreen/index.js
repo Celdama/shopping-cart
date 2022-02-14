@@ -11,7 +11,7 @@ import {
 import { FaCaretDown } from 'react-icons/fa';
 
 const ProductListSmallScreen = ({
-  allProducts,
+  products,
   handleCurrentProduct,
   currentProduct,
 }) => {
@@ -21,20 +21,21 @@ const ProductListSmallScreen = ({
     setCollapseDropDown(!collapseDropDown);
   };
 
-  const handleCurrent = (productName) => {
+  const handleCurrent = (product) => {
     setCollapseDropDown(!collapseDropDown);
-    handleCurrentProduct(productName);
+    handleCurrentProduct(product);
   };
 
-  const productsListItems = allProducts.map((product) => {
-    const isCurrent = product.name === currentProduct.name;
+  const productsListItems = products.map((product) => {
+    const { name, id, color } = product;
+    const isCurrent = name === currentProduct.name;
     return (
       <ProductListItems
-        key={product.id}
-        style={isCurrent ? { borderBottom: `2px solid ${product.color}` } : {}}
+        key={id}
+        style={isCurrent ? { borderBottom: `2px solid ${color}` } : {}}
         onClick={() => handleCurrent(product)}
       >
-        {product.name}
+        {name}
       </ProductListItems>
     );
   });
@@ -62,7 +63,7 @@ const ProductListSmallScreen = ({
 ProductListSmallScreen.propTypes = {
   handleCurrentProduct: PropTypes.func,
   currentProduct: PropTypes.object,
-  allProducts: PropTypes.array,
+  products: PropTypes.array,
 };
 
 export default ProductListSmallScreen;

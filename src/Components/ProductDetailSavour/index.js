@@ -12,7 +12,7 @@ const ProductDetailSavour = ({ product, handleCurrentProduct, isCurrent }) => {
       animate='visible'
       initial='hidden'
       color={color}
-      onClick={handleCurrentProduct}
+      onClick={() => handleCurrentProduct(product)}
     >
       {name}
     </Item>

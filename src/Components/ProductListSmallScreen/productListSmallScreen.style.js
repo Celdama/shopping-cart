@@ -26,6 +26,7 @@ export const Content = styled.div`
 
 export const Dropdown = styled.div`
   display: flex;
+
   justify-content: space-between;
   align-items: center;
   position: relative;
@@ -48,7 +49,7 @@ export const Dropdown = styled.div`
 export const ProductList = styled.ul`
   background-color: var(--black);
   position: absolute;
-  top: 68px;
+  top: 74px;
   width: 95%;
   list-style: none;
   padding: 0 0 20px 0;

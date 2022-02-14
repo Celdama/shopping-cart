@@ -73,12 +73,13 @@ export const ProductDetail = ({
   };
 
   const listAllProducts = products.map((product) => {
+    const { id, name } = product;
     return (
       <ProductDetailSavour
         product={product}
-        key={product.id}
-        handleCurrentProduct={() => handleCurrentProduct(product)}
-        isCurrent={product.name === currentProduct.name}
+        key={id}
+        handleCurrentProduct={handleCurrentProduct}
+        isCurrent={name === currentProduct.name}
       />
     );
   });
@@ -91,7 +92,7 @@ export const ProductDetail = ({
         <ProductListSmallScreen
           handleCurrentProduct={handleCurrentProduct}
           currentProduct={currentProduct}
-          allProducts={products}
+          products={products}
         />
         <ProductDetailImg currentProductImage={currentProductImage} />
         <ProductImgSmallScreen
