@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import getSubTotal from '../../Helpers/subTotalOrder';
@@ -6,8 +6,9 @@ import CheckoutForm from '../CheckoutForm';
 import CheckoutItems from '../CheckoutItems';
 import CheckoutSummary from '../CheckoutSummary';
 import { Wrapper, Content } from './checkout.style';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { productsSelector } from '../../Store/selectors/productsSelector';
+import { resetProductQuantityAfterOrder } from '../../Store/actions/productsActions';
 
 export const Checkout = ({ products, handleOrderComplete }) => {
   let navigate = useNavigate();
@@ -51,7 +52,7 @@ export const Checkout = ({ products, handleOrderComplete }) => {
     alert(
       `Dear ${fullName} your order has been registered, and will be delivered to the adress ${adress} ${city} within 5 days.`
     );
-    handleOrderComplete();
+    handleOrderComplete(products);
     setRedirect(true);
   };
 
@@ -81,14 +82,18 @@ Checkout.propTypes = {
   handleOrderComplete: PropTypes.func,
 };
 
-export const CheckoutStore = ({ handleOrderComplete }) => {
+export const CheckoutStore = () => {
   const products = useSelector(productsSelector);
+  const dispatch = useDispatch();
+
+  const handleOrderComplete = useCallback(
+    (product) => {
+      dispatch(resetProductQuantityAfterOrder(product));
+    },
+    [dispatch]
+  );
 
   return (
     <Checkout products={products} handleOrderComplete={handleOrderComplete} />
   );
-};
-
-CheckoutStore.propTypes = {
-  handleOrderComplete: PropTypes.func,
 };

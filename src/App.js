@@ -100,15 +100,6 @@ export const App = () => {
     setDisplayCart((prevState) => !prevState);
   };
 
-  const handleOrderComplete = () => {
-    console.log('order complete');
-    setCartItems((prevState) => {
-      return prevState.map((item) => {
-        return { ...item, quantity: 0 };
-      });
-    });
-  };
-
   const handleDisplayMenu = () => {
     setDisplayMenu(!displayMenu);
   };
@@ -126,12 +117,7 @@ export const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/shop' element={<ProductDetailStore />} />
-          <Route
-            path='/checkout'
-            element={
-              <CheckoutStore handleOrderComplete={handleOrderComplete} />
-            }
-          />
+          <Route path='/checkout' element={<CheckoutStore />} />
         </Routes>
         <CartStore
           displayCart={displayCart}
