@@ -74,17 +74,6 @@ export const App = () => {
     });
   };
 
-  const decrementeProductQuantity = (product) => {
-    setCartItems((prevState) => {
-      return prevState.map((item) => {
-        const { name, quantity } = item;
-        return name === product.name
-          ? { ...item, quantity: quantity - 1 }
-          : item;
-      });
-    });
-  };
-
   const handleDisplayCart = () => {
     setDisplayCart((prevState) => !prevState);
   };
@@ -112,7 +101,6 @@ export const App = () => {
           displayCart={displayCart}
           handleDisplayCart={handleDisplayCart}
           deleteProductFromCart={deleteProductFromCart}
-          decrementeProductQuantity={decrementeProductQuantity}
         />
       </BrowserRouter>
       <GlobalStyle />
