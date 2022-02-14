@@ -4,12 +4,13 @@ import { getMainImgProductShopPageEffect } from '../../Helpers/motionEffect';
 import { Wrapper, Image } from './productDetailImg.style';
 
 const ProductDetailImg = ({ currentProductImage }) => {
+  const { id, img } = currentProductImage;
   return (
     <Wrapper>
       <Image
         className='product-img-xl'
-        key={currentProductImage.id}
-        src={currentProductImage.img}
+        key={id}
+        src={img}
         variants={getMainImgProductShopPageEffect()}
         initial='hidden'
         animate='visible'
