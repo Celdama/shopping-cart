@@ -49,6 +49,8 @@ const initialState = [
 ];
 
 export const INCREMENTE_PRODUCT_QUANTITY = 'INCREMENTE_PRODUCT_QUANTITY';
+export const RESET_PRODUCT_QUANTITY_AFTER_ORDER =
+  'RESET_PRODUCT_QUANTITY_AFTER_ORDER';
 
 export const productsReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -58,6 +60,10 @@ export const productsReducer = (state = initialState, action) => {
           return { ...product, quantity: product.quantity + 1 };
         }
         return product;
+      });
+    case RESET_PRODUCT_QUANTITY_AFTER_ORDER:
+      return state.map((product) => {
+        return { ...product, quantity: 0 };
       });
 
     default:
