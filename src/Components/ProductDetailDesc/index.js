@@ -14,8 +14,8 @@ import {
 } from '../../Helpers/motionEffect';
 
 const ProductDetailDesc = ({
+  products,
   handleCurrentProduct,
-  addProductToCart,
   currentProduct,
   handleIncrementeQuantity,
 }) => {
@@ -40,7 +40,7 @@ const ProductDetailDesc = ({
         </ContentDesc>
         <ContentMarketing variants={getChildrenDescEffect()}>
           can't decide which flavor is right for you ? <br />
-          <span onClick={() => handleCurrentProduct('variety')}>
+          <span onClick={() => handleCurrentProduct(products[4])}>
             try our sample pack
           </span>
         </ContentMarketing>
@@ -56,6 +56,7 @@ const ProductDetailDesc = ({
 };
 
 ProductDetailDesc.propTypes = {
+  products: PropTypes.array,
   currentProduct: PropTypes.object,
   handleCurrentProduct: PropTypes.func,
   addProductToCart: PropTypes.func,

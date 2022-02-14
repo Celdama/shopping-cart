@@ -108,6 +108,7 @@ export const ProductDetail = ({
             <div className='info-text'>
               <ProductDetailTitle currentProduct={currentProduct} />
               <ProductDetailDesc
+                products={products}
                 currentProduct={currentProduct}
                 handleCurrentProduct={handleCurrentProduct}
                 handleIncrementeQuantity={handleIncrementeQuantity}
