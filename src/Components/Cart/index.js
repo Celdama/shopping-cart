@@ -17,12 +17,7 @@ import {
 import { useSelector } from 'react-redux';
 import { productsSelector } from '../../Store/selectors/productsSelector';
 
-export const Cart = ({
-  products,
-  displayCart,
-  handleDisplayCart,
-  deleteProductFromCart,
-}) => {
+export const Cart = ({ products, displayCart, handleDisplayCart }) => {
   const cardItemsList = products.map((product) => {
     const { id, quantity, name } = product;
 
@@ -32,7 +27,6 @@ export const Cart = ({
           <CartItemStore
             thumbnail={getThumbnailProductByKey(name)}
             product={product}
-            deleteProductFromCart={() => deleteProductFromCart(product)}
           />
         )}
       </Item>
@@ -68,19 +62,12 @@ export const Cart = ({
 };
 
 Cart.propTypes = {
-  cartItems: PropTypes.array,
+  products: PropTypes.array,
   displayCart: PropTypes.bool,
   handleDisplayCart: PropTypes.func,
-  deleteProductFromCart: PropTypes.func,
-  incrementeProductQuantity: PropTypes.func,
-  decrementeProductQuantity: PropTypes.func,
 };
 
-export const CartStore = ({
-  displayCart,
-  handleDisplayCart,
-  deleteProductFromCart,
-}) => {
+export const CartStore = ({ displayCart, handleDisplayCart }) => {
   const products = useSelector(productsSelector);
 
   return (
@@ -88,7 +75,11 @@ export const CartStore = ({
       products={products}
       displayCart={displayCart}
       handleDisplayCart={handleDisplayCart}
-      deleteProductFromCart={deleteProductFromCart}
     />
   );
+};
+
+CartStore.propTypes = {
+  displayCart: PropTypes.bool,
+  handleDisplayCart: PropTypes.func,
 };

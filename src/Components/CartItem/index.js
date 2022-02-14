@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import {
   incrementeProductQuantity,
   decrementeProductQuantity,
+  deleteProduct,
 } from '../../Store/actions/productsActions';
 
 import {
@@ -19,18 +20,23 @@ import {
 export const CartItem = ({
   product,
   thumbnail,
-  deleteProductFromCart,
   handleIncrementeQuantity,
   handleDecrementeQuantity,
+  handleDeleteProductFromCart,
 }) => {
+  const { name, price, quantity } = product;
+
   return (
     <Wrapper>
       <Content>
         <Thumbnail src={thumbnail} alt='product' />
         <ContentProductInfo>
-          <span className='name'>{product.name}</span>
-          <span className='price'>$ {product.price}.00 USD</span>
-          <span onClick={deleteProductFromCart} className='delete'>
+          <span className='name'>{name}</span>
+          <span className='price'>$ {price}.00 USD</span>
+          <span
+            onClick={() => handleDeleteProductFromCart(product)}
+            className='delete'
+          >
             REMOVE
           </span>
         </ContentProductInfo>
@@ -41,7 +47,7 @@ export const CartItem = ({
           >
             <FaMinus />
           </QuantityBtn>
-          <span>{product.quantity}</span>
+          <span>{quantity}</span>
           <QuantityBtn
             onClick={() => handleIncrementeQuantity(product)}
             className='incremente'
@@ -56,19 +62,13 @@ export const CartItem = ({
 
 CartItem.propTypes = {
   thumbnail: PropTypes.string,
-  name: PropTypes.string,
-  price: PropTypes.number,
-  quantity: PropTypes.number,
-  deleteProductFromCart: PropTypes.func,
-  decrementeProductQuantity: PropTypes.func,
-  incrementeProductQuantity: PropTypes.func,
+  product: PropTypes.object,
+  handleDeleteProductFromCart: PropTypes.func,
+  handleDecrementeQuantity: PropTypes.func,
+  handleIncrementeQuantity: PropTypes.func,
 };
 
-export const CartItemStore = ({
-  thumbnail,
-  product,
-  deleteProductFromCart,
-}) => {
+export const CartItemStore = ({ thumbnail, product }) => {
   const dispatch = useDispatch();
 
   const handleIncrementeQuantity = useCallback(
@@ -85,13 +85,25 @@ export const CartItemStore = ({
     [dispatch]
   );
 
+  const handleDeleteProductFromCart = useCallback(
+    (product) => {
+      dispatch(deleteProduct(product));
+    },
+    [dispatch]
+  );
+
   return (
     <CartItem
       thumbnail={thumbnail}
       product={product}
-      deleteProductFromCart={deleteProductFromCart}
+      handleDeleteProductFromCart={handleDeleteProductFromCart}
       handleDecrementeQuantity={handleDecrementeQuantity}
       handleIncrementeQuantity={handleIncrementeQuantity}
     />
   );
+};
+
+CartItemStore.propTypes = {
+  thumbnail: PropTypes.string,
+  product: PropTypes.object,
 };

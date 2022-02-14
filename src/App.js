@@ -65,15 +65,6 @@ export const App = () => {
     handleNumberOfProduct(cartItems);
   }, [cartItems]);
 
-  const deleteProductFromCart = (product) => {
-    setCartItems((prevState) => {
-      return prevState.map((item) => {
-        const { name } = item;
-        return name === product.name ? { ...item, quantity: 0 } : item;
-      });
-    });
-  };
-
   const handleDisplayCart = () => {
     setDisplayCart((prevState) => !prevState);
   };
@@ -100,7 +91,6 @@ export const App = () => {
         <CartStore
           displayCart={displayCart}
           handleDisplayCart={handleDisplayCart}
-          deleteProductFromCart={deleteProductFromCart}
         />
       </BrowserRouter>
       <GlobalStyle />
