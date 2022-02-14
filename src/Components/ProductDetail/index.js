@@ -106,10 +106,7 @@ export const ProductDetail = ({
           </ProductList>
           <ProductInfo>
             <div className='info-text'>
-              <ProductDetailTitle
-                currentProduct={currentProduct}
-                currentProductImage={currentProductImage}
-              />
+              <ProductDetailTitle currentProduct={currentProduct} />
               <ProductDetailDesc
                 currentProduct={currentProduct}
                 handleCurrentProduct={handleCurrentProduct}

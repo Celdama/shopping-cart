@@ -9,8 +9,8 @@ import {
   ContentPrice,
 } from './productDetailDesc.style';
 import {
-  getContainerBasicMotionEffect,
-  getChildrenBasicMotionEffect,
+  getContainerDescEffect,
+  getChildrenDescEffect,
 } from '../../Helpers/motionEffect';
 
 const ProductDetailDesc = ({
@@ -25,63 +25,27 @@ const ProductDetailDesc = ({
     <Wrapper>
       <Content
         key={id}
-        variants={getContainerBasicMotionEffect(0, 1, 0, 0.2, 0.2)}
+        variants={getContainerDescEffect()}
         animate='visible'
         initial='hidden'
       >
-        <ContentPrice
-          variants={getChildrenBasicMotionEffect(
-            50,
-            0,
-            0,
-            1,
-            0,
-            'backInOut',
-            0.5
-          )}
-        >
+        <ContentPrice variants={getChildrenDescEffect()}>
           $ {price}.00 USD
         </ContentPrice>
         <ContentDesc
-          variants={getChildrenBasicMotionEffect(
-            50,
-            0,
-            0,
-            1,
-            0,
-            'backInOut',
-            0.5
-          )}
+          variants={getChildrenDescEffect()}
           className='product-desc'
         >
           {description}
         </ContentDesc>
-        <ContentMarketing
-          variants={getChildrenBasicMotionEffect(
-            50,
-            0,
-            0,
-            1,
-            0,
-            'backInOut',
-            0.5
-          )}
-        >
+        <ContentMarketing variants={getChildrenDescEffect()}>
           can't decide which flavor is right for you ? <br />
           <span onClick={() => handleCurrentProduct('variety')}>
             try our sample pack
           </span>
         </ContentMarketing>
         <Button
-          variants={getChildrenBasicMotionEffect(
-            50,
-            0,
-            0,
-            1,
-            0,
-            'backInOut',
-            0.5
-          )}
+          variants={getChildrenDescEffect()}
           onClick={() => handleIncrementeQuantity(currentProduct)}
         >
           add to cart

@@ -302,6 +302,34 @@ const getDividerTitleEffect = () => ({
   },
 });
 
+const getContainerDescEffect = () => ({
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delay: 0,
+      delayChildren: 0.2,
+      staggerChildren: 0.2,
+    },
+  },
+});
+
+const getChildrenDescEffect = () => ({
+  hidden: {
+    y: 50,
+    opacity: 0,
+  },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: 0,
+      transition: 'backInOut',
+      duration: 0.5,
+    },
+  },
+});
+
 export {
   getContainerBasicMotionEffect,
   getChildrenBasicMotionEffect,
@@ -325,4 +353,6 @@ export {
   getTextSpaceEffect,
   getDividerEffect,
   getDividerTitleEffect,
+  getContainerDescEffect,
+  getChildrenDescEffect,
 };
