@@ -144,7 +144,10 @@ export const ProductDetail = ({
 };
 
 ProductDetail.propTypes = {
-  addProductToCart: PropTypes.func,
+  products: PropTypes.array,
+  currentProduct: PropTypes.object,
+  handleSetCurrentProduct: PropTypes.func,
+  handleIncrementeQuantity: PropTypes.func,
 };
 
 export const ProductDetailStore = () => {
