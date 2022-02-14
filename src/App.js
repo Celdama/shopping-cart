@@ -74,17 +74,6 @@ export const App = () => {
     });
   };
 
-  const incrementeProductQuantity = (product) => {
-    setCartItems((prevState) => {
-      return prevState.map((item) => {
-        const { name, quantity } = item;
-        return name === product.name
-          ? { ...item, quantity: quantity + 1 }
-          : item;
-      });
-    });
-  };
-
   const decrementeProductQuantity = (product) => {
     setCartItems((prevState) => {
       return prevState.map((item) => {
@@ -123,9 +112,7 @@ export const App = () => {
           displayCart={displayCart}
           handleDisplayCart={handleDisplayCart}
           deleteProductFromCart={deleteProductFromCart}
-          incrementeProductQuantity={incrementeProductQuantity}
           decrementeProductQuantity={decrementeProductQuantity}
-          // cartItems={cartItems}
         />
       </BrowserRouter>
       <GlobalStyle />

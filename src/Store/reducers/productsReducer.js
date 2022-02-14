@@ -49,6 +49,7 @@ const initialState = [
 ];
 
 export const INCREMENTE_PRODUCT_QUANTITY = 'INCREMENTE_PRODUCT_QUANTITY';
+export const DECREMENTE_PRODUCT_QUANTITY = 'DECREMENTE_PRODUCT_QUANTITY';
 export const RESET_PRODUCT_QUANTITY_AFTER_ORDER =
   'RESET_PRODUCT_QUANTITY_AFTER_ORDER';
 
@@ -58,6 +59,13 @@ export const productsReducer = (state = initialState, action) => {
       return state.map((product) => {
         if (product.id === action.payload.id) {
           return { ...product, quantity: product.quantity + 1 };
+        }
+        return product;
+      });
+    case DECREMENTE_PRODUCT_QUANTITY:
+      return state.map((product) => {
+        if (product.id === action.payload.id) {
+          return { ...product, quantity: product.quantity - 1 };
         }
         return product;
       });
