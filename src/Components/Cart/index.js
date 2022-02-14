@@ -22,8 +22,6 @@ export const Cart = ({
   displayCart,
   handleDisplayCart,
   deleteProductFromCart,
-  handleIncrementeQuantity,
-  handleDecrementeQuantity,
 }) => {
   const cardItemsList = products.map((product) => {
     const { id, quantity, name } = product;
@@ -35,8 +33,6 @@ export const Cart = ({
             thumbnail={getThumbnailProductByKey(name)}
             product={product}
             deleteProductFromCart={() => deleteProductFromCart(product)}
-            handleIncrementeQuantity={() => handleIncrementeQuantity(product)}
-            handleDecrementeQuantity={() => handleDecrementeQuantity(product)}
           />
         )}
       </Item>
