@@ -4,16 +4,17 @@ import { Item } from './productDetailSavour.style';
 import { getChildrenBasicMotionEffect } from '../../Helpers/motionEffect';
 
 const ProductDetailSavour = ({ product, handleCurrentProduct, isCurrent }) => {
+  const { color, name } = product;
   return (
     <Item
       variants={getChildrenBasicMotionEffect(50, 0, 0, 1, 0.2, 'ease', 0.6)}
-      style={isCurrent ? { borderBottom: `2px solid ${product.color}` } : {}}
+      style={isCurrent ? { borderBottom: `2px solid ${color}` } : {}}
       animate='visible'
       initial='hidden'
-      color={product.color}
+      color={color}
       onClick={handleCurrentProduct}
     >
-      {product.name}
+      {name}
     </Item>
   );
 };
