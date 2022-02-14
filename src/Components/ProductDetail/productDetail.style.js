@@ -34,6 +34,7 @@ export const ProductDetailInfo = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-end;
+  margin-top: 20px;
   width: 100%;
   @media screen and (min-width: ${breakpoints.sm}) {
     width: 50%;

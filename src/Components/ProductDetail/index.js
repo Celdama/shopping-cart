@@ -56,7 +56,7 @@ export const ProductDetail = ({
         setAllImages(getCoverProductByKey(products[0].name));
       }
     });
-  }, [locationId]);
+  }, [locationId, handleSetCurrentProduct, products]);
 
   const setAllImages = (imgArray) => {
     setAllProductsImages(imgArray);
